@@ -1,89 +1,28 @@
-name: Publish verified Windows downloads
+name: Prepare Windows download release
 
 on:
   push:
     branches: [main]
-    paths: ['.github/release-transfer.json']
+    paths: ['.github/workflows/publish.yml']
   workflow_dispatch:
 
 permissions:
   contents: read
 
-concurrency:
-  group: public-release
-  cancel-in-progress: false
-
 jobs:
-  publish:
+  prepare:
     if: github.repository == 'Sebii1998/edubase-to-pdf-ocr'
     runs-on: ubuntu-22.04
-    timeout-minutes: 20
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - name: Download and verify the two approved binary packages
-        shell: python
-        run: |
-          import hashlib, json, pathlib, re, urllib.request, urllib.parse, zipfile
-          manifest = json.loads(pathlib.Path('.github/release-transfer.json').read_text())
-          tag = manifest['tag']
-          if not re.fullmatch(r'v\d+\.\d+\.\d+', tag):
-              raise RuntimeError('Invalid release tag')
-          expected = {'Edubase-PDF-Windows.zip', 'Edubase-Mathe-OCR-Windows.zip'}
-          assets = manifest['assets']
-          if len(assets) != 2 or {a['name'] for a in assets} != expected:
-              raise RuntimeError('Only the two Windows binary packages may be published')
-          target = pathlib.Path('release-assets')
-          target.mkdir()
-          checksums = []
-          class NoRedirect(urllib.request.HTTPRedirectHandler):
-              def redirect_request(self, req, fp, code, msg, headers, newurl):
-                  return None
-          opener = urllib.request.build_opener(NoRedirect)
-          for asset in assets:
-              url = urllib.parse.urlsplit(asset['url'])
-              if (url.scheme != 'https' or url.hostname not in {'release-assets.githubusercontent.com', 'objects.githubusercontent.com'}
-                      or url.username or url.password or url.port not in (None, 443)):
-                  raise RuntimeError('Unexpected download host')
-              if (not re.fullmatch(r'[0-9a-f]{64}', asset['sha256'])
-                      or type(asset['bytes']) is not int or not 0 < asset['bytes'] < 2_000_000_000):
-                  raise RuntimeError('Invalid binary checksum or size')
-              digest, total = hashlib.sha256(), 0
-              request = urllib.request.Request(asset['url'], headers={'User-Agent': 'Edubase-public-downloads'})
-              with opener.open(request, timeout=120) as source, (target / asset['name']).open('xb') as output:
-                  while chunk := source.read(1024 * 1024):
-                      total += len(chunk)
-                      if total > asset['bytes']:
-                          raise RuntimeError('Package exceeds its approved size')
-                      output.write(chunk)
-                      digest.update(chunk)
-              if total != asset['bytes'] or digest.hexdigest() != asset['sha256']:
-                  raise RuntimeError('Package failed checksum verification')
-              checksums.append(asset['sha256'] + '  ' + asset['name'])
-              print('Verified:', asset['name'], total, 'bytes')
-          with zipfile.ZipFile(target / 'Edubase-PDF-Windows.zip') as archive:
-              names = archive.namelist()
-              if 'Edubase-PDF/Edubase-PDF.exe' not in names:
-                  raise RuntimeError('Windows application is missing')
-              if any('/edubase_pdf/' in n and n.endswith('.py') for n in names):
-                  raise RuntimeError('Application source must stay in the private repository')
-              manifests = [n for n in names if n.endswith('/math-runtime.json')]
-              if len(manifests) != 1:
-                  raise RuntimeError('Optional runtime manifest is missing or ambiguous')
-              runtime = json.loads(archive.read(manifests[0]))
-              addon = next(a for a in assets if a['name'] == 'Edubase-Mathe-OCR-Windows.zip')
-              expected_url = f'https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/{tag}/{addon["name"]}'
-              if (runtime['url'] != expected_url or runtime['sha256'] != addon['sha256']
-                      or runtime['bytes'] != addon['bytes']):
-                  raise RuntimeError('In-app math download does not match this public release')
-          (target / 'SHA256SUMS.txt').write_text('\n'.join(checksums) + '\n', encoding='utf-8')
-          pathlib.Path('release-tag.txt').write_text(tag, encoding='ascii')
-      - name: Publish download release
+      - name: Prepare draft for direct binary uploads
         env:
           GH_TOKEN: ${{ github.token }}
-        shell: bash
         run: |
-          set -euo pipefail
-          tag="$(cat release-tag.txt)"
-          gh release create "$tag" release-assets/Edubase-PDF-Windows.zip release-assets/Edubase-Mathe-OCR-Windows.zip release-assets/SHA256SUMS.txt --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --prerelease --title "Edubase PDF + OCR $tag — Windows" --notes-file RELEASE_NOTES.md
+          if gh release view v1.6.0 --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo 'Release already exists; retaining its current assets and state.'
+          else
+            gh release create v1.6.0 --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --draft --prerelease --title "Edubase PDF + OCR v1.6.0 — Windows" --notes-file RELEASE_NOTES.md
+          fi
