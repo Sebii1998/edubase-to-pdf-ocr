@@ -29,7 +29,9 @@
 
 **Edubase to PDF + OCR** hilft dir, Edubase-Buchseiten als **durchsuchbare PDF** lokal zu speichern. So kannst du deine Lernunterlagen offline nutzen und langfristig in deinem persönlichen Archiv aufbewahren – auch wenn der Edubase-Reader später verändert oder eingestellt wird.
 
-Die Windows-App bietet automatische Seitenaufnahme und Texterkennung, automatische Titelerkennung, einstellbare Buchseitennummerierung und optionale Mathe-Erkennung.
+Nach deiner Anmeldung im Edubase-Reader nimmt die Windows-App die angezeigten Seiten des ausgewählten Buches automatisch als Bilder auf. Daraus erstellt sie auf deinem PC eine PDF und ergänzt mit Texterkennung (OCR) durchsuchbaren Text. Die aufgenommenen Buchseiten werden dabei nicht auf GitHub hochgeladen.
+
+Automatische Titelerkennung, einstellbare Buchseitennummerierung und optionale Mathe-Erkennung ergänzen den Export.
 
 > **Für persönlichen Gebrauch und Archivierung:** Speichere nur Inhalte, auf die du zugreifen und die du speichern darfst. Das Projekt ist nicht für unerlaubte Weitergabe, Piraterie oder andere rechtswidrige Zwecke bestimmt.
 
@@ -119,7 +121,9 @@ Ergebnisse prüfen; die App löst keine Aufgaben.
 
 **Edubase to PDF + OCR** helps you save Edubase book pages locally as **searchable PDFs**. Keep your learning materials available offline and in your personal archive, even if the Edubase Reader changes or is discontinued in the future.
 
-The Windows app includes automatic page capture and text recognition, automatic book titles, configurable PDF page labels and optional maths recognition.
+After you sign in to the Edubase Reader, the Windows app automatically captures the displayed pages of your selected book as images. It creates a PDF on your PC and uses optical character recognition (OCR) to add searchable text. The captured book pages are not uploaded to GitHub.
+
+Automatic title detection, configurable PDF page labels and optional maths recognition complete the export.
 
 > **For personal use and archiving:** Only save content you can access and are permitted to save. This project is not intended for unauthorised sharing, piracy or other unlawful purposes.
 
