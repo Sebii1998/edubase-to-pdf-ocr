@@ -1,123 +1,166 @@
-# Edubase to PDF + OCR
+<h1 align="center">Edubase to PDF + OCR</h1>
 
-[Deutsch](#deutsch) · **[English below ↓](#english)**
+<p align="center">
+  <strong>Dein Buch. Lokal als durchsuchbare PDF.</strong><br>
+  <sub>Your book. A local, searchable PDF.</sub>
+</p>
 
-**[Webseite & Download](https://sebii1998.github.io/edubase-to-pdf-ocr/)** ·
-**[Website in English](https://sebii1998.github.io/edubase-to-pdf-ocr/en/)**
+<p align="center">
+  <a href="https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/tag/v1.6.0"><img src="https://img.shields.io/badge/Version-1.6.0-4163ad?style=flat-square" alt="Version 1.6.0"></a>
+  <img src="https://img.shields.io/badge/Windows-64--bit-263246?style=flat-square" alt="Windows 64-bit">
+  <img src="https://img.shields.io/badge/Sprache-DE%20%2F%20EN-263246?style=flat-square" alt="Deutsch und English">
+</p>
+
+<p align="center">
+  <a href="#deutsch">Deutsch</a> · <strong><a href="#english">English below ↓</a></strong> ·
+  <a href="https://sebii1998.github.io/edubase-to-pdf-ocr/">Webseite</a> ·
+  <a href="https://sebii1998.github.io/edubase-to-pdf-ocr/en/">Website in English</a>
+</p>
+
+---
 
 ## Deutsch
 
-**Dein Buch. Lokal als durchsuchbare PDF.**
+Edubase-Buchseiten im Browser aufnehmen und als **durchsuchbare PDF** speichern.
+Mit automatischer Titelerkennung, einstellbarer Buchseitennummerierung und optionaler Mathe-Erkennung.
 
-Eine Windows-App, die deine Edubase-Buchseiten im Browser aufnimmt und daraus eine
-durchsuchbare PDF erstellt. Mit automatischer Titelerkennung, einstellbarer
-Buchseitennummerierung und optionaler Erkennung von Matheformeln.
+<p>
+  <a href="https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-PDF-Windows.zip"><img src="https://img.shields.io/badge/%E2%86%93%20Windows--App%20herunterladen-4163ad?style=for-the-badge" alt="Windows-App herunterladen"></a>
+</p>
 
-![Edubase to PDF + OCR – deutsche Oberfläche](site/assets/app-de.png)
+**[Windows-App herunterladen · ZIP, ca. 243 MB](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-PDF-Windows.zip)** · [Alle Downloads](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/tag/v1.6.0)
 
-### [⬇ Windows-App herunterladen](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-PDF-Windows.zip)
+**Windows 64 Bit (Intel/AMD).** Python, Texterkennung und Firefox sind enthalten.
+Installiertes Edge oder Chrome werden ebenfalls unterstützt.
 
-**Windows 64 Bit (Intel/AMD) · Version 1.6.0**
+> Die fertige App findest du über den Download oben. **Code → Download ZIP** und **Source code** enthalten nur die öffentliche Dokumentation.
 
-Python und Texterkennung sind enthalten. Nutze installiertes Edge oder Chrome;
-Firefox ist im Paket enthalten. Keine separate Python-Installation nötig.
+<p align="center">
+  <a href="site/assets/app-de.png"><img src="site/assets/app-de.png" alt="Edubase to PDF + OCR – deutsche Oberfläche mit Seitenauswahl und PDF-Export" width="820"></a>
+</p>
 
-### Schnellstart
+### In drei Schritten starten
 
-1. ZIP **vollständig entpacken** und **`Edubase-PDF.exe`** starten.
-2. **Browser öffnen**, bei Edubase anmelden und das Buch in der **Einzelseitenansicht** öffnen.
-3. Zuerst **Reader-Seiten 1–3** testen: **Vorschau** prüfen → **Aufnehmen + OCR-PDF**.
+1. **Entpacken:** ZIP vollständig entpacken und **`Edubase-PDF.exe`** starten.
+2. **Buch öffnen:** **Browser öffnen** → bei Edubase anmelden → Buch in der **Einzelseitenansicht** öffnen.
+3. **Drei Seiten testen:** Reader-Seiten **1–3** wählen, **Vorschau** prüfen und **Aufnehmen + OCR-PDF** starten.
 
-Die PDF liegt unter **`Dokumente/Edubase-PDF`**. Lesbarkeit und Textsuche prüfen;
+Deine PDF liegt standardmässig unter **`Dokumente/Edubase-PDF`**. Lesbarkeit und Textsuche prüfen;
 danach über **Neuer Auftrag** einen grösseren Bereich oder das ganze Buch aufnehmen.
 Während der Aufnahme nicht selbst blättern.
 
-### Gut zu wissen
+| Funktion | Das bringt sie dir |
+| --- | --- |
+| **PDF + OCR** | Buchseiten mit durchsuchbarem Text; Verarbeitung lokal auf deinem PC. |
+| **Flexible Aufnahme** | Seitenbereich wählen, pausieren oder bereits aufgenommene Seiten exportieren. |
+| **Buchseitennummern** | Einstellen, welche Reader-Seite der gedruckten Buchseite 1 entspricht. |
+| **Mathe optional** | Formeln als LaTeX in PDF-Anhängen speichern. |
 
-- **Am Schluss nur die PDF:** Nach erfolgreichem Export werden Arbeitsbilder und
-  Zwischendateien automatisch gelöscht, auch bei einem Teilexport. Nach Stopp oder
-  Fehler bleiben sie erhalten. Für späteres Fortsetzen **vor dem Export** unter
-  **Erweiterte Einstellungen → Arbeitsbilder behalten** den Haken setzen.
-- **Ganzes Buch:** Für einen automatischen Export vor **Browser öffnen** den Haken
-  **Ganzes Buch automatisch aufnehmen** setzen. Beim Start ist er ausgeschaltet.
+> **Am Schluss bleibt nur die PDF.** Nach erfolgreichem Export werden Arbeitsbilder und Zwischendateien gelöscht – auch bei einem Teilexport. Möchtest du später fortsetzen, aktiviere **vor dem Export** unter **Erweiterte Einstellungen → Arbeitsbilder behalten** den Haken.
+
+<details>
+<summary><strong>Aufnahme, Fortsetzen und Sprache</strong></summary>
+
+- **Ganzes Buch:** Vor **Browser öffnen** den Haken **Ganzes Buch automatisch aufnehmen** setzen. Beim Start ist er ausgeschaltet.
 - **Früher fertig:** **Stoppen → Bisherige Seiten als PDF** exportiert bereits aufgenommene Seiten.
-- **Mathe optional:** **Mathe-OCR einrichten** lädt das Zusatzmodul (ca. 575 MB).
-  Danach **Mathe & Formeln erkennen** aktivieren. Erkannte Formeln werden als LaTeX
-  in **PDF-Anhängen** gespeichert. Ergebnisse prüfen; die App löst keine Aufgaben.
-- **Deutsch / English:** Auswahl oben rechts; Start immer auf Deutsch.
-  Die kleinen **ⓘ** erklären die Funktionen.
+- **Fortsetzen:** Nach Stopp oder Fehler bleiben Arbeitsdateien erhalten. Über **Aufnahme fortsetzen…** den Auftrag wieder öffnen.
+- **Deutsch / English:** Auswahl oben rechts; die App startet immer auf Deutsch. Die kleinen **ⓘ** erklären die Funktionen.
+- **Buchzählung:** Der eingestellte Versatz passt die PDF-Seitenlabels an. Unnummerierte Einschübe werden damit nicht automatisch erkannt.
 
-**🎬 Ein YouTube-Tutorial ist geplant.**
+</details>
 
-[Anleitung](docs/ANLEITUNG.md) ·
-[Mathe-Zusatzmodul](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-Mathe-OCR-Windows.zip) ·
-[Alle Downloads](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/tag/v1.6.0) ·
-[Fehler melden](https://github.com/Sebii1998/edubase-to-pdf-ocr/issues)
+<details>
+<summary><strong>Mathe & Formeln erkennen – optional</strong></summary>
 
-Nutze oben **Windows-App herunterladen**. GitHubs **Code → Download ZIP** und
-**Source code** enthalten hier nur die öffentliche Dokumentation, nicht die App.
+**Mathe-OCR einrichten** lädt das Zusatzmodul (ca. 575 MB).
+Danach **Mathe & Formeln erkennen** aktivieren.
 
-*Windows-App ohne digitale Signatur. Die Verarbeitung erfolgt lokal.
-Unabhängiges Projekt; nutze nur Inhalte, auf die du zugreifen und die du speichern darfst.*
+Erkannte Formeln werden als **LaTeX in PDF-Anhängen** gespeichert.
+Ergebnisse prüfen; die App löst keine Aufgaben.
+
+[Mathe-Zusatzmodul herunterladen](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-Mathe-OCR-Windows.zip)
+
+</details>
+
+**[Ausführliche Anleitung](docs/ANLEITUNG.md)** · [Fehler melden](https://github.com/Sebii1998/edubase-to-pdf-ocr/issues) · [Webseite](https://sebii1998.github.io/edubase-to-pdf-ocr/)
+
+🎬 Ein YouTube-Tutorial ist geplant.
+
+*Windows-App ohne digitale Signatur. Unabhängiges Projekt; nutze nur Inhalte, auf die du zugreifen und die du speichern darfst.*
 
 ---
 
 ## English
 
-**Your book. A local, searchable PDF.**
+Capture Edubase book pages in your browser and save them as a **searchable PDF**.
+Includes automatic book titles, configurable PDF page labels and optional maths recognition.
 
-A Windows app that captures your Edubase book pages in the browser and turns them
-into a searchable PDF. Includes automatic book titles, configurable PDF page labels
-and optional maths recognition.
+<p>
+  <a href="https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-PDF-Windows.zip"><img src="https://img.shields.io/badge/%E2%86%93%20Download%20for%20Windows-4163ad?style=for-the-badge" alt="Download the Windows app"></a>
+</p>
 
-![Edubase → PDF + OCR – English interface](site/assets/app-en.png)
+**[Download the Windows app · ZIP, about 243 MB](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-PDF-Windows.zip)** · [All downloads](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/tag/v1.6.0)
 
-### [⬇ Download the Windows app](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-PDF-Windows.zip)
+**64-bit Windows (Intel/AMD).** Python, text recognition and Firefox are included.
+Installed Edge and Chrome are also supported.
 
-**Windows 64-bit (Intel/AMD) · Version 1.6.0**
+> Get the app using the download above. **Code → Download ZIP** and **Source code** contain only the public documentation.
 
-Python and text recognition are included. Use installed Edge or Chrome;
-Firefox is bundled. No separate Python installation needed.
+<p align="center">
+  <a href="site/assets/app-en.png"><img src="site/assets/app-en.png" alt="Edubase to PDF + OCR – English interface with page selection and PDF export" width="820"></a>
+</p>
 
-### Quick start
+### Get started in three steps
 
-1. **Extract the entire ZIP** and launch **`Edubase-PDF.exe`**.
-2. Select **English** at the top right. Click **Open browser**, sign in to Edubase
-   and open your book in **single-page view**.
-3. Test **Reader pages 1–3** first: check the **Preview** → **Capture + OCR PDF**.
+1. **Extract:** Extract the entire ZIP and launch **`Edubase-PDF.exe`**. Select **English** at the top right.
+2. **Open your book:** **Open browser** → sign in to Edubase → open your book in **single-page view**.
+3. **Test three pages:** Select Reader pages **1–3**, check the **Preview** and click **Capture + OCR PDF**.
 
-Find your PDF in **`Documents/Edubase-PDF`**. Check readability and text search,
+Your PDF is saved to **`Documents/Edubase-PDF`** by default. Check readability and text search,
 then use **New job** to capture a larger range or the whole book.
 Do not turn pages manually while capturing.
 
-### Good to know
+| Feature | What it does |
+| --- | --- |
+| **PDF + OCR** | Book pages with searchable text, processed locally on your PC. |
+| **Flexible capture** | Choose a page range, pause or export the pages already captured. |
+| **Book page labels** | Set which Reader page contains printed book page 1. |
+| **Optional maths** | Save recognised formulas as LaTeX in PDF attachments. |
 
-- **Only the PDF remains:** Working images and temporary files are deleted after
-  a successful export, including partial exports. Errors or stopping preserve them.
-  To resume later, enable **Advanced settings → Keep working images**
-  **before exporting**.
-- **Whole book:** For automatic export, enable **Capture the entire book automatically**
-  before clicking **Open browser**. This option starts switched off.
+> **Only the PDF remains.** Working images and temporary files are deleted after a successful export, including partial exports. To resume later, enable **Advanced settings → Keep working images before exporting**.
+
+<details>
+<summary><strong>Capture, resume and language</strong></summary>
+
+- **Whole book:** Enable **Capture the entire book automatically** before clicking **Open browser**. This option starts switched off.
 - **Finish early:** **Stop → Saved pages to PDF** exports the pages already captured.
-- **Optional maths:** **Set up math OCR** downloads the add-on (about 575 MB).
-  Then enable **Recognise maths & formulas**. Recognised formulas are saved as
-  LaTeX in **PDF attachments**. Check the results; the app does not solve exercises.
-- **German / English:** Switch at the top right; every launch starts in German.
-  The small **ⓘ** icons explain the controls.
+- **Resume:** Stopping or an error preserves the working files. Open the job using **Resume capture…**.
+- **German / English:** Switch at the top right; every launch starts in German. The small **ⓘ** icons explain the controls.
+- **Book numbering:** The selected offset adjusts PDF page labels. It does not automatically detect unnumbered inserts.
 
-**🎬 A YouTube tutorial is planned.**
+</details>
 
-[Guide (German)](docs/ANLEITUNG.md) ·
-[Maths add-on](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-Mathe-OCR-Windows.zip) ·
-[All downloads](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/tag/v1.6.0) ·
-[Report an issue](https://github.com/Sebii1998/edubase-to-pdf-ocr/issues)
+<details>
+<summary><strong>Recognise maths & formulas – optional</strong></summary>
 
-Use **Download the Windows app** above. GitHub's **Code → Download ZIP** and
-**Source code** contain only the public documentation here, not the app.
+**Set up math OCR** downloads the add-on (about 575 MB).
+Then enable **Recognise maths & formulas**.
 
-*Unsigned Windows app. Processing runs locally.
-Independent project; only use content you can access and are permitted to save.*
+Recognised formulas are saved as **LaTeX in PDF attachments**.
+Check the results; the app does not solve exercises.
+
+[Download the maths add-on](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-Mathe-OCR-Windows.zip)
+
+</details>
+
+**[Full guide (German)](docs/ANLEITUNG.md)** · [Report an issue](https://github.com/Sebii1998/edubase-to-pdf-ocr/issues) · [English website](https://sebii1998.github.io/edubase-to-pdf-ocr/en/)
+
+🎬 A YouTube tutorial is planned.
+
+*Unsigned Windows app. Independent project; only use content you can access and are permitted to save.*
 
 ---
 
-[MIT License](LICENSE) · [Third-party notices](THIRD_PARTY_NOTICES.md)
+<p align="center">
+  <a href="LICENSE">MIT License</a> · <a href="THIRD_PARTY_NOTICES.md">Third-party notices</a> · <a href="#edubase-to-pdf--ocr">↑ Nach oben / Back to top</a>
+</p>
