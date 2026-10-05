@@ -6,15 +6,21 @@
 </p>
 
 <p align="center">
+  <a href="https://sebii1998.github.io/edubase-to-pdf-ocr/"><img src="docs/images/website-de.svg" alt="Webseite öffnen – Download, Anleitung und Screenshots an einem Ort" width="820"></a>
+</p>
+
+<p align="center">
+  <strong><a href="https://sebii1998.github.io/edubase-to-pdf-ocr/">Webseite öffnen</a> · <a href="https://sebii1998.github.io/edubase-to-pdf-ocr/en/">Visit the English website</a></strong>
+</p>
+
+<p align="center">
   <a href="https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/tag/v1.6.0"><img src="https://img.shields.io/badge/Version-1.6.0-4163ad?style=flat-square" alt="Version 1.6.0"></a>
   <img src="https://img.shields.io/badge/Windows-64--bit-263246?style=flat-square" alt="Windows 64-bit">
   <img src="https://img.shields.io/badge/Sprache-DE%20%2F%20EN-263246?style=flat-square" alt="Deutsch und English">
 </p>
 
 <p align="center">
-  <a href="#deutsch">Deutsch</a> · <strong><a href="#english">English below ↓</a></strong> ·
-  <a href="https://sebii1998.github.io/edubase-to-pdf-ocr/">Webseite</a> ·
-  <a href="https://sebii1998.github.io/edubase-to-pdf-ocr/en/">Website in English</a>
+  <a href="#deutsch">Deutsch</a> · <strong><a href="#english">English below ↓</a></strong>
 </p>
 
 ---
@@ -25,10 +31,10 @@ Edubase-Buchseiten im Browser aufnehmen und als **durchsuchbare PDF** speichern.
 Mit automatischer Titelerkennung, einstellbarer Buchseitennummerierung und optionaler Mathe-Erkennung.
 
 <p>
-  <a href="https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-PDF-Windows.zip"><img src="https://img.shields.io/badge/%E2%86%93%20Windows--App%20herunterladen-4163ad?style=for-the-badge" alt="Windows-App herunterladen"></a>
+  <a href="https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-PDF-Windows.zip"><img src="docs/images/download-de.svg" alt="Windows-App herunterladen" width="340"></a>
 </p>
 
-**[Windows-App herunterladen · ZIP, ca. 243 MB](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-PDF-Windows.zip)** · [Alle Downloads](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/tag/v1.6.0)
+[ZIP · ca. 243 MB](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-PDF-Windows.zip) · [Alle Downloads](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/tag/v1.6.0)
 
 **Windows 64 Bit (Intel/AMD).** Python, Texterkennung und Firefox sind enthalten.
 Installiertes Edge oder Chrome werden ebenfalls unterstützt.
@@ -92,14 +98,20 @@ Ergebnisse prüfen; die App löst keine Aufgaben.
 
 ## English
 
+<p align="center">
+  <a href="https://sebii1998.github.io/edubase-to-pdf-ocr/en/"><img src="docs/images/website-en.svg" alt="Visit the English website – downloads, instructions and screenshots in one place" width="820"></a>
+</p>
+
+**[Visit the English website](https://sebii1998.github.io/edubase-to-pdf-ocr/en/)**
+
 Capture Edubase book pages in your browser and save them as a **searchable PDF**.
 Includes automatic book titles, configurable PDF page labels and optional maths recognition.
 
 <p>
-  <a href="https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-PDF-Windows.zip"><img src="https://img.shields.io/badge/%E2%86%93%20Download%20for%20Windows-4163ad?style=for-the-badge" alt="Download the Windows app"></a>
+  <a href="https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-PDF-Windows.zip"><img src="docs/images/download-en.svg" alt="Download the Windows app" width="340"></a>
 </p>
 
-**[Download the Windows app · ZIP, about 243 MB](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-PDF-Windows.zip)** · [All downloads](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/tag/v1.6.0)
+[ZIP · about 243 MB](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-PDF-Windows.zip) · [All downloads](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/tag/v1.6.0)
 
 **64-bit Windows (Intel/AMD).** Python, text recognition and Firefox are included.
 Installed Edge and Chrome are also supported.

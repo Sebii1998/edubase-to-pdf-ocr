@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="174" viewBox="0 0 820 174" role="img" aria-labelledby="title desc">
+  <title id="title">Die Webseite zur App</title>
+  <desc id="desc">Download, Anleitung und Screenshots an einem Ort. Webseite öffnen.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#25344d"/>
+      <stop offset="1" stop-color="#191f2a"/>
+    </linearGradient>
+  </defs>
+  <rect x="1" y="1" width="818" height="172" rx="22" fill="url(#background)" stroke="#384960" stroke-width="2"/>
+  <rect x="27" y="28" width="58" height="58" rx="17" fill="#344f80"/>
+  <g fill="none" stroke="#dbe7ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="41" y="42" width="30" height="27" rx="4"/>
+    <path d="M41 50h30"/>
+    <path d="M47 46h.1m5 0h.1"/>
+    <path d="M50 58h12m-12 5h8"/>
+  </g>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <text x="108" y="54" fill="#ffffff" font-size="29" font-weight="700">Die Webseite zur App</text>
+    <text x="109" y="84" fill="#c4d0e4" font-size="18">Download, Anleitung und Screenshots an einem Ort.</text>
+    <rect x="108" y="105" width="250" height="43" rx="13" fill="#4163ad"/>
+    <text x="128" y="133" fill="#ffffff" font-size="18" font-weight="600">Webseite öffnen</text>
+  </g>
+  <path d="M321 126.5h15m-5-5 5 5-5 5" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="none" stroke="#6e8fca" stroke-width="2" opacity="0.25">
+    <rect x="714" y="37" width="77" height="95" rx="12"/>
+    <path d="M714 58h77M729 76h46M729 88h31M729 110h46"/>
+  </g>
+</svg>
