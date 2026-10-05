@@ -105,8 +105,6 @@ Ergebnisse prüfen; die App löst keine Aufgaben.
 
 **[Ausführliche Anleitung](docs/ANLEITUNG.md)** · [Fehler melden](https://github.com/Sebii1998/edubase-to-pdf-ocr/issues) · [Webseite](https://sebii1998.github.io/edubase-to-pdf-ocr/)
 
-**Inspiration:** Michael Beutlers ursprüngliches `edubase-to-pdf`-Projekt.
-
 *Windows-App ohne digitale Signatur. Unabhängiges Projekt.*
 
 ---
@@ -196,8 +194,6 @@ Check the results; the app does not solve exercises.
 </details>
 
 **[Full guide (German)](docs/ANLEITUNG.md)** · [Report an issue](https://github.com/Sebii1998/edubase-to-pdf-ocr/issues) · [English website](https://sebii1998.github.io/edubase-to-pdf-ocr/en/)
-
-**Inspiration:** Michael Beutler’s original `edubase-to-pdf` project.
 
 *Unsigned Windows app. Independent project.*
 
