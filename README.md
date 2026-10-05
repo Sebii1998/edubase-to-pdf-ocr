@@ -36,17 +36,26 @@ Mit automatischer Titelerkennung, einstellbarer Buchseitennummerierung und optio
 
 [ZIP · ca. 243 MB](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-PDF-Windows.zip) · [Alle Downloads](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/tag/v1.6.0)
 
-> 🎬 **[Video-Anleitung ansehen · 2:32 Min.](https://www.youtube.com/watch?v=tta2wmdQ5ZI)**  
-> Vom Download bis zur fertigen PDF – Schritt für Schritt mit deutschen Erklärungen.
-
 **Windows 64 Bit (Intel/AMD).** Python, Texterkennung und Firefox sind enthalten.
 Installiertes Edge oder Chrome werden ebenfalls unterstützt.
 
 > Die fertige App findest du über den Download oben. **Code → Download ZIP** und **Source code** enthalten nur die öffentliche Dokumentation.
 
+### Video-Anleitung
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=tta2wmdQ5ZI"><img src="docs/images/tutorial-thumbnail.png" alt="Edubase als PDF mit OCR – YouTube-Tutorial starten" width="820"></a><br>
+  <a href="https://www.youtube.com/watch?v=tta2wmdQ5ZI"><img src="docs/images/tutorial-de.svg" alt="Tutorial auf YouTube ansehen · 2:32 Minuten · Deutsch" width="820"></a>
+</p>
+
+<details>
+<summary><strong>App-Oberfläche ansehen</strong></summary>
+
 <p align="center">
   <a href="site/assets/app-de.png"><img src="site/assets/app-de.png" alt="Edubase to PDF + OCR – deutsche Oberfläche mit Seitenauswahl und PDF-Export" width="820"></a>
 </p>
+
+</details>
 
 ### In drei Schritten starten
 
@@ -114,17 +123,26 @@ Includes automatic book titles, configurable PDF page labels and optional maths 
 
 [ZIP · about 243 MB](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-PDF-Windows.zip) · [All downloads](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/tag/v1.6.0)
 
-> 🎬 **[Watch the tutorial · German · 2:32](https://www.youtube.com/watch?v=tta2wmdQ5ZI)**  
-> Download, setup and PDF export, shown step by step with German on-screen explanations.
-
 **64-bit Windows (Intel/AMD).** Python, text recognition and Firefox are included.
 Installed Edge and Chrome are also supported.
 
 > Get the app using the download above. **Code → Download ZIP** and **Source code** contain only the public documentation.
 
+### Video tutorial
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=tta2wmdQ5ZI"><img src="docs/images/tutorial-thumbnail.png" alt="Edubase to PDF with OCR – watch the YouTube tutorial in German" width="820"></a><br>
+  <a href="https://www.youtube.com/watch?v=tta2wmdQ5ZI"><img src="docs/images/tutorial-en.svg" alt="Watch on YouTube · 2:32 · German on-screen explanations" width="820"></a>
+</p>
+
+<details>
+<summary><strong>View the app interface</strong></summary>
+
 <p align="center">
   <a href="site/assets/app-en.png"><img src="site/assets/app-en.png" alt="Edubase to PDF + OCR – English interface with page selection and PDF export" width="820"></a>
 </p>
+
+</details>
 
 ### Get started in three steps
 

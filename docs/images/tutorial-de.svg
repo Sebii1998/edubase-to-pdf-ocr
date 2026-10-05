@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="112" viewBox="0 0 820 112" role="img" aria-labelledby="title desc">
+  <title id="title">Tutorial ansehen</title>
+  <desc id="desc">YouTube-Anleitung vom Download bis zur fertigen PDF. 2 Minuten 32 Sekunden mit deutschen Erklärungen.</desc>
+  <rect x="0.5" y="0.5" width="819" height="111" rx="20" fill="#202734" stroke="#34435b"/>
+  <text x="26" y="45" fill="#f5f8ff" font-family="Segoe UI, Arial, sans-serif" font-size="25" font-weight="700">Vom Download zur PDF.</text>
+  <text x="26" y="77" fill="#a6bce0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" letter-spacing="1">2:32 MIN · DEUTSCHE ERKLÄRUNGEN</text>
+  <rect x="522" y="24" width="272" height="64" rx="17" fill="#4163ad" stroke="#6386d2"/>
+  <path d="M548 44 L548 68 L567 56 Z" fill="#ffffff"/>
+  <text x="583" y="62" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600">Tutorial ansehen</text>
+</svg>
