@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <strong><a href="https://sebii1998.github.io/edubase-to-pdf-ocr/">Webseite öffnen</a> · <a href="https://sebii1998.github.io/edubase-to-pdf-ocr/en/">Visit the English website</a></strong>
+  <strong><a href="https://sebii1998.github.io/edubase-to-pdf-ocr/">Webseite öffnen</a> · <a href="https://sebii1998.github.io/edubase-to-pdf-ocr/en/">Visit the English website</a> · <a href="https://www.youtube.com/watch?v=tta2wmdQ5ZI">▶ YouTube-Tutorial</a></strong>
 </p>
 
 <p align="center">
@@ -35,6 +35,9 @@ Mit automatischer Titelerkennung, einstellbarer Buchseitennummerierung und optio
 </p>
 
 [ZIP · ca. 243 MB](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-PDF-Windows.zip) · [Alle Downloads](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/tag/v1.6.0)
+
+> 🎬 **[Video-Anleitung ansehen · 2:32 Min.](https://www.youtube.com/watch?v=tta2wmdQ5ZI)**  
+> Vom Download bis zur fertigen PDF – Schritt für Schritt mit deutschen Erklärungen.
 
 **Windows 64 Bit (Intel/AMD).** Python, Texterkennung und Firefox sind enthalten.
 Installiertes Edge oder Chrome werden ebenfalls unterstützt.
@@ -90,8 +93,6 @@ Ergebnisse prüfen; die App löst keine Aufgaben.
 
 **[Ausführliche Anleitung](docs/ANLEITUNG.md)** · [Fehler melden](https://github.com/Sebii1998/edubase-to-pdf-ocr/issues) · [Webseite](https://sebii1998.github.io/edubase-to-pdf-ocr/)
 
-🎬 Ein YouTube-Tutorial ist geplant.
-
 *Windows-App ohne digitale Signatur. Unabhängiges Projekt; nutze nur Inhalte, auf die du zugreifen und die du speichern darfst.*
 
 ---
@@ -112,6 +113,9 @@ Includes automatic book titles, configurable PDF page labels and optional maths 
 </p>
 
 [ZIP · about 243 MB](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-PDF-Windows.zip) · [All downloads](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/tag/v1.6.0)
+
+> 🎬 **[Watch the tutorial · German · 2:32](https://www.youtube.com/watch?v=tta2wmdQ5ZI)**  
+> Download, setup and PDF export, shown step by step with German on-screen explanations.
 
 **64-bit Windows (Intel/AMD).** Python, text recognition and Firefox are included.
 Installed Edge and Chrome are also supported.
@@ -166,8 +170,6 @@ Check the results; the app does not solve exercises.
 </details>
 
 **[Full guide (German)](docs/ANLEITUNG.md)** · [Report an issue](https://github.com/Sebii1998/edubase-to-pdf-ocr/issues) · [English website](https://sebii1998.github.io/edubase-to-pdf-ocr/en/)
-
-🎬 A YouTube tutorial is planned.
 
 *Unsigned Windows app. Independent project; only use content you can access and are permitted to save.*
 
