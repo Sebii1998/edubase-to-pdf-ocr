@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <strong><a href="https://sebii1998.github.io/edubase-to-pdf-ocr/">Webseite öffnen</a> · <a href="https://sebii1998.github.io/edubase-to-pdf-ocr/en/">Visit the English website</a> · <a href="https://www.youtube.com/watch?v=tta2wmdQ5ZI">▶ YouTube-Tutorial</a></strong>
+  <strong><a href="https://sebii1998.github.io/edubase-to-pdf-ocr/">Webseite öffnen</a> · <a href="https://sebii1998.github.io/edubase-to-pdf-ocr/en/">Visit the English website</a> · <a href="https://www.youtube.com/watch?v=0XhHn8oYu90">▶ YouTube-Tutorial</a></strong>
 </p>
 
 <p align="center">
@@ -47,8 +47,8 @@ Installiertes Edge oder Chrome werden ebenfalls unterstützt.
 ### Video-Anleitung
 
 <p align="center">
-  <a href="https://www.youtube.com/watch?v=tta2wmdQ5ZI"><img src="docs/images/tutorial-thumbnail.png" alt="Edubase als PDF mit OCR – YouTube-Tutorial starten" width="820"></a><br>
-  <a href="https://www.youtube.com/watch?v=tta2wmdQ5ZI"><img src="docs/images/tutorial-de.svg" alt="Tutorial auf YouTube ansehen · 2:32 Minuten · Deutsch" width="820"></a>
+  <a href="https://www.youtube.com/watch?v=0XhHn8oYu90"><img src="docs/images/tutorial-thumbnail.png" alt="Edubase als PDF mit OCR – YouTube-Tutorial starten" width="820"></a><br>
+  <a href="https://www.youtube.com/watch?v=0XhHn8oYu90"><img src="docs/images/tutorial-de.svg" alt="Tutorial auf YouTube ansehen · 2:32 Minuten · Deutsch" width="820"></a>
 </p>
 
 <details>
@@ -137,8 +137,8 @@ Installed Edge and Chrome are also supported.
 ### Video tutorial
 
 <p align="center">
-  <a href="https://www.youtube.com/watch?v=tta2wmdQ5ZI"><img src="docs/images/tutorial-thumbnail.png" alt="Edubase to PDF with OCR – watch the YouTube tutorial in German" width="820"></a><br>
-  <a href="https://www.youtube.com/watch?v=tta2wmdQ5ZI"><img src="docs/images/tutorial-en.svg" alt="Watch on YouTube · 2:32 · German on-screen explanations" width="820"></a>
+  <a href="https://www.youtube.com/watch?v=0XhHn8oYu90"><img src="docs/images/tutorial-thumbnail.png" alt="Edubase to PDF with OCR – watch the YouTube tutorial in German" width="820"></a><br>
+  <a href="https://www.youtube.com/watch?v=0XhHn8oYu90"><img src="docs/images/tutorial-en.svg" alt="Watch on YouTube · 2:32 · German on-screen explanations" width="820"></a>
 </p>
 
 <details>
