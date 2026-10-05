@@ -27,8 +27,11 @@
 
 ## Deutsch
 
-Edubase-Buchseiten im Browser aufnehmen und als **durchsuchbare PDF** speichern.
-Mit automatischer Titelerkennung, einstellbarer Buchseitennummerierung und optionaler Mathe-Erkennung.
+**Edubase to PDF + OCR** hilft dir, Edubase-Buchseiten als **durchsuchbare PDF** lokal zu speichern. So kannst du deine Lernunterlagen offline nutzen und langfristig in deinem persönlichen Archiv aufbewahren – auch wenn der Edubase-Reader später verändert oder eingestellt wird.
+
+Die Windows-App bietet automatische Seitenaufnahme und Texterkennung, automatische Titelerkennung, einstellbare Buchseitennummerierung und optionale Mathe-Erkennung.
+
+> **Für persönlichen Gebrauch und Archivierung:** Speichere nur Inhalte, auf die du zugreifen und die du speichern darfst. Das Projekt ist nicht für unerlaubte Weitergabe, Piraterie oder andere rechtswidrige Zwecke bestimmt.
 
 <p>
   <a href="https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-PDF-Windows.zip"><img src="docs/images/download-de.svg" alt="Windows-App herunterladen" width="340"></a>
@@ -102,7 +105,9 @@ Ergebnisse prüfen; die App löst keine Aufgaben.
 
 **[Ausführliche Anleitung](docs/ANLEITUNG.md)** · [Fehler melden](https://github.com/Sebii1998/edubase-to-pdf-ocr/issues) · [Webseite](https://sebii1998.github.io/edubase-to-pdf-ocr/)
 
-*Windows-App ohne digitale Signatur. Unabhängiges Projekt; nutze nur Inhalte, auf die du zugreifen und die du speichern darfst.*
+**Inspiration:** Michael Beutlers ursprüngliches `edubase-to-pdf`-Projekt.
+
+*Windows-App ohne digitale Signatur. Unabhängiges Projekt.*
 
 ---
 
@@ -114,8 +119,11 @@ Ergebnisse prüfen; die App löst keine Aufgaben.
 
 **[Visit the English website](https://sebii1998.github.io/edubase-to-pdf-ocr/en/)**
 
-Capture Edubase book pages in your browser and save them as a **searchable PDF**.
-Includes automatic book titles, configurable PDF page labels and optional maths recognition.
+**Edubase to PDF + OCR** helps you save Edubase book pages locally as **searchable PDFs**. Keep your learning materials available offline and in your personal archive, even if the Edubase Reader changes or is discontinued in the future.
+
+The Windows app includes automatic page capture and text recognition, automatic book titles, configurable PDF page labels and optional maths recognition.
+
+> **For personal use and archiving:** Only save content you can access and are permitted to save. This project is not intended for unauthorised sharing, piracy or other unlawful purposes.
 
 <p>
   <a href="https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-PDF-Windows.zip"><img src="docs/images/download-en.svg" alt="Download the Windows app" width="340"></a>
@@ -189,7 +197,9 @@ Check the results; the app does not solve exercises.
 
 **[Full guide (German)](docs/ANLEITUNG.md)** · [Report an issue](https://github.com/Sebii1998/edubase-to-pdf-ocr/issues) · [English website](https://sebii1998.github.io/edubase-to-pdf-ocr/en/)
 
-*Unsigned Windows app. Independent project; only use content you can access and are permitted to save.*
+**Inspiration:** Michael Beutler’s original `edubase-to-pdf` project.
+
+*Unsigned Windows app. Independent project.*
 
 ---
 
