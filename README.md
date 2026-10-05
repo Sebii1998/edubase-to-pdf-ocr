@@ -1,6 +1,9 @@
-# Edubase → PDF + OCR
+# Edubase to PDF + OCR
 
 [Deutsch](#deutsch) · **[English below ↓](#english)**
+
+**[Webseite & Download](https://sebii1998.github.io/edubase-to-pdf-ocr/)** ·
+**[Website in English](https://sebii1998.github.io/edubase-to-pdf-ocr/en/)**
 
 ## Deutsch
 
@@ -10,7 +13,7 @@ Eine Windows-App, die deine Edubase-Buchseiten im Browser aufnimmt und daraus ei
 durchsuchbare PDF erstellt. Mit automatischer Titelerkennung, einstellbarer
 Buchseitennummerierung und optionaler Erkennung von Matheformeln.
 
-![Edubase → PDF + OCR – deutsche Oberfläche](docs/images/app-1.6.0.png)
+![Edubase to PDF + OCR – deutsche Oberfläche](site/assets/app-de.png)
 
 ### [⬇ Windows-App herunterladen](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-PDF-Windows.zip)
 
@@ -54,7 +57,7 @@ Während der Aufnahme nicht selbst blättern.
 Nutze oben **Windows-App herunterladen**. GitHubs **Code → Download ZIP** und
 **Source code** enthalten hier nur die öffentliche Dokumentation, nicht die App.
 
-*Windows-Vorschau ohne digitale Signatur. Die Verarbeitung erfolgt lokal.
+*Windows-App ohne digitale Signatur. Die Verarbeitung erfolgt lokal.
 Unabhängiges Projekt; nutze nur Inhalte, auf die du zugreifen und die du speichern darfst.*
 
 ---
@@ -112,7 +115,7 @@ Do not turn pages manually while capturing.
 Use **Download the Windows app** above. GitHub's **Code → Download ZIP** and
 **Source code** contain only the public documentation here, not the app.
 
-*Unsigned Windows preview. Processing runs locally.
+*Unsigned Windows app. Processing runs locally.
 Independent project; only use content you can access and are permitted to save.*
 
 ---
