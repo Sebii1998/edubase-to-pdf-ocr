@@ -70,7 +70,7 @@ A Windows app that captures your Edubase book pages in the browser and turns the
 into a searchable PDF. Includes automatic book titles, configurable PDF page labels
 and optional maths recognition.
 
-![Edubase → PDF + OCR – English interface](docs/images/app-1.6.0-en.png)
+![Edubase → PDF + OCR – English interface](site/assets/app-en.png)
 
 ### [⬇ Download the Windows app](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-PDF-Windows.zip)
 
