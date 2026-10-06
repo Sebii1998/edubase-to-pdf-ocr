@@ -86,14 +86,19 @@ Sonderzählungen werden durch diesen einfachen Versatz nicht automatisch erkannt
 1. **Mathe-OCR einrichten** lädt einmalig das Zusatzmodul samt Modellen herunter
    (ca. **575 MB**, zusätzlicher Platz zum Entpacken nötig).
 2. **Mathe & Formeln erkennen** aktivieren und zunächst wenige typische Seiten testen.
-3. Die fertige PDF in einem PDF-Programm mit **Anhangsbereich** öffnen.
+3. **LaTeX-Dateien zusätzlich als PDF-Anhang** nur bei Bedarf aktivieren (standardmässig aus).
 
 Die lokale Erkennung nutzt [Pix2Text-Modelle](https://github.com/breezedeus/Pix2Text)
-für Brüche, Wurzeln, Potenzen, Indizes und Formelzeichen. Erkannte Formeln werden
-als LaTeX mit Seitenzuordnung in zwei **PDF-Anhängen** (`.formeln.md` und
-`.formeln.json`) gespeichert. Die sichtbaren PDF-Seiten bleiben unverändert;
-die Anhänge ermöglichen das Weiterverwenden der erkannten Schreibweise.
-Nicht jeder PDF-Betrachter zeigt Anhänge an.
+für Brüche, Wurzeln, Potenzen, Indizes und Formelzeichen. Sie ergänzt unsichtbaren
+**Suchtext**, während die sichtbaren PDF-Seiten unverändert bleiben. Mit **Strg+F**
+z. B. nach `σ` oder `F/A` suchen. Komplexe Ausdrücke werden linear dargestellt,
+etwa `(a+b)/(c-d)` oder `x^2`. Treffer hängen von Erkennung und PDF-Programm ab;
+mathematisch gleichwertige Schreibweisen werden nicht automatisch gefunden.
+
+Die separate Anhangsoption speichert LaTeX und Seitenzuordnung in
+`.formeln.md` und `.formeln.json` innerhalb der PDF zum Weiterverwenden.
+**Für Strg+F ist kein Anhang nötig.** Zum Öffnen der optionalen Dateien
+ein PDF-Programm mit Anhangsbereich verwenden.
 
 Das Modul löst keine Aufgaben. Vorzeichen, Indizes und ähnliche Buchstaben
 prüfen. Die zusätzliche Erkennung benötigt Zeit und Arbeitsspeicher;
@@ -134,7 +139,7 @@ OCR-Seite, jeweils nicht für das gesamte Buch.
 | Seite noch nicht vollständig geladen | Wartezeit pro Seite erhöhen und zuerst wenige Seiten testen. |
 | Identische Seiten gemeldet | Prüfen, ob umgeblättert wird. Identische Nachbarseiten nur erlauben, wenn diese im Buch wirklich vorkommen. |
 | Sitzung abgelaufen | Browser erneut öffnen, anmelden, dasselbe Buch öffnen und Auftrag fortsetzen. |
-| Formeln fehlen | PDF-Anhänge und Protokoll prüfen. Bei einem Erkennungsfehler **Nur OCR erneut…** mit aktivierter Mathe-Option verwenden. |
+| Formeln fehlen | Mit Strg+F nach einem erkannten Zeichen suchen; Anhänge gibt es nur bei gewählter Anhangsoption. Bei einem Erkennungsfehler das Protokoll prüfen und **Nur OCR erneut…** mit aktivierter Mathe-Option verwenden. |
 | Arbeitsbilder nach dem Export fehlen | Gewollte Voreinstellung. Für weitere Seiten **Neuer Auftrag**; vor künftigen Exporten bei Bedarf **Arbeitsbilder behalten** wählen. |
 
 [Fehler melden](https://github.com/Sebii1998/edubase-to-pdf-ocr/issues):

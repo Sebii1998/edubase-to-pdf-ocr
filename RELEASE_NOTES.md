@@ -14,8 +14,11 @@ Edge oder Chrome werden ebenfalls unterstützt.
 - Nach erfolgreichem Export bleibt standardmässig **nur die PDF**. Zum späteren
   Fortsetzen vor dem Export **Arbeitsbilder behalten** aktivieren.
 - Optional **Mathe-OCR einrichten** in der App wählen. Das Zusatzpaket
-  **`Edubase-Mathe-OCR-Windows.zip`** erkennt Formeln und speichert LaTeX als
-  PDF-Anhänge. Ergebnisse prüfen.
+  **`Edubase-Mathe-OCR-Windows.zip`** ergänzt erkannten Formeltext für Strg+F
+  (z. B. `σ` oder `F/A`), bei unverändertem Seitenbild. Komplexe Formeln werden
+  vereinfacht; Ergebnisse prüfen.
+- **LaTeX-Dateien zusätzlich als PDF-Anhang** separat anwählen, falls gewünscht.
+  Standardmässig aus; für Strg+F nicht nötig. Weiterhin **Version 1.6.0**.
 
 Diese Windows-Vorschau ist **nicht digital signiert**.
 [Anleitung, Bilder und Downloads](README.md)
@@ -34,8 +37,11 @@ and Chrome are also supported.
 - Successful exports leave **only the PDF** by default. Enable **Keep working
   images** before exporting if you want to resume later.
 - For optional formulas, choose **Set up math OCR** in the app. The
-  **`Edubase-Mathe-OCR-Windows.zip`** add-on saves recognised LaTeX as PDF
-  attachments. Check the results.
+  **`Edubase-Mathe-OCR-Windows.zip`** add-on adds recognised formula text for Ctrl+F
+  (e.g. `σ` or `F/A`), keeping the page image unchanged. Complex formulas are
+  simplified; check the results.
+- Select **Also attach LaTeX files to the PDF** separately if wanted.
+  Off by default; not needed for Ctrl+F. Still **version 1.6.0**.
 
 This Windows preview is **not digitally signed**.
 [Instructions, screenshots and downloads](README.md#english)

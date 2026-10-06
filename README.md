@@ -77,7 +77,7 @@ Während der Aufnahme nicht selbst blättern.
 | **PDF + OCR** | Buchseiten mit durchsuchbarem Text; Verarbeitung lokal auf deinem PC. |
 | **Flexible Aufnahme** | Seitenbereich wählen, pausieren oder bereits aufgenommene Seiten exportieren. |
 | **Buchseitennummern** | Einstellen, welche Reader-Seite der gedruckten Buchseite 1 entspricht. |
-| **Mathe optional** | Formeln als LaTeX in PDF-Anhängen speichern. |
+| **Mathe optional** | Formeln durchsuchen; LaTeX-Anhang separat wählbar. |
 
 > **Am Schluss bleibt nur die PDF.** Nach erfolgreichem Export werden Arbeitsbilder und Zwischendateien gelöscht – auch bei einem Teilexport. Möchtest du später fortsetzen, aktiviere **vor dem Export** unter **Erweiterte Einstellungen → Arbeitsbilder behalten** den Haken.
 
@@ -98,7 +98,12 @@ Während der Aufnahme nicht selbst blättern.
 **Mathe-OCR einrichten** lädt das Zusatzmodul (ca. 575 MB).
 Danach **Mathe & Formeln erkennen** aktivieren.
 
-Erkannte Formeln werden als **LaTeX in PDF-Anhängen** gespeichert.
+Erkannte Formeln werden als **unsichtbarer Suchtext** ergänzt; das Seitenbild bleibt unverändert.
+Mit **Strg+F** z. B. nach `σ` oder `F/A` suchen. Komplexe Formeln werden vereinfacht;
+Treffer hängen von Erkennung und PDF-Programm ab.
+
+**LaTeX-Dateien zusätzlich als PDF-Anhang** ist separat wählbar und standardmässig aus.
+Der Anhang enthält LaTeX und Seitenzuordnung zum Weiterverwenden und ist für Strg+F nicht nötig.
 Ergebnisse prüfen; die App löst keine Aufgaben.
 
 [Mathe-Zusatzmodul herunterladen](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-Mathe-OCR-Windows.zip)
@@ -169,7 +174,7 @@ Do not turn pages manually while capturing.
 | **PDF + OCR** | Book pages with searchable text, processed locally on your PC. |
 | **Flexible capture** | Choose a page range, pause or export the pages already captured. |
 | **Book page labels** | Set which Reader page contains printed book page 1. |
-| **Optional maths** | Save recognised formulas as LaTeX in PDF attachments. |
+| **Optional maths** | Search recognised formulas; choose LaTeX attachments separately. |
 
 > **Only the PDF remains.** Working images and temporary files are deleted after a successful export, including partial exports. To resume later, enable **Advanced settings → Keep working images before exporting**.
 
@@ -190,7 +195,12 @@ Do not turn pages manually while capturing.
 **Set up math OCR** downloads the add-on (about 575 MB).
 Then enable **Recognise maths & formulas**.
 
-Recognised formulas are saved as **LaTeX in PDF attachments**.
+Recognised formulas are added as **invisible searchable text**; the page image stays unchanged.
+Use **Ctrl+F** for e.g. `σ` or `F/A`. Complex formulas are simplified; results depend
+on recognition and the PDF viewer.
+
+**Also attach LaTeX files to the PDF** is a separate option, off by default.
+Attachments contain LaTeX and page references for reuse and are not needed for Ctrl+F.
 Check the results; the app does not solve exercises.
 
 [Download the maths add-on](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-Mathe-OCR-Windows.zip)
