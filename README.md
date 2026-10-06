@@ -98,6 +98,13 @@ Während der Aufnahme nicht selbst blättern.
 **Mathe-OCR einrichten** lädt das Zusatzmodul (ca. 575 MB).
 Danach **Mathe & Formeln erkennen** aktivieren.
 
+Unter **Erweiterte Einstellungen → Mathe-OCR-Leistung** wählst du **Automatisch**,
+**CPU – maximale Leistung** oder **GPU verwenden**. Automatisch nutzt eine eingerichtete,
+unterstützte GPU, sonst die CPU mit Reserve. CPU-Maximum gibt alle Rechenthreads frei.
+**GPU-Modul einrichten** lädt das zusätzliche DirectML-Modul für geeignete Intel-, AMD-
+und NVIDIA-Grafik. Bei GPU-Problemen übernimmt die CPU. Die Geschwindigkeit hängt vom
+Laptop ab; die Bildqualität bleibt gleich.
+
 Erkannte Formeln werden als **unsichtbarer Suchtext** ergänzt; das Seitenbild bleibt unverändert.
 Mit **Strg+F** z. B. nach `σ` oder `F/A` suchen. Komplexe Formeln werden vereinfacht;
 Treffer hängen von Erkennung und PDF-Programm ab.
@@ -194,6 +201,13 @@ Do not turn pages manually while capturing.
 
 **Set up math OCR** downloads the add-on (about 575 MB).
 Then enable **Recognise maths & formulas**.
+
+Under **Advanced settings → Math OCR performance**, choose **Automatic**,
+**CPU – maximum performance**, or **Use GPU**. Automatic uses a configured, compatible
+GPU, otherwise the CPU with some headroom. CPU maximum allows all processing threads.
+**Set up GPU module** downloads the additional DirectML module for compatible Intel,
+AMD and NVIDIA graphics. GPU failures fall back to CPU. Speed depends on your laptop;
+image quality stays the same.
 
 Recognised formulas are added as **invisible searchable text**; the page image stays unchanged.
 Use **Ctrl+F** for e.g. `σ` or `F/A`. Complex formulas are simplified; results depend
