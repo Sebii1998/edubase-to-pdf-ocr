@@ -20,6 +20,11 @@ Edge oder Chrome werden ebenfalls unterstützt.
 - **LaTeX-Dateien zusätzlich als PDF-Anhang** separat anwählen, falls gewünscht.
   Standardmässig aus; für Strg+F nicht nötig. Weiterhin **Version 1.6.0**.
 
+- Die normale Ansicht passt sich der Fensterhöhe an. Zusätzlicher Inhalt wird erst
+  bei geöffneten erweiterten Einstellungen oder geöffnetem Protokoll gescrollt.
+- Chrome und Edge passen den Reader ausserhalb einer Aufnahme an die Fenstergrösse
+  an. Die hohe Aufnahmeauflösung bleibt erhalten.
+
 Diese Windows-Vorschau ist **nicht digital signiert**.
 [Anleitung, Bilder und Downloads](https://github.com/Sebii1998/edubase-to-pdf-ocr/blob/main/README.md)
 
@@ -42,6 +47,11 @@ and Chrome are also supported.
   simplified; check the results.
 - Select **Also attach LaTeX files to the PDF** separately if wanted.
   Off by default; not needed for Ctrl+F. Still **version 1.6.0**.
+
+- The normal view adapts to the window height. Scrolling is only needed for extra
+  content when advanced settings or the log are expanded.
+- Chrome and Edge fit the reader to the window outside capture. High-resolution
+  capture is preserved.
 
 This Windows preview is **not digitally signed**.
 [Instructions, screenshots and downloads](https://github.com/Sebii1998/edubase-to-pdf-ocr/blob/main/README.md#english)
