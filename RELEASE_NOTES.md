@@ -21,7 +21,7 @@ Edge oder Chrome werden ebenfalls unterstützt.
   Standardmässig aus; für Strg+F nicht nötig. Weiterhin **Version 1.6.0**.
 
 Diese Windows-Vorschau ist **nicht digital signiert**.
-[Anleitung, Bilder und Downloads](README.md)
+[Anleitung, Bilder und Downloads](https://github.com/Sebii1998/edubase-to-pdf-ocr/blob/main/README.md)
 
 ---
 
@@ -44,4 +44,4 @@ and Chrome are also supported.
   Off by default; not needed for Ctrl+F. Still **version 1.6.0**.
 
 This Windows preview is **not digitally signed**.
-[Instructions, screenshots and downloads](README.md#english)
+[Instructions, screenshots and downloads](https://github.com/Sebii1998/edubase-to-pdf-ocr/blob/main/README.md#english)
