@@ -92,18 +92,22 @@ Während der Aufnahme nicht selbst blättern.
 
 </details>
 
+Unter **Erweiterte Einstellungen → OCR-Leistung** bleibt **Automatisch** wie bisher:
+normale Text-OCR erkennt eine Seite nach der anderen. **CPU – maximale Leistung**
+verarbeitet mehrere Textseiten gleichzeitig, passend zu CPU, freiem RAM und Bildgrösse.
+Für Mathe-OCR gibt dieser Modus alle Rechenthreads frei. Mehr Leistung kann Wärme und
+Lüftergeräusch erhöhen; der Geschwindigkeitsgewinn hängt vom Gerät ab.
+
 <details>
 <summary><strong>Mathe & Formeln erkennen – optional</strong></summary>
 
 **Mathe-OCR einrichten** lädt das Zusatzmodul (ca. 575 MB).
 Danach **Mathe & Formeln erkennen** aktivieren.
 
-Unter **Erweiterte Einstellungen → Mathe-OCR-Leistung** wählst du **Automatisch**,
-**CPU – maximale Leistung** oder **GPU verwenden**. Automatisch nutzt eine eingerichtete,
-unterstützte GPU, sonst die CPU mit Reserve. CPU-Maximum gibt alle Rechenthreads frei.
-**GPU-Modul einrichten** lädt das zusätzliche DirectML-Modul für geeignete Intel-, AMD-
-und NVIDIA-Grafik. Bei GPU-Problemen übernimmt die CPU. Die Geschwindigkeit hängt vom
-Laptop ab; die Bildqualität bleibt gleich.
+**GPU verwenden** beschleunigt ausschliesslich Mathe-OCR. **GPU-Modul einrichten**
+lädt das DirectML-Modul für geeignete Intel-, AMD- und NVIDIA-Grafik.
+Bei GPU-Problemen übernimmt die CPU. Im Modus **Automatisch** wird eine eingerichtete,
+unterstützte GPU ebenfalls genutzt; sonst bleibt CPU-Reserve.
 
 Erkannte Formeln werden als **unsichtbarer Suchtext** ergänzt; das Seitenbild bleibt unverändert.
 Mit **Strg+F** z. B. nach `σ` oder `F/A` suchen. Komplexe Formeln werden vereinfacht;
@@ -196,18 +200,21 @@ Do not turn pages manually while capturing.
 
 </details>
 
+Under **Advanced settings → OCR performance**, **Automatic** keeps normal text OCR
+unchanged, one page at a time. **CPU – maximum performance** processes multiple text
+pages at once, based on CPU, available RAM and image size. For math OCR, this mode
+allows all processing threads. More resources may increase heat and fan noise;
+actual speed depends on your device.
+
 <details>
 <summary><strong>Recognise maths & formulas – optional</strong></summary>
 
 **Set up math OCR** downloads the add-on (about 575 MB).
 Then enable **Recognise maths & formulas**.
 
-Under **Advanced settings → Math OCR performance**, choose **Automatic**,
-**CPU – maximum performance**, or **Use GPU**. Automatic uses a configured, compatible
-GPU, otherwise the CPU with some headroom. CPU maximum allows all processing threads.
-**Set up GPU module** downloads the additional DirectML module for compatible Intel,
-AMD and NVIDIA graphics. GPU failures fall back to CPU. Speed depends on your laptop;
-image quality stays the same.
+**Use GPU** accelerates math OCR only. **Set up GPU module** downloads the DirectML
+module for compatible Intel, AMD and NVIDIA graphics. GPU failures fall back to
+CPU. **Automatic** also uses a configured, compatible GPU; otherwise it leaves CPU headroom.
 
 Recognised formulas are added as **invisible searchable text**; the page image stays unchanged.
 Use **Ctrl+F** for e.g. `σ` or `F/A`. Complex formulas are simplified; results depend

@@ -2,6 +2,25 @@
 
 [← Downloads und Schnellstart / English quick start](../README.md)
 
+## OCR-Leistung
+
+**Erweiterte Einstellungen → OCR-Leistung**:
+
+- **Automatisch:** normale Text-OCR wie bisher, eine Seite nach der anderen.
+- **CPU – maximale Leistung:** mehrere Textseiten gleichzeitig; die App begrenzt
+  die Anzahl anhand der CPU-Threads, des freien RAMs und der Bildgrösse.
+  Mathe-OCR darf in diesem Modus alle Rechenthreads nutzen.
+- **GPU verwenden:** nur für Mathe-OCR, mit eingerichtetem GPU-Modul und geeigneter
+  Grafik. Die normale Text-OCR bleibt dabei wie bisher. Bei GPU-Problemen übernimmt
+  die CPU. Automatisch nutzt das eingerichtete GPU-Modul ebenfalls, wenn es funktioniert.
+
+Die PDF bleibt in der richtigen Seitenreihenfolge, mit gleicher Bildauflösung und
+Buchzählung. Pause lässt bereits laufende Seiten fertig werden und startet keine
+weiteren; Stoppen beendet die laufende Erkennung. Fertige OCR-Seiten bleiben bei
+Abbruch im Zwischenspeicher. Mehr CPU-Leistung kann den Laptop wärmer und lauter
+machen und ist nicht auf jedem Gerät schneller.
+
+
 ## Starten und drei Seiten testen
 
 1. [Windows-App herunterladen](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-PDF-Windows.zip),
