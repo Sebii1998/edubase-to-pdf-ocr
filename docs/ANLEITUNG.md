@@ -19,12 +19,26 @@ Mathe- und GPU-Zusatzmodule werden weiterhin erkannt.
 **Erweiterte Einstellungen → OCR-Leistung**:
 
 - **Automatisch:** normale Text-OCR wie bisher, eine Seite nach der anderen.
+  Mathe-OCR nutzt das eingerichtete GPU-Modul, wenn es funktioniert.
 - **CPU – maximale Leistung:** mehrere Textseiten gleichzeitig; die App begrenzt
   die Anzahl anhand der CPU-Threads, des freien RAMs und der Bildgrösse.
   Mathe-OCR darf in diesem Modus alle Rechenthreads nutzen.
 - **GPU verwenden:** nur für Mathe-OCR, mit eingerichtetem GPU-Modul und geeigneter
   Grafik. Die normale Text-OCR bleibt dabei wie bisher. Bei GPU-Problemen übernimmt
-  die CPU. Automatisch nutzt das eingerichtete GPU-Modul ebenfalls, wenn es funktioniert.
+  die CPU.
+
+Die App zeigt erkannte Grafikkarten in den erweiterten Einstellungen an. Eine
+manuelle Eingabe des Modells ist nicht nötig. Bei mehreren Karten bevorzugt sie
+die von Windows für hohe Leistung vorgesehene GPU. Das Protokoll nennt die
+tatsächlich für Mathe-OCR verwendete Karte oder meldet den CPU-Betrieb.
+
+Für die GPU stehen **Standard (5 Formeln)**, **Hoch (10 Formeln)** und
+**Maximum (20 Formeln)** zur Wahl. Die Zahl begrenzt die gemeinsam verarbeiteten
+Formeln; bei wenigen Formeln auf einer Seite fällt die Gruppe kleiner aus.
+Grössere Gruppen benötigen mehr Grafikspeicher und garantieren keine höhere
+Geschwindigkeit. Bei Problemen verkleinert die App die Gruppe automatisch.
+Auflösung, Farben und Erkennungsmodelle bleiben unverändert. Die Einstellung
+wirkt auf GPU-Mathe-OCR, nicht auf die normale Text-OCR oder die Seitenaufnahme.
 
 Die PDF bleibt in der richtigen Seitenreihenfolge, mit gleicher Bildauflösung und
 Buchzählung. Pause lässt bereits laufende Seiten fertig werden und startet keine

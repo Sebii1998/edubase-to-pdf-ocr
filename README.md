@@ -74,7 +74,7 @@ Deine PDF liegt standardmässig unter **`Dokumente/Edubase-PDF`**. Lesbarkeit un
 danach über **Neuer Auftrag** einen grösseren Bereich oder das ganze Buch aufnehmen.
 Während der Aufnahme nicht selbst blättern.
 
-> **Leistung wählen:** Unter **Erweiterte Einstellungen → OCR-Leistung** bleibt **Automatisch** wie bisher. **CPU – maximale Leistung** nutzt mehr CPU-Leistung für Text- und Mathe-OCR; Textseiten werden passend zu CPU und Arbeitsspeicher parallel verarbeitet. **GPU verwenden** beschleunigt Mathe-OCR mit eingerichtetem GPU-Modul und unterstützter Grafikkarte. Der Geschwindigkeitsgewinn hängt vom Gerät ab.
+> **Leistung wählen:** Unter **Erweiterte Einstellungen → OCR-Leistung** nutzt **Automatisch** ein funktionierendes GPU-Modul für Mathe-OCR. Die App erkennt Grafikkarten und bevorzugt die von Windows für hohe Leistung vorgesehene GPU; das Protokoll zeigt die tatsächlich verwendete Karte. **CPU – maximale Leistung** verarbeitet Textseiten passend zu CPU und Arbeitsspeicher parallel. Für Mathe-OCR auf der GPU stehen **Standard (5 Formeln)**, **Hoch (10 Formeln)** und **Maximum (20 Formeln)** zur Wahl. Grössere Gruppen brauchen mehr Grafikspeicher und sind nicht auf jedem Gerät schneller. Bildqualität und Erkennungsmodelle bleiben gleich.
 
 | Funktion | Das bringt sie dir |
 | --- | --- |
@@ -180,7 +180,7 @@ Your PDF is saved to **`Documents/Edubase-PDF`** by default. Check readability a
 then use **New job** to capture a larger range or the whole book.
 Do not turn pages manually while capturing.
 
-> **Choose performance:** Under **Advanced settings → OCR performance**, **Automatic** works as before. **CPU – maximum performance** uses more CPU resources for text and maths OCR, processing text pages in parallel according to your CPU and available memory. **Use GPU** accelerates maths OCR with the GPU module installed and a supported graphics card. Speed gains depend on your device.
+> **Choose performance:** Under **Advanced settings → OCR performance**, **Automatic** uses a working GPU module for maths OCR. The app detects graphics cards and prefers the GPU Windows selects for high performance; the log identifies the card actually used. **CPU – maximum performance** processes text pages in parallel according to your CPU and available memory. GPU maths OCR offers **Standard (5 formulas)**, **High (10 formulas)** and **Maximum (20 formulas)**. Larger groups need more graphics memory and are not faster on every device. Image quality and recognition models stay the same.
 
 | Feature | What it does |
 | --- | --- |

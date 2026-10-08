@@ -6,6 +6,8 @@
 
 **Neu in 1.7.0**
 
+- Grafikkarten werden automatisch erkannt und angezeigt; Mathe-OCR bevorzugt die von Windows für hohe Leistung vorgesehene GPU. Das Protokoll nennt die tatsächlich verwendete Karte.
+- GPU-Mathe-OCR mit **Standard (5 Formeln)**, **Hoch (10 Formeln)** und **Maximum (20 Formeln)**. Bei Problemen wird die Gruppe automatisch verkleinert; Erkennungsmodelle und Bildqualität bleiben gleich. Der Tempogewinn hängt vom Gerät und den Formeln ab.
 - Effizientere Seitenaufnahme in Chrome, Edge und Firefox bei gleicher Auflösung und Farbe.
 - Text und erkannte Formeln werden in einem Durchgang in die PDF geschrieben.
 - Weniger wiederholte Dateizugriffe; Formel-Begleitdateien nur bei gewähltem PDF-Anhang.
@@ -44,6 +46,8 @@ Diese Windows-Vorschau ist **nicht digital signiert**.
 
 **New in 1.7.0**
 
+- Graphics cards are detected and displayed automatically; maths OCR prefers the GPU Windows selects for high performance. The log identifies the card actually used.
+- GPU maths OCR offers **Standard (5 formulas)**, **High (10 formulas)** and **Maximum (20 formulas)**. Groups shrink automatically if needed; recognition models and image quality stay the same. Speed gains depend on your device and formulas.
 - More efficient capture in Chrome, Edge and Firefox, preserving resolution and colour.
 - Text and recognised formulas are written to the PDF in a single pass.
 - Fewer repeated file reads; formula companion files are created only when PDF attachments are selected.
