@@ -1,18 +1,6 @@
-# Anleitung · Version 1.7.0
+# Anleitung
 
 [← Downloads und Schnellstart / English quick start](../README.md)
-
-## Fortschritt bei Aufnahme und OCR
-
-Unten stehen zwei Fortschrittsbalken: **Aufnahme** zählt gespeicherte Buchseiten,
-**OCR** zählt fertig erkannte Seiten. Bei eingeschalteter Mathe-OCR zeigt die
-Beschriftung **Text** und **Mathe** einzeln. Die Verarbeitung kann schon während
-der Aufnahme laufen. Wenn alle OCR-Seiten fertig sind, kann das Speichern und
-Prüfen der endgültigen PDF noch dauern; der Status darüber zeigt diesen Schritt.
-
-Version 1.7.0 spart wiederholte Bildzugriffe und unnötige Zwischenexporte. Die
-Aufnahmeauflösung, Farben und Erkennungsmodelle bleiben unverändert. Bestehende
-Mathe- und GPU-Zusatzmodule werden weiterhin erkannt.
 
 ## OCR-Leistung
 
@@ -35,7 +23,7 @@ machen und ist nicht auf jedem Gerät schneller.
 
 ## Starten und drei Seiten testen
 
-1. [Windows-App herunterladen](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.7.0/Edubase-PDF-Windows.zip),
+1. [Windows-App herunterladen](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-PDF-Windows.zip),
    ZIP vollständig entpacken und **`Edubase-PDF.exe`** starten. Die Ordner neben
    der EXE gehören zum Programm und müssen mitentpackt werden.
 2. **Browser öffnen**, bei Edubase anmelden und das Buch in der
@@ -135,7 +123,7 @@ Das Modul löst keine Aufgaben. Vorzeichen, Indizes und ähnliche Buchstaben
 prüfen. Die zusätzliche Erkennung benötigt Zeit und Arbeitsspeicher;
 die normale PDF-Erstellung funktioniert ohne sie.
 
-[Zusatzmodul separat herunterladen](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.7.0/Edubase-Mathe-OCR-Windows.zip)
+[Zusatzmodul separat herunterladen](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-Mathe-OCR-Windows.zip)
 – am einfachsten erfolgt die Einrichtung direkt über den Knopf in der App.
 
 ## Ausgabe, Bildqualität und grosse Bücher
@@ -182,4 +170,3 @@ einen OCR-Dienst hochgeladen. Unabhängiges Projekt: Verwende nur Inhalte,
 auf die du zugreifen und die du speichern darfst.
 
 [Lizenz](../LICENSE) · [Drittanbieterhinweise](../THIRD_PARTY_NOTICES.md)
-
