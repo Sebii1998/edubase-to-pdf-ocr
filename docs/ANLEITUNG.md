@@ -18,13 +18,14 @@ Mathe- und GPU-Zusatzmodule werden weiterhin erkannt.
 
 **Erweiterte Einstellungen → OCR-Leistung**:
 
-- **Automatisch:** normale Text-OCR wie bisher, eine Seite nach der anderen.
+- **Automatisch:** Textseiten werden mit Reserve für Browser und Mathe-OCR parallel verarbeitet.
+  Bei ausreichenden Ressourcen beginnt die OCR schon während der Aufnahme.
   Mathe-OCR nutzt das eingerichtete GPU-Modul, wenn es funktioniert.
 - **CPU – maximale Leistung:** mehrere Textseiten gleichzeitig; die App begrenzt
   die Anzahl anhand der CPU-Threads, des freien RAMs und der Bildgrösse.
   Mathe-OCR darf in diesem Modus alle Rechenthreads nutzen.
 - **GPU verwenden:** nur für Mathe-OCR, mit eingerichtetem GPU-Modul und geeigneter
-  Grafik. Die normale Text-OCR bleibt dabei wie bisher. Bei GPU-Problemen übernimmt
+  Grafik. Text-OCR läuft parallel auf der CPU, mit Ressourcenreserve. Bei GPU-Problemen übernimmt
   die CPU.
 
 Die App zeigt erkannte Grafikkarten in den erweiterten Einstellungen an. Eine
@@ -34,7 +35,9 @@ tatsächlich für Mathe-OCR verwendete Karte oder meldet den CPU-Betrieb.
 
 Für die GPU stehen **Standard (5 Formeln)**, **Hoch (10 Formeln)** und
 **Maximum (20 Formeln)** zur Wahl. Die Zahl begrenzt die gemeinsam verarbeiteten
-Formeln; bei wenigen Formeln auf einer Seite fällt die Gruppe kleiner aus.
+Formeln. Die App füllt Gruppen aus bis zu vier bereits gespeicherten Seiten und
+verarbeitet ähnlich lange Ausschnitte gemeinsam. Sie wartet dafür nicht auf
+noch aufzunehmende Seiten. Die ursprüngliche Formelreihenfolge bleibt erhalten.
 Grössere Gruppen benötigen mehr Grafikspeicher und garantieren keine höhere
 Geschwindigkeit. Bei Problemen verkleinert die App die Gruppe automatisch.
 Auflösung, Farben und Erkennungsmodelle bleiben unverändert. Die Einstellung
@@ -46,6 +49,24 @@ weiteren; Stoppen beendet die laufende Erkennung. Fertige OCR-Seiten bleiben bei
 Abbruch im Zwischenspeicher. Mehr CPU-Leistung kann den Laptop wärmer und lauter
 machen und ist nicht auf jedem Gerät schneller.
 
+
+## NVIDIA RTX und AMD
+
+**CUDA verwenden (NVIDIA RTX)** ist unter **Erweiterte Einstellungen** nur bei
+einer erkannten NVIDIA-RTX-Karte auswählbar und standardmässig ausgeschaltet.
+Zuerst **CUDA-Modul einrichten** wählen. Die App lädt ein separates Zusatzpaket;
+eine manuelle Eingabe des Grafikkartenmodells oder eine CUDA-Toolkit-Installation
+ist nicht erforderlich. Ein funktionierender NVIDIA-Treiber wird benötigt.
+
+CUDA hält Formelmerkmale zwischen Erkennungsschritten im Grafikspeicher.
+Modellgewichte, Auflösung und volle FP32-Genauigkeit bleiben erhalten. Bei Problemen
+probiert die App DirectML, falls eingerichtet, und danach die CPU. Das Protokoll
+nennt die tatsächlich aktive Technik und Grafikkarte. Eine erkannte RTX-Karte
+allein garantiert nicht, dass Treiber und Zusatzmodul CUDA erfolgreich starten.
+
+**AMD und Intel:** Das vorhandene **GPU-Modul einrichten** installiert DirectML.
+Die neuen seitenübergreifenden und nach geschätzter Länge sortierten Formelgruppen
+funktionieren auch damit. CUDA ist ausschliesslich für NVIDIA vorgesehen.
 
 ## Starten und drei Seiten testen
 

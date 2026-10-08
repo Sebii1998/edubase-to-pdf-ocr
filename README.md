@@ -74,7 +74,7 @@ Deine PDF liegt standardmässig unter **`Dokumente/Edubase-PDF`**. Lesbarkeit un
 danach über **Neuer Auftrag** einen grösseren Bereich oder das ganze Buch aufnehmen.
 Während der Aufnahme nicht selbst blättern.
 
-> **Leistung wählen:** Unter **Erweiterte Einstellungen → OCR-Leistung** nutzt **Automatisch** ein funktionierendes GPU-Modul für Mathe-OCR. Die App erkennt Grafikkarten und bevorzugt die von Windows für hohe Leistung vorgesehene GPU; das Protokoll zeigt die tatsächlich verwendete Karte. **CPU – maximale Leistung** verarbeitet Textseiten passend zu CPU und Arbeitsspeicher parallel. Für Mathe-OCR auf der GPU stehen **Standard (5 Formeln)**, **Hoch (10 Formeln)** und **Maximum (20 Formeln)** zur Wahl. Grössere Gruppen brauchen mehr Grafikspeicher und sind nicht auf jedem Gerät schneller. Bildqualität und Erkennungsmodelle bleiben gleich.
+> **Leistung wählen:** Unter **Erweiterte Einstellungen → OCR-Leistung** nutzt **Automatisch** ein funktionierendes GPU-Modul für Mathe-OCR. Die App erkennt Grafikkarten und bevorzugt die von Windows für hohe Leistung vorgesehene GPU; das Protokoll zeigt die tatsächlich verwendete Karte. **CPU – maximale Leistung** verarbeitet Textseiten passend zu CPU und Arbeitsspeicher parallel. Für Mathe-OCR auf der GPU stehen **Standard (5 Formeln)**, **Hoch (10 Formeln)** und **Maximum (20 Formeln)** zur Wahl. Grössere Gruppen brauchen mehr Grafikspeicher und sind nicht auf jedem Gerät schneller. Bildqualität und Erkennungsmodelle bleiben gleich. Formelgruppen werden über bis zu vier bereits aufgenommene Seiten gefüllt; ähnlich lange Ausschnitte werden gemeinsam verarbeitet.
 
 | Funktion | Das bringt sie dir |
 | --- | --- |
@@ -106,6 +106,14 @@ Danach **Mathe & Formeln erkennen** aktivieren.
 lädt das DirectML-Modul für geeignete Intel-, AMD- und NVIDIA-Grafik.
 Bei GPU-Problemen übernimmt die CPU. Im Modus **Automatisch** wird eine eingerichtete,
 unterstützte GPU ebenfalls genutzt; sonst bleibt CPU-Reserve.
+
+**NVIDIA RTX – optionales CUDA:** Unter **Erweiterte Einstellungen** zuerst
+**CUDA-Modul einrichten**, danach **CUDA verwenden (NVIDIA RTX)** anwählen.
+Die Auswahl ist nur bei erkannter NVIDIA-RTX-Karte möglich und standardmässig aus.
+Das separate CUDA-Modul hält Formelmerkmale während der Erkennung im Grafikspeicher.
+Bei Problemen übernimmt DirectML, falls eingerichtet, sonst die CPU.
+AMD und Intel verwenden weiterhin DirectML und nutzen ebenfalls die neuen Formelgruppen.
+Der tatsächliche Tempogewinn hängt von GPU und Buch ab.
 
 Erkannte Formeln werden als **unsichtbarer Suchtext** ergänzt; das Seitenbild bleibt unverändert.
 Mit **Strg+F** z. B. nach `σ` oder `F/A` suchen. Komplexe Formeln werden vereinfacht;
@@ -180,7 +188,7 @@ Your PDF is saved to **`Documents/Edubase-PDF`** by default. Check readability a
 then use **New job** to capture a larger range or the whole book.
 Do not turn pages manually while capturing.
 
-> **Choose performance:** Under **Advanced settings → OCR performance**, **Automatic** uses a working GPU module for maths OCR. The app detects graphics cards and prefers the GPU Windows selects for high performance; the log identifies the card actually used. **CPU – maximum performance** processes text pages in parallel according to your CPU and available memory. GPU maths OCR offers **Standard (5 formulas)**, **High (10 formulas)** and **Maximum (20 formulas)**. Larger groups need more graphics memory and are not faster on every device. Image quality and recognition models stay the same.
+> **Choose performance:** Under **Advanced settings → OCR performance**, **Automatic** uses a working GPU module for maths OCR. The app detects graphics cards and prefers the GPU Windows selects for high performance; the log identifies the card actually used. **CPU – maximum performance** processes text pages in parallel according to your CPU and available memory. GPU maths OCR offers **Standard (5 formulas)**, **High (10 formulas)** and **Maximum (20 formulas)**. Larger groups need more graphics memory and are not faster on every device. Image quality and recognition models stay the same. Formula groups draw from up to four already captured pages and group crops of similar estimated length.
 
 | Feature | What it does |
 | --- | --- |
@@ -215,6 +223,14 @@ CPU. **Automatic** also uses a configured, compatible GPU; otherwise it leaves C
 Recognised formulas are added as **invisible searchable text**; the page image stays unchanged.
 Use **Ctrl+F** for e.g. `σ` or `F/A`. Complex formulas are simplified; results depend
 on recognition and the PDF viewer.
+
+**NVIDIA RTX – optional CUDA:** In **Advanced settings**, choose **Set up CUDA
+module**, then enable **Use CUDA (NVIDIA RTX)**. This option is off by default and
+only selectable when an NVIDIA RTX card is detected. The separate module keeps
+formula features in graphics memory during recognition. DirectML takes over if
+installed when CUDA fails; otherwise the CPU does. AMD and Intel continue to use
+DirectML and benefit from the same new formula groups. Actual speed depends on
+your GPU and book.
 
 **Also attach LaTeX files to the PDF** is a separate option, off by default.
 Attachments contain LaTeX and page references for reuse and are not needed for Ctrl+F.

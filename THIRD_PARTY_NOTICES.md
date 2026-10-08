@@ -120,3 +120,21 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
+
+
+## Optionales NVIDIA-RTX-CUDA-Paket
+
+`Edubase-CUDA-OCR-Windows.zip` enthält ONNX Runtime GPU 1.20.2 (MIT)
+sowie NVIDIA CUDA Runtime 12.4.127, cuBLAS 12.4.5.8, cuFFT 11.2.1.3
+cuDNN 9.1.0.70 sowie NVRTC und nvJitLink 12.4.127 aus den jeweiligen offiziellen NVIDIA-PyPI-Paketen.
+Die NVIDIA-Komponenten behalten ihre eigenen Lizenzbedingungen; deren
+Original-Lizenzen und Paket-Metadaten bleiben vollständig im Zusatzpaket.
+Die MIT-Lizenz der App gilt nicht für die NVIDIA-Komponenten.
+
+- ONNX Runtime: https://github.com/microsoft/onnxruntime
+- CUDA: https://docs.nvidia.com/cuda/eula/
+- cuDNN: https://docs.nvidia.com/deeplearning/cudnn/backend/latest/reference/eula.html
+
+Das Zusatzpaket wird nur auf ausdrückliche Auswahl eingerichtet und verändert
+weder den Grafiktreiber noch die vorhandene CPU-/DirectML-Laufzeit.
+

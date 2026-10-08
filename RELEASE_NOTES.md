@@ -6,6 +6,13 @@
 
 **Neu in 1.7.0**
 
+- GPU-Formelgruppen über bis zu vier bereits aufgenommene Seiten; ähnlich lange
+  Ausschnitte werden gemeinsam verarbeitet. Die ursprüngliche Formel- und
+  Seitenreihenfolge bleibt erhalten.
+- Optionales **CUDA für NVIDIA RTX**, standardmässig aus und ohne erkannte
+  RTX-Karte nicht auswählbar. Separates Zusatzpaket, unverändertes Formelmodell
+  und volle FP32-Genauigkeit; Rückfall auf DirectML oder CPU bei Problemen.
+
 - Grafikkarten werden automatisch erkannt und angezeigt; Mathe-OCR bevorzugt die von Windows für hohe Leistung vorgesehene GPU. Das Protokoll nennt die tatsächlich verwendete Karte.
 - GPU-Mathe-OCR mit **Standard (5 Formeln)**, **Hoch (10 Formeln)** und **Maximum (20 Formeln)**. Bei Problemen wird die Gruppe automatisch verkleinert; Erkennungsmodelle und Bildqualität bleiben gleich. Der Tempogewinn hängt vom Gerät und den Formeln ab.
 - Effizientere Seitenaufnahme in Chrome, Edge und Firefox bei gleicher Auflösung und Farbe.
@@ -14,7 +21,7 @@
 - Zwei Fortschrittsbalken für Aufnahme und OCR, mit getrennten Text-/Mathe-Seitenzählern.
 - Die normale Ansicht passt auch direkt nach dem Start ohne Scrollen.
 
-Mathe- und GPU-Zusatzpakete sind unverändert; vorhandene Module funktionieren weiter.
+Mathe- und DirectML-Zusatzpakete sind unverändert; vorhandene Module funktionieren weiter. Das CUDA-Paket ist neu und optional. AMD und Intel nutzen weiterhin DirectML.
 
 **Edubase-Buchseiten lokal als durchsuchbare PDF speichern.** Für Windows 64 Bit
 (Intel/AMD); Python, Texterkennung und Firefox sind enthalten. Installiertes
@@ -46,6 +53,12 @@ Diese Windows-Vorschau ist **nicht digital signiert**.
 
 **New in 1.7.0**
 
+- GPU formula groups span up to four already captured pages and group crops of
+  similar estimated length. Original formula and page order are preserved.
+- Optional **CUDA for NVIDIA RTX**, off by default and unavailable without a
+  detected RTX card. Separate add-on, unchanged formula model and full FP32
+  precision; falls back to DirectML or CPU if needed.
+
 - Graphics cards are detected and displayed automatically; maths OCR prefers the GPU Windows selects for high performance. The log identifies the card actually used.
 - GPU maths OCR offers **Standard (5 formulas)**, **High (10 formulas)** and **Maximum (20 formulas)**. Groups shrink automatically if needed; recognition models and image quality stay the same. Speed gains depend on your device and formulas.
 - More efficient capture in Chrome, Edge and Firefox, preserving resolution and colour.
@@ -54,7 +67,7 @@ Diese Windows-Vorschau ist **nicht digital signiert**.
 - Two progress bars for capture and OCR, with individual text/math page counters.
 - The normal view fits without scrolling immediately after launch.
 
-The maths and GPU add-on packages are unchanged; existing installations remain compatible.
+The maths and DirectML add-ons are unchanged; existing installations remain compatible. The CUDA add-on is new and optional. AMD and Intel continue to use DirectML.
 
 **Save Edubase book pages as a local, searchable PDF.** For 64-bit Windows
 (Intel/AMD); Python, text recognition and Firefox are included. Installed Edge
