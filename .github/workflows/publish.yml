@@ -5,6 +5,11 @@ on:
     branches: [main]
     paths: ['.github/workflows/publish.yml']
   workflow_dispatch:
+    inputs:
+      app_url:
+        description: Temporary GitHub download URL for the SHA256-pinned v1.7.0 app
+        required: false
+        type: string
 
 permissions:
   contents: read
@@ -13,6 +18,7 @@ jobs:
   prepare:
     if: github.repository == 'Sebii1998/edubase-to-pdf-ocr'
     runs-on: ubuntu-22.04
+    timeout-minutes: 15
     permissions:
       contents: write
     steps:
@@ -21,8 +27,60 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if gh release view v1.6.0 --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+          if gh release view v1.7.0 --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
             echo 'Release already exists; retaining its current assets and state.'
           else
-            gh release create v1.6.0 --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --draft --prerelease --title "Edubase PDF + OCR v1.6.0 — Windows" --notes-file RELEASE_NOTES.md
+            gh release create v1.7.0 --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --draft --prerelease --title "Edubase PDF + OCR v1.7.0 — Windows" --notes-file RELEASE_NOTES.md
           fi
+      - name: Import and verify the approved v1.7.0 binary packages
+        if: github.event_name == 'workflow_dispatch' && inputs.app_url != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+          APP_URL: ${{ inputs.app_url }}
+        shell: python
+        run: |
+          import hashlib, json, os, pathlib, subprocess, urllib.parse, urllib.request, zipfile
+          url = os.environ['APP_URL']
+          print('::add-mask::' + url, flush=True)
+          parsed = urllib.parse.urlsplit(url)
+          assert parsed.scheme == 'https' and parsed.hostname == 'release-assets.githubusercontent.com'
+          assert not parsed.username and not parsed.password
+          expected = {
+              'Edubase-PDF-Windows.zip': (243965222, '08fa75d7bb5c89b6cc03bf87d2b62015d8d936884dc598516a76a1868c655a3d'),
+              'Edubase-Mathe-OCR-Windows.zip': (574549116, '32da1ebaef1c3c28bd12de20a5505ab0baff7a47202b8ee9fb6fecf914468993'),
+              'Edubase-GPU-OCR-Windows.zip': (22817570, 'a4f4d094eddd44c97e4429714b63aba6cc7ac94560dae048eaa7b2c3444336b4'),
+          }
+          root = pathlib.Path(os.environ['RUNNER_TEMP']) / 'verified-v170'
+          root.mkdir()
+          for name, (size, sha) in expected.items():
+              source = url if name == 'Edubase-PDF-Windows.zip' else 'https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/' + name
+              target = root / name
+              digest, received = hashlib.sha256(), 0
+              with urllib.request.urlopen(source, timeout=60) as response, target.open('xb') as output:
+                  assert response.status == 200
+                  while chunk := response.read(1024 * 1024):
+                      received += len(chunk)
+                      assert received <= size
+                      digest.update(chunk)
+                      output.write(chunk)
+              assert (received, digest.hexdigest()) == (size, sha), name + ': checksum mismatch'
+              with zipfile.ZipFile(target) as archive:
+                  assert archive.testzip() is None, name + ': corrupt ZIP member'
+              print('Verified ' + name + ': ' + sha, flush=True)
+          with zipfile.ZipFile(root / 'Edubase-PDF-Windows.zip') as archive:
+              build = json.loads(archive.read('Edubase-PDF/BUILD.json'))
+              assert build['app_version'] == '1.7.0'
+              assert build['source_commit'] == '745ee4669dcda675306076c0e647993006fdf73e'
+              for kind, name in [('math', 'Edubase-Mathe-OCR-Windows.zip'), ('gpu', 'Edubase-GPU-OCR-Windows.zip')]:
+                  manifest = json.loads(archive.read('Edubase-PDF/_internal/' + kind + '-runtime.json'))
+                  assert manifest['url'] == 'https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.7.0/' + name
+                  assert (manifest['bytes'], manifest['sha256']) == expected[name]
+          sums = ''.join(sha + '  ' + name + '\r\n' for name, (_, sha) in expected.items()).encode('utf8')
+          assert len(sums) == 283 and hashlib.sha256(sums).hexdigest() == '03b0631ee27ceb8c7d9ad3f0a812166f70da9d1528af0755b08adf31a29a8655'
+          (root / 'SHA256SUMS.txt').write_bytes(sums)
+          release = json.loads(subprocess.check_output(['gh', 'release', 'view', 'v1.7.0', '--repo', os.environ['GITHUB_REPOSITORY'], '--json', 'isDraft,assets'], text=True))
+          assert release['isDraft'], 'Only the unpublished draft may be populated automatically.'
+          assert not release['assets'], 'Keep existing assets intact; review an already populated draft manually.'
+          subprocess.run(['gh', 'release', 'upload', 'v1.7.0', '--repo', os.environ['GITHUB_REPOSITORY'], *[str(root / name) for name in [*expected, 'SHA256SUMS.txt']]], check=True)
+          print('All four verified files uploaded to the v1.7.0 draft.', flush=True)
+

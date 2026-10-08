@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/tag/v1.6.0"><img src="https://img.shields.io/badge/Version-1.6.0-4163ad?style=flat-square" alt="Version 1.6.0"></a>
+  <a href="https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/tag/v1.7.0"><img src="https://img.shields.io/badge/Version-1.7.0-4163ad?style=flat-square" alt="Version 1.7.0"></a>
   <img src="https://img.shields.io/badge/Windows-64--bit-263246?style=flat-square" alt="Windows 64-bit">
   <img src="https://img.shields.io/badge/Sprache-DE%20%2F%20EN-263246?style=flat-square" alt="Deutsch und English">
 </p>
@@ -33,13 +33,15 @@ Nach deiner Anmeldung im Edubase-Reader nimmt die Windows-App die angezeigten Se
 
 Automatische Titelerkennung, einstellbare Buchseitennummerierung und optionale Mathe-Erkennung ergänzen den Export.
 
+**Neu in 1.7.0:** Effizientere Seitenaufnahme, weniger wiederholte Dateizugriffe und PDF-Erstellung mit Formeltext in einem Durchgang. Zwei Balken zeigen Aufnahme und OCR getrennt; bei aktiver Mathe-OCR siehst du Text- und Formelseiten einzeln. Auflösung, Farben und OCR-Modelle bleiben erhalten.
+
 > **Für persönlichen Gebrauch und Archivierung:** Speichere nur Inhalte, auf die du zugreifen und die du speichern darfst. Das Projekt ist nicht für unerlaubte Weitergabe, Piraterie oder andere rechtswidrige Zwecke bestimmt.
 
 <p>
-  <a href="https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-PDF-Windows.zip"><img src="docs/images/download-de.svg" alt="Windows-App herunterladen" width="340"></a>
+  <a href="https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.7.0/Edubase-PDF-Windows.zip"><img src="docs/images/download-de.svg" alt="Windows-App herunterladen" width="340"></a>
 </p>
 
-[ZIP · ca. 243 MB](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-PDF-Windows.zip) · [Alle Downloads](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/tag/v1.6.0)
+[ZIP · ca. 244 MB](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.7.0/Edubase-PDF-Windows.zip) · [Alle Downloads](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/tag/v1.7.0)
 
 **Windows 64 Bit (Intel/AMD).** Python, Texterkennung und Firefox sind enthalten.
 Installiertes Edge oder Chrome werden ebenfalls unterstützt.
@@ -113,7 +115,7 @@ Treffer hängen von Erkennung und PDF-Programm ab.
 Der Anhang enthält LaTeX und Seitenzuordnung zum Weiterverwenden und ist für Strg+F nicht nötig.
 Ergebnisse prüfen; die App löst keine Aufgaben.
 
-[Mathe-Zusatzmodul herunterladen](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-Mathe-OCR-Windows.zip)
+[Mathe-Zusatzmodul herunterladen](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.7.0/Edubase-Mathe-OCR-Windows.zip)
 
 </details>
 
@@ -137,13 +139,15 @@ After you sign in to the Edubase Reader, the Windows app automatically captures 
 
 Automatic title detection, configurable PDF page labels and optional maths recognition complete the export.
 
+**New in 1.7.0:** More efficient page capture, fewer repeated file reads and single-pass PDF creation with formula text. Two progress bars separate capture and OCR; with maths enabled, text and formula page counts are shown individually. Resolution, colours and OCR models are preserved.
+
 > **For personal use and archiving:** Only save content you can access and are permitted to save. This project is not intended for unauthorised sharing, piracy or other unlawful purposes.
 
 <p>
-  <a href="https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-PDF-Windows.zip"><img src="docs/images/download-en.svg" alt="Download the Windows app" width="340"></a>
+  <a href="https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.7.0/Edubase-PDF-Windows.zip"><img src="docs/images/download-en.svg" alt="Download the Windows app" width="340"></a>
 </p>
 
-[ZIP · about 243 MB](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-PDF-Windows.zip) · [All downloads](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/tag/v1.6.0)
+[ZIP · about 244 MB](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.7.0/Edubase-PDF-Windows.zip) · [All downloads](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/tag/v1.7.0)
 
 **64-bit Windows (Intel/AMD).** Python, text recognition and Firefox are included.
 Installed Edge and Chrome are also supported.
@@ -216,7 +220,7 @@ on recognition and the PDF viewer.
 Attachments contain LaTeX and page references for reuse and are not needed for Ctrl+F.
 Check the results; the app does not solve exercises.
 
-[Download the maths add-on](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.6.0/Edubase-Mathe-OCR-Windows.zip)
+[Download the maths add-on](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.7.0/Edubase-Mathe-OCR-Windows.zip)
 
 </details>
 
@@ -229,3 +233,4 @@ Check the results; the app does not solve exercises.
 <p align="center">
   <a href="LICENSE">MIT License</a> · <a href="THIRD_PARTY_NOTICES.md">Third-party notices</a> · <a href="#edubase-to-pdf--ocr">↑ Nach oben / Back to top</a>
 </p>
+
