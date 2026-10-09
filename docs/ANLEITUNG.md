@@ -4,10 +4,10 @@
 
 ## PDFs zusammenfügen
 
-1. **PDFs zusammenfügen…** anklicken und mindestens zwei PDFs vom PC auswählen.
+1. **PDFs zusammenfügen** anklicken und mindestens zwei PDFs vom PC auswählen.
 2. Im neuen Fenster die Reihenfolge prüfen. Mit den Pfeilen nach oben/unten
    verschieben, weitere PDFs hinzufügen oder Einträge entfernen.
-3. **Zusammenfügen & speichern…** wählen und einen neuen Dateinamen für die Ausgabe festlegen.
+3. **Zusammenfügen & speichern** wählen und einen neuen Dateinamen für die Ausgabe festlegen.
 
 Die PDFs werden in der angezeigten Reihenfolge verbunden. Vorhandene Seiten,
 Text- und Formel-Suchschichten werden übernommen; es startet keine neue OCR
@@ -21,7 +21,7 @@ Dateien wieder auswählen. Ein zuvor geladener OCR-Auftrag bleibt erhalten.
 
 ## Eigene PDF vom PC verarbeiten
 
-1. **Eigene PDF auswählen…** anklicken und die Datei vom PC wählen. Die App
+1. **Eigene PDF auswählen** anklicken und die Datei vom PC wählen. Die App
    erkennt die PDF, zeigt ihren Namen und die Seitenzahl und wählt zunächst
    **alle Seiten** aus. Bei Bedarf den Seitenbereich einschränken; **Ganze PDF**
    stellt wieder den vollständigen Bereich ein.
@@ -46,7 +46,7 @@ auftreten. Auch in diesem Fall führt die App die gewählte OCR aus. Vorhandene
 PDF-Seitenbeschriftungen bleiben erhalten; **Buchzählung** ist im PDF-Modus deaktiviert.
 
 **Pause** und **Stoppen** gelten auch für den PDF-Auftrag. Bei Stopp oder Fehler
-bleiben die internen Arbeitsdaten erhalten. **Aufnahme fortsetzen…** erkennt
+bleiben die internen Arbeitsdaten erhalten. **Aufnahme fortsetzen** erkennt
 auch einen gespeicherten PDF-Auftrag und setzt ihn ohne Browser fort. Dafür
 verwendet die App ihre unveränderte Arbeitskopie der ursprünglichen PDF.
 **Bisherige Seiten als PDF** exportiert vollständig vorbereitete Seiten ab
@@ -54,7 +54,7 @@ Beginn des gewählten Bereichs. Für eine weitere Verarbeitung nach einem
 solchen Export zuvor **Arbeitsbilder behalten** einschalten.
 
 Wie bei Edubase werden die internen Arbeitsdaten nach erfolgreichem Export
-standardmässig gelöscht. Soll später **Nur OCR erneut…** verwendet werden,
+standardmässig gelöscht. Soll später **Nur OCR erneut** verwendet werden,
 vorher unter **Erweiterte Einstellungen / Performance-Einstellungen** **Arbeitsbilder behalten** aktivieren.
 Die ausgewählte Originaldatei wird bei dieser Bereinigung nie gelöscht.
 Mit **Neuer Auftrag** wird der PDF-Modus verlassen; danach ist die bisherige
@@ -85,9 +85,11 @@ eine stabile Darstellung. Diese notwendigen Prüfungen können länger dauern:
 **2 Sekunden sind keine Obergrenze für die gesamte Aufnahme einer Seite.**
 Die Bildqualität wird für die Beschleunigung nicht reduziert.
 
-## OCR-Leistung
+## Performance-Einstellungen für Mathe-OCR
 
-**Erweiterte Einstellungen / Performance-Einstellungen → OCR-Leistung**:
+Passe die Mathe-Erkennung unter **Erweiterte Einstellungen / Performance-Einstellungen**
+an deinen PC an. Wähle die Rechenleistung und bei GPU-Betrieb die Anzahl Formeln pro Gruppe.
+Die allgemeine Auswahl **OCR-Leistung** steuert zusätzlich die parallele Text-OCR:
 
 - **Automatisch:** Textseiten werden mit Reserve für Browser und Mathe-OCR parallel verarbeitet.
   Bei ausreichenden Ressourcen beginnt die OCR schon während der Aufnahme.
@@ -137,15 +139,23 @@ eine manuelle Eingabe des Grafikkartenmodells oder eine CUDA-Toolkit-Installatio
 ist nicht erforderlich. Ein funktionierender NVIDIA-Treiber wird benötigt.
 
 CUDA hält Formelmerkmale zwischen Erkennungsschritten im Grafikspeicher.
-Modellgewichte, Auflösung und volle FP32-Genauigkeit bleiben erhalten. Hat CUDA
-bereits Formelseiten erfolgreich erkannt und tritt später ein Erkennungsfehler
-auf, versucht die App pro Lauf höchstens einen Neustart der CUDA-Erkennung. Bereits
-fertige Ergebnisse bleiben erhalten und werden nicht erneut erkannt. Bei
-Startproblemen oder erneutem Erkennungsfehler werden verfügbare Alternativen
-bis hin zu DirectML und CPU versucht. Stoppen und Zeitlimits lösen keinen
-Neustart aus; es gibt keine endlose Wiederholung. Das Protokoll nennt Fehler, Wechsel und die
-tatsächlich aktive Technik und Grafikkarte. Eine erkannte RTX-Karte allein
-garantiert nicht, dass Treiber und Zusatzmodul CUDA erfolgreich starten.
+Modellgewichte, Auflösung und volle FP32-Genauigkeit bleiben erhalten. Bei schweren
+CUDA-Fehlern wie Fehler 715 beendet die App den betroffenen Prozess vollständig und
+startet einen neuen mit höchstens **10 Formeln pro Gruppe**. Das gilt auch, wenn
+vorher 20 oder 30 Formeln eingestellt waren.
+
+Scheitert dieselbe Seitengruppe erneut, übernimmt eine verfügbare Alternative wie
+DirectML oder CPU. Bei weiteren noch offenen Seiten darf die App CUDA wieder versuchen.
+Pro Mathe-Durchlauf sind höchstens **drei zusätzliche CUDA-Starts** erlaubt; auch
+fehlgeschlagene Starts zählen mit. Danach bleibt die App bei einer verfügbaren Alternative.
+Bereits fertige Ergebnisse bleiben erhalten und werden nicht erneut erkannt.
+Stoppen und Zeitlimits lösen keinen Neustart aus.
+
+Das Protokoll bestätigt die CUDA-Wiederherstellung erst nach einer erfolgreich
+erkannten Seite. Es nennt ausserdem Fehler, Prozess-ID, Formelgruppe und die aktive
+Grafikkarte. Diese Wiederherstellung begrenzt die Folgen eines CUDA-Abbruchs; sie
+behebt nicht automatisch dessen ursprüngliche Ursache. Eine erkannte RTX-Karte
+allein garantiert nicht, dass Treiber und Zusatzmodul CUDA erfolgreich starten.
 
 **AMD und Intel:** Das vorhandene **GPU-Modul einrichten** installiert DirectML.
 Die neuen seitenübergreifenden und nach geschätzter Länge sortierten Formelgruppen
@@ -179,10 +189,6 @@ Unterordner. Mit **Ausgabe öffnen** gelangst du direkt dorthin.
   anklicken. Mit **Tab** und **Enter** geht es auch per Tastatur.
 - Weitere Optionen findest du unter **Erweiterte Einstellungen / Performance-Einstellungen**;
   Fehlermeldungen unter **Protokoll**.
-- **Protokoll kopieren** kopiert alle bisher gesammelten Meldungen mit Uhrzeit
-  in die Zwischenablage – auch bei eingeklapptem Protokoll und während einer
-  Verarbeitung. Die Meldungen folgen der aktuell gewählten Oberflächensprache.
-  Mit **Strg+V** in einen Texteditor oder eine Support-Nachricht einfügen.
 
 ## Ganzes Buch automatisch aufnehmen
 
@@ -201,7 +207,7 @@ Einzelseitenansicht wechseln oder **Stoppen** wählen und manuell starten.
 **Stoppen** beendet den Auftrag; vollständig gespeicherte Seiten bleiben erhalten.
 
 Zum Fortsetzen einer Edubase-Aufnahme den Browser öffnen, erneut anmelden und dasselbe Buch öffnen.
-Die Automatik dabei ausgeschaltet lassen. **Aufnahme fortsetzen…** wählen,
+Die Automatik dabei ausgeschaltet lassen. **Aufnahme fortsetzen** wählen,
 den Auftrag laden und **Auftrag fortsetzen + OCR** anklicken. Die App prüft
 bereits gespeicherte Seiten und fährt mit der fehlenden Seite fort.
 
@@ -209,7 +215,7 @@ Ein gespeicherter Auftrag einer eigenen PDF wird automatisch erkannt und ohne
 Browser fortgesetzt. Nach dem Laden **PDF mit OCR verarbeiten** wählen.
 
 Sind alle Bilder vorhanden und nur die Texterkennung fehlgeschlagen,
-**Nur OCR erneut…** verwenden. Dafür ist kein Browser nötig.
+**Nur OCR erneut** verwenden. Dafür ist kein Browser nötig.
 
 ## Nach einem Stopp die bisherigen Seiten als PDF
 
@@ -273,7 +279,7 @@ Im Ausgabeordner bleibt nach erfolgreichem Export standardmässig **nur die PDF*
 Während der Verarbeitung liegen Bilder und Zwischendateien im lokalen
 Arbeitsbereich der App. Bei Stopp oder Fehler bleiben sie für einen erneuten
 Versuch erhalten. Scheitert nur die Mathe-Erkennung, bleibt die normale PDF
-ebenfalls erhalten; mit **Nur OCR erneut…** lässt sich die Erkennung wiederholen.
+ebenfalls erhalten; mit **Nur OCR erneut** lässt sich die Erkennung wiederholen.
 
 **Arbeitsbilder behalten** verhindert die automatische Bereinigung und ermöglicht
 Fortsetzen oder erneutes OCR auch nach einem erfolgreichen Export. Späteres
@@ -301,7 +307,7 @@ OCR-Seite, jeweils nicht für das gesamte Buch.
 | Seite noch nicht vollständig geladen | Einzelseitenansicht, Vorschau und Protokoll prüfen. Bei einem Lade-Zeitlimit das Seiten-Zeitlimit erhöhen und zuerst wenige Seiten testen. Eine höhere maximale Wartezeit deaktiviert die adaptive frühere Aufnahme nicht. |
 | Identische Seiten gemeldet | Prüfen, ob umgeblättert wird. Identische Nachbarseiten nur erlauben, wenn diese im Buch wirklich vorkommen. |
 | Sitzung abgelaufen | Browser erneut öffnen, anmelden, dasselbe Buch öffnen und Auftrag fortsetzen. |
-| Formeln fehlen | Mit Strg+F nach einem erkannten Zeichen suchen; Anhänge gibt es nur bei gewählter Anhangsoption. Bei einem Erkennungsfehler das Protokoll prüfen und **Nur OCR erneut…** mit aktivierter Mathe-Option verwenden. |
+| Formeln fehlen | Mit Strg+F nach einem erkannten Zeichen suchen; Anhänge gibt es nur bei gewählter Anhangsoption. Bei einem Erkennungsfehler das Protokoll prüfen und **Nur OCR erneut** mit aktivierter Mathe-Option verwenden. |
 | Arbeitsbilder nach dem Export fehlen | Gewollte Voreinstellung. Für weitere Seiten **Neuer Auftrag**; vor künftigen Exporten bei Bedarf **Arbeitsbilder behalten** wählen. |
 
 [Fehler melden](https://github.com/Sebii1998/edubase-to-pdf-ocr/issues):

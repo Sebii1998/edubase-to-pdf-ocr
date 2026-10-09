@@ -33,9 +33,13 @@ Nach deiner Anmeldung im Edubase-Reader nimmt die Windows-App die angezeigten Se
 
 Automatische Titelerkennung, einstellbare Buchseitennummerierung und optionale Mathe-Erkennung ergänzen den Export.
 
-**Neu in 1.8.0 – Finale Version:** Mit **Eigene PDF auswählen…** kannst du jetzt auch eine PDF von deinem PC mit Text-OCR verarbeiten. Mathe-OCR läuft nur, wenn du sie zusätzlich aktivierst. Die App wechselt automatisch in den PDF-Modus; dafür sind kein Browser und keine Aufnahme nötig. Die Originaldatei bleibt unverändert. Die bisherige Edubase-Aufnahme bleibt erhalten.
+**Neu in 1.8.0 – Finale Version**
 
-**Zusätzlich im aktuellen Update:** **PDFs zusammenfügen…** mit frei wählbarer Reihenfolge, **Protokoll kopieren** und die klarere Beschriftung **Erweiterte Einstellungen / Performance-Einstellungen**.
+- **Eigene PDFs durchsuchbar machen:** Wähle eine PDF von deinem PC und starte die Texterkennung. Mathe-OCR kannst du bei Bedarf zuschalten – alles lokal, ohne Browser.
+- **PDFs zusammenfügen:** Kombiniere mehrere Dokumente in deiner gewünschten Reihenfolge zu einer PDF.
+- **Mathe-OCR auf deinen PC abstimmen:** Wähle CPU, GPU oder optional CUDA. Für die GPU stehen bis zu **10, 20 oder 30 Formeln pro Gruppe** zur Auswahl. Die Performance-Einstellungen helfen dir, die verfügbare Rechenleistung passend zu nutzen.
+
+Die bewährte Edubase-Aufnahme bleibt vollständig erhalten.
 
 > **Für persönlichen Gebrauch und Archivierung:** Speichere nur Inhalte, auf die du zugreifen und die du speichern darfst. Das Projekt ist nicht für unerlaubte Weitergabe, Piraterie oder andere rechtswidrige Zwecke bestimmt.
 
@@ -78,7 +82,7 @@ Während der Aufnahme nicht selbst blättern.
 
 ### Eigene PDF mit OCR verarbeiten
 
-1. **Eigene PDF auswählen…** anklicken. Die App zeigt die Seitenzahl und wählt zunächst alle Seiten aus; bei Bedarf den Bereich einschränken.
+1. **Eigene PDF auswählen** anklicken. Die App zeigt die Seitenzahl und wählt zunächst alle Seiten aus; bei Bedarf den Bereich einschränken.
 2. **Textsprache** einstellen. Text-OCR läuft immer; **Mathe & Formeln erkennen** nur bei Bedarf aktivieren.
 3. **PDF mit OCR verarbeiten** starten. Das Ergebnis ist eine neue PDF; deine Originaldatei bleibt unverändert.
 
@@ -86,24 +90,26 @@ Der PDF-Modus braucht keinen Browser und keine Edubase-Anmeldung. Die ursprüngl
 
 ### PDFs zusammenfügen
 
-1. **PDFs zusammenfügen…** anklicken und mindestens zwei PDFs auswählen.
+1. **PDFs zusammenfügen** anklicken und mindestens zwei PDFs auswählen.
 2. Die Dateien mit den Pfeilen in die gewünschte Reihenfolge bringen; bei Bedarf hinzufügen oder entfernen.
-3. **Zusammenfügen & speichern…** wählen und unter einem neuen Dateinamen speichern.
+3. **Zusammenfügen & speichern** wählen und unter einem neuen Dateinamen speichern.
 
 Die Originale bleiben unverändert; eine vorhandene Zieldatei wird nicht überschrieben. Seiten und bestehender Text-/Formel-Suchtext bleiben erhalten. Es läuft keine neue OCR und kein Browser. **Pause** und **Stoppen** sind verfügbar; ein zuvor geladener OCR-Auftrag bleibt erhalten.
 
-### Protokoll und Performance-Einstellungen
+### Performance-Einstellungen für Mathe-OCR
 
-**Protokoll kopieren** kopiert alle bisherigen Meldungen mit Uhrzeit in die Zwischenablage – auch eingeklappt und während einer Verarbeitung. Die Meldungen folgen der aktuellen Oberflächensprache. Mit **Strg+V** einfügen.
+Öffne **Erweiterte Einstellungen / Performance-Einstellungen** und passe die Mathe-Erkennung an deinen Rechner an:
 
-> **Leistung wählen:** Unter **Erweiterte Einstellungen / Performance-Einstellungen → OCR-Leistung** nutzt **Automatisch** ein funktionierendes GPU-Modul für Mathe-OCR. Die App erkennt Grafikkarten und bevorzugt die von Windows für hohe Leistung vorgesehene GPU; das Protokoll zeigt die tatsächlich verwendete Karte. **CPU – maximale Leistung** verarbeitet Textseiten passend zu CPU und Arbeitsspeicher parallel. Für Mathe-OCR auf der GPU stehen **Standard (10 Formeln)**, **Hoch (20 Formeln)** und **Maximum (30 Formeln)** zur Wahl. Grössere Gruppen brauchen mehr Grafikspeicher und sind nicht auf jedem Gerät schneller. Bildqualität und Erkennungsmodelle bleiben gleich. Formelgruppen werden über bis zu vier bereits aufgenommene Seiten gefüllt; ähnlich lange Ausschnitte werden gemeinsam verarbeitet.
+- **Rechenleistung wählen:** **Automatisch** nutzt ein eingerichtetes, funktionierendes GPU-Modul. **CPU – maximale Leistung** gibt Mathe-OCR alle verfügbaren Rechenthreads. Eine geeignete Grafikkarte kannst du über **GPU verwenden** nutzen; für erkannte NVIDIA-RTX-Karten steht zusätzlich CUDA bereit.
+- **Formelgruppen wählen:** **Standard (10 Formeln)**, **Hoch (20 Formeln)** oder **Maximum (30 Formeln)** bestimmt, wie viele Formeln die GPU gemeinsam verarbeitet. Grössere Gruppen brauchen mehr Grafikspeicher und sind nicht auf jedem Gerät schneller.
+- **Qualität behalten:** Bildauflösung, Farben und Erkennungsmodelle bleiben gleich. Die GPU-Einstellungen beschleunigen ausschliesslich Mathe-OCR; Text-OCR läuft auf der CPU.
 
 | Funktion | Das bringt sie dir |
 | --- | --- |
 | **PDF + OCR** | Buchseiten mit durchsuchbarem Text; Verarbeitung lokal auf deinem PC. |
 | **Eigene PDF** | PDF vom PC mit Text-OCR und optionaler Mathe-OCR verarbeiten; das Original bleibt erhalten. |
 | **PDFs zusammenfügen** | Dateien in der gewünschten Reihenfolge als neue PDF speichern, ohne neue OCR. |
-| **Protokoll kopieren** | Alle Meldungen mit Uhrzeit kopieren, auch während der Verarbeitung. |
+| **Mathe-OCR anpassen** | CPU, GPU oder optional CUDA nutzen und die Anzahl Formeln pro Gruppe wählen. |
 | **Flexible Aufnahme** | Seitenbereich wählen, pausieren oder bereits aufgenommene Seiten exportieren. |
 | **Buchseitennummern** | Einstellen, welche Reader-Seite der gedruckten Buchseite 1 entspricht. |
 | **Mathe optional** | Formeln durchsuchen; LaTeX-Anhang separat wählbar. |
@@ -117,7 +123,7 @@ Die Originale bleiben unverändert; eine vorhandene Zieldatei wird nicht übersc
 - **Text-OCR während der Aufnahme:** Üblicherweise laufen bis zu zwei Seiten parallel, bei Rückstand und genügend CPU/RAM bis zu vier. Wartende Seiten werden schon während der Aufnahme abgearbeitet; bei knappen Ressourcen erfolgt die restliche OCR beim Export.
 - **Ganzes Buch:** Vor **Browser öffnen** den Haken **Ganzes Buch automatisch aufnehmen** setzen. Beim Start ist er ausgeschaltet.
 - **Früher fertig:** **Stoppen → Bisherige Seiten als PDF** exportiert bereits aufgenommene Seiten.
-- **Fortsetzen:** Nach Stopp oder Fehler bleiben Arbeitsdateien erhalten. Über **Aufnahme fortsetzen…** den Auftrag wieder öffnen.
+- **Fortsetzen:** Nach Stopp oder Fehler bleiben Arbeitsdateien erhalten. Über **Aufnahme fortsetzen** den Auftrag wieder öffnen.
 - **Deutsch / English:** Auswahl oben rechts; die App startet immer auf Deutsch. Die kleinen **ⓘ** erklären die Funktionen.
 - **Buchzählung:** Der eingestellte Versatz passt die PDF-Seitenlabels an. Unnummerierte Einschübe werden damit nicht automatisch erkannt.
 
@@ -138,10 +144,12 @@ unterstützte GPU ebenfalls genutzt; sonst bleibt CPU-Reserve.
 **CUDA-Modul einrichten**, danach **CUDA verwenden (NVIDIA RTX)** anwählen.
 Die Auswahl ist nur bei erkannter NVIDIA-RTX-Karte möglich und standardmässig aus.
 Das separate CUDA-Modul hält Formelmerkmale während der Erkennung im Grafikspeicher.
-Hat CUDA bereits Formelseiten erfolgreich erkannt und fällt später aus, versucht die App
-die CUDA-Erkennung pro Lauf höchstens einmal neu zu starten. Fertige Ergebnisse bleiben
-erhalten. Bei Startproblemen oder erneutem Erkennungsfehler werden verfügbare Alternativen
-bis hin zu DirectML und CPU versucht. Stoppen und Zeitlimits lösen keinen Neustart aus.
+Bei schweren CUDA-Fehlern wie Fehler 715 startet die App die Erkennung in einem neuen
+Prozess mit höchstens 10 Formeln pro Gruppe. Scheitert dieselbe Seitengruppe erneut,
+verarbeitet eine verfügbare Alternative wie DirectML oder CPU diese Gruppe. Bei weiteren
+Seiten kann die App CUDA erneut versuchen. Pro Mathe-Durchlauf sind höchstens drei
+zusätzliche CUDA-Starts erlaubt. Fertige Ergebnisse bleiben erhalten. Stoppen und
+Zeitlimits lösen keinen Neustart aus.
 AMD und Intel verwenden weiterhin DirectML und nutzen ebenfalls die neuen Formelgruppen.
 Der tatsächliche Tempogewinn hängt von GPU und Buch ab.
 
@@ -179,9 +187,13 @@ After you sign in to the Edubase Reader, the Windows app automatically captures 
 
 Automatic title detection, configurable PDF page labels and optional maths recognition complete the export.
 
-**New in 1.8.0 – Final release:** Use **Select your own PDF…** to process a PDF from your PC with text OCR. Maths OCR runs only when you enable it. The app switches to PDF mode automatically; no browser or capture is needed. The original file stays unchanged. Edubase capture remains available.
+**New in 1.8.0 – Final release**
 
-**Also in the current update:** **Merge PDFs…** with a selectable order, **Copy log** and the clearer **Advanced settings / Performance settings** label.
+- **Make your own PDFs searchable:** Select a PDF from your PC and start text recognition. Add maths OCR when you need it – all locally, without a browser.
+- **Merge PDFs:** Bring several documents together in the order you choose.
+- **Tune maths OCR for your PC:** Choose CPU, GPU or optional CUDA. For GPU processing, select up to **10, 20 or 30 formulas per group**. Performance settings help you put your available computing power to use.
+
+Edubase capture remains fully available.
 
 > **For personal use and archiving:** Only save content you can access and are permitted to save. This project is not intended for unauthorised sharing, piracy or other unlawful purposes.
 
@@ -224,7 +236,7 @@ Do not turn pages manually while capturing.
 
 ### Process your own PDF with OCR
 
-1. Click **Select your own PDF…**. The app shows its page count and selects all pages; narrow the range if needed.
+1. Click **Select your own PDF**. The app shows its page count and selects all pages; narrow the range if needed.
 2. Set the **Text language**. Text OCR always runs; enable **Recognise maths & formulas** only if needed.
 3. Start **Process PDF with OCR**. The result is a new PDF; your original file stays unchanged.
 
@@ -232,24 +244,26 @@ PDF mode needs no browser or Edubase sign-in. Original pages are retained and in
 
 ### Merge PDFs
 
-1. Click **Merge PDFs…** and select at least two PDFs.
+1. Click **Merge PDFs** and select at least two PDFs.
 2. Use the arrows to set their order; add or remove files as needed.
-3. Choose **Merge & save…** and save under a new filename.
+3. Choose **Merge & save** and save under a new filename.
 
 Originals stay unchanged; an existing destination file is not overwritten. Pages and existing text/formula search layers are retained. No new OCR or browser is started. **Pause** and **Stop** are available; a previously loaded OCR job is kept.
 
-### Log and performance settings
+### Performance settings for maths OCR
 
-**Copy log** copies all messages collected so far, including timestamps, to the clipboard – even while collapsed or a job is running. Messages follow the current interface language. Paste with **Ctrl+V**.
+Open **Advanced settings / Performance settings** and match maths recognition to your PC:
 
-> **Choose performance:** Under **Advanced settings / Performance settings → OCR performance**, **Automatic** uses a working GPU module for maths OCR. The app detects graphics cards and prefers the GPU Windows selects for high performance; the log identifies the card actually used. **CPU – maximum performance** processes text pages in parallel according to your CPU and available memory. GPU maths OCR offers **Standard (10 formulas)**, **High (20 formulas)** and **Maximum (30 formulas)**. Larger groups need more graphics memory and are not faster on every device. Image quality and recognition models stay the same. Formula groups draw from up to four already captured pages and group crops of similar estimated length.
+- **Choose computing power:** **Automatic** uses an installed, working GPU module. **CPU – maximum performance** gives maths OCR all available processing threads. Enable **Use GPU** for a compatible graphics card; detected NVIDIA RTX cards also offer optional CUDA.
+- **Choose formula groups:** **Standard (10 formulas)**, **High (20 formulas)** or **Maximum (30 formulas)** sets how many formulas the GPU processes together. Larger groups need more graphics memory and are not faster on every device.
+- **Keep the quality:** Image resolution, colours and recognition models stay the same. GPU settings accelerate maths OCR only; text OCR runs on the CPU.
 
 | Feature | What it does |
 | --- | --- |
 | **PDF + OCR** | Book pages with searchable text, processed locally on your PC. |
 | **Your own PDF** | Process a local PDF with text OCR and optional maths OCR; keep the original file. |
 | **Merge PDFs** | Save documents in the selected order as a new PDF, without new OCR. |
-| **Copy log** | Copy all timestamped messages, even while processing. |
+| **Tune maths OCR** | Use CPU, GPU or optional CUDA and choose the GPU formula batch size. |
 | **Flexible capture** | Choose a page range, pause or export the pages already captured. |
 | **Book page labels** | Set which Reader page contains printed book page 1. |
 | **Optional maths** | Search recognised formulas; choose LaTeX attachments separately. |
@@ -263,7 +277,7 @@ Originals stay unchanged; an existing destination file is not overwritten. Pages
 - **Text OCR during capture:** Usually up to two pages run in parallel, increasing to four when a backlog grows and CPU/RAM allow. Queued pages are processed while capture continues; with limited resources, remaining OCR runs during export.
 - **Whole book:** Enable **Capture the entire book automatically** before clicking **Open browser**. This option starts switched off.
 - **Finish early:** **Stop → Saved pages to PDF** exports the pages already captured.
-- **Resume:** Stopping or an error preserves the working files. Open the job using **Resume capture…**.
+- **Resume:** Stopping or an error preserves the working files. Open the job using **Resume capture**.
 - **German / English:** Switch at the top right; every launch starts in German. The small **ⓘ** icons explain the controls.
 - **Book numbering:** The selected offset adjusts PDF page labels. It does not automatically detect unnumbered inserts.
 
@@ -286,12 +300,13 @@ on recognition and the PDF viewer.
 **NVIDIA RTX – optional CUDA:** In **Advanced settings / Performance settings**, choose **Set up CUDA
 module**, then enable **Use CUDA (NVIDIA RTX)**. This option is off by default and
 only selectable when an NVIDIA RTX card is detected. The separate module keeps
-formula features in graphics memory during recognition. If CUDA has completed formula
-pages and later fails, the app attempts to restart CUDA recognition at most once per
-run, preserving completed results. Startup problems or a repeated recognition failure
-trigger available alternatives, including DirectML and CPU. Stop and timeouts do not
-trigger a restart. AMD and Intel continue to use DirectML and benefit from the same new formula groups. Actual speed depends on
-your GPU and book.
+formula features in graphics memory during recognition. After a fatal CUDA error such
+as error 715, the app restarts recognition in a new process with up to 10 formulas per
+group. If the same page group fails again, an available alternative such as DirectML
+or CPU processes that group. The app can try CUDA again on further pages, with at most
+three additional CUDA starts per maths OCR run. Completed results are kept. Stop and
+timeouts do not trigger a restart. AMD and Intel continue to use DirectML with the same
+formula group settings. Actual speed depends on your GPU and book.
 
 **Also attach LaTeX files to the PDF** is a separate option, off by default.
 Attachments contain LaTeX and page references for reuse and are not needed for Ctrl+F.

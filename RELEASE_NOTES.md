@@ -4,78 +4,83 @@
 
 ## Deutsch
 
-**Update der finalen Version: PDF-Werkzeuge und einfachere Bedienung.**
+**Deine Unterlagen. Durchsuchbar, zusammengefügt und bereit zum Lernen.**
 
-- **PDFs zusammenfügen…:** mindestens zwei PDFs auswählen, die Reihenfolge mit
-  den Pfeilen anpassen und über **Zusammenfügen & speichern…** als neue Datei speichern.
-  Seiten, vorhandener Text und Formel-Suchschichten bleiben erhalten. Keine neue OCR;
-  Originale und bestehende Zieldateien werden nicht überschrieben. Pause und Stopp
-  sind verfügbar; ein zuvor geladener OCR-Auftrag bleibt erhalten.
-- **Protokoll kopieren:** alle bisherigen Meldungen mit Uhrzeit in die Zwischenablage
-  kopieren, auch bei eingeklapptem Protokoll und während einer Verarbeitung.
-  Die Meldungen folgen der aktuell gewählten Oberflächensprache.
-- **Erweiterte Einstellungen / Performance-Einstellungen:** neue Beschriftung
-  für die vorhandenen Aufnahme-, CPU-, GPU- und CUDA-Einstellungen.
+- **Eigene PDFs durchsuchbar machen:** Wähle eine PDF von deinem PC und starte die
+  Texterkennung. Mathe-OCR kannst du bei Bedarf zuschalten. Die App erkennt den
+  PDF-Modus automatisch – alles lokal, ohne Browser oder Edubase-Anmeldung.
+- **PDFs zusammenfügen:** Kombiniere mehrere Dokumente in deiner gewünschten
+  Reihenfolge zu einer neuen PDF. Seiten und vorhandener Suchtext bleiben erhalten.
+  Die Originaldateien bleiben unverändert.
+- **Mathe-OCR auf deinen PC abstimmen:** Nutze CPU, GPU oder optional CUDA für
+  NVIDIA RTX. Unter **Erweiterte Einstellungen / Performance-Einstellungen** wählst
+  du für die GPU bis zu **10, 20 oder 30 Formeln pro Gruppe**. Grössere Gruppen
+  brauchen mehr Grafikspeicher; das Tempo hängt von deinem PC und den Formeln ab.
+  Bildqualität und Erkennungsmodelle bleiben gleich.
 
-**Ebenfalls in 1.8.0: eigene PDF vom PC mit OCR verarbeiten.**
+**Aktualisiert am 10. Oktober 2026: gezieltere CUDA-Wiederherstellung.**
 
-- **Eigene PDF auswählen…** schaltet automatisch in den PDF-Modus. Kein Browser,
-  keine Edubase-Anmeldung und keine Bildschirmaufnahme nötig.
-- Text-OCR läuft für die gewählten Seiten. Mathe-OCR läuft zusätzlich nur,
-  wenn **Mathe & Formeln erkennen** aktiviert ist.
-- **PDF mit OCR verarbeiten** erstellt eine neue PDF mit unsichtbarem Suchtext.
-  Die Originaldatei bleibt unverändert; vorhandene Ausgabedateien werden nicht überschrieben.
-- Originalseiten, Vektorgrafiken und vorhandener Text bleiben erhalten.
-  Bei bereits durchsuchbaren PDFs können beim Kopieren oder Extrahieren doppelte
-  Textstellen entstehen.
-- Seitenbereich, Pause, Stopp und Fortsetzen funktionieren auch für eigene PDFs.
-  **Neuer Auftrag** wechselt zurück zur bisherigen Edubase-Aufnahme.
-- Mathe-, GPU- und CUDA-Zusatzpakete bleiben unverändert. Bereits eingerichtete
-  Module können weiterverwendet werden; kein erneuter Download nötig.
+Bei schweren CUDA-Fehlern wie Fehler 715 startet die App die Mathe-Erkennung in
+einem neuen Prozess mit höchstens **10 Formeln pro Gruppe**. Scheitert dieselbe
+Seitengruppe erneut, übernimmt eine verfügbare Alternative wie DirectML oder CPU.
+Bei weiteren Seiten kann die App CUDA wieder versuchen. Pro Mathe-Durchlauf sind
+höchstens **drei zusätzliche CUDA-Starts** erlaubt. Fertige Ergebnisse bleiben erhalten.
+Stoppen und Zeitlimits lösen keinen Neustart aus.
 
-**Starten:** [Windows-App herunterladen](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.8.0/Edubase-PDF-Windows.zip)
+Die bewährte **Edubase-Aufnahme** bleibt vollständig erhalten. Seitenbereich,
+Pause, Stopp und Fortsetzen stehen auch für eigene PDFs bereit. **Neuer Auftrag**
+wechselt zurück zur Aufnahme. Bereits eingerichtete Mathe-, GPU- und CUDA-Module
+kannst du weiterverwenden.
+
+Bei eigenen PDFs bleiben die Originalseiten, Vektorgrafiken und vorhandener Text
+erhalten; OCR ergänzt unsichtbaren Suchtext. Bereits durchsuchbare PDFs können
+beim Kopieren oder Extrahieren doppelte Textstellen liefern. Prüfe OCR-Ergebnisse.
+
+**Loslegen:** [Windows-App herunterladen](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.8.0/Edubase-PDF-Windows.zip)
 → ZIP vollständig entpacken → **Edubase-PDF.exe** öffnen.
 Der Download ist ca. **241,7 MB** gross. Python, Text-OCR mit Deutsch/Englisch,
-PDFium und Firefox sind enthalten. Installiertes Edge oder Chrome kann für
-Edubase weiterhin verwendet werden.
+PDFium und Firefox sind enthalten. Installiertes Edge oder Chrome kannst du für
+Edubase ebenfalls verwenden.
 
 [Anleitung](https://github.com/Sebii1998/edubase-to-pdf-ocr/blob/main/docs/ANLEITUNG.md)
 · [Webseite](https://sebii1998.github.io/edubase-to-pdf-ocr/)
 
 ## English
 
-**Final release update: PDF tools and easier controls.**
+**Your documents. Searchable, combined and ready to study.**
 
-- **Merge PDFs…:** select at least two PDFs, reorder them using the arrows and
-  choose **Merge & save…** to save a new file. Pages, existing text and formula
-  search layers are retained. No new OCR runs; originals and existing destination
-  files are not overwritten. Pause and stop are available; a previously loaded
-  OCR job is kept.
-- **Copy log:** copy all messages collected so far, including timestamps, to the
-  clipboard, even while the log is collapsed or a job is running. Messages follow
-  the current interface language.
-- **Advanced settings / Performance settings:** clearer label for the existing
-  capture, CPU, GPU and CUDA settings.
+- **Make your own PDFs searchable:** Select a PDF from your PC and start text
+  recognition. Add maths OCR when you need it. The app switches to PDF mode
+  automatically – all locally, without a browser or Edubase account.
+- **Merge PDFs:** Bring several documents together in the order you choose and
+  save a new PDF. Pages and existing searchable text are retained.
+  Your original files stay unchanged.
+- **Tune maths OCR for your PC:** Use CPU, GPU or optional CUDA for NVIDIA RTX.
+  Under **Advanced settings / Performance settings**, choose up to **10, 20 or
+  30 formulas per group** for GPU processing. Larger groups need more graphics
+  memory; speed depends on your PC and formulas. Image quality and recognition
+  models stay the same.
 
-**Also in 1.8.0: process a PDF from your PC with OCR.**
+**Updated on 10 October 2026: improved CUDA recovery.**
 
-- **Select your own PDF…** switches to PDF mode automatically. No browser,
-  Edubase sign-in or screen capture is needed.
-- Text OCR runs for the selected pages. Maths OCR runs only when
-  **Recognise maths & formulas** is enabled.
-- **Process PDF with OCR** creates a new PDF with invisible searchable text.
-  Your original file stays unchanged; existing output files are not overwritten.
-- Original pages, vector graphics and existing text are preserved. Copying or
-  extracting text from an already searchable PDF can produce duplicates.
-- Page ranges, pause, stop and resume also work for your own PDFs.
-  **New job** returns to the existing Edubase capture mode.
-- Maths, GPU and CUDA add-ons remain unchanged. Keep using installed modules;
-  there is no need to download them again.
+After a fatal CUDA error such as error 715, the app restarts maths recognition in
+a new process with up to **10 formulas per group**. If the same page group fails
+again, an available alternative such as DirectML or CPU takes over. The app can try
+CUDA again on further pages, with at most **three additional CUDA starts** per maths
+OCR run. Completed results are kept. Stop and timeouts do not trigger a restart.
+
+**Edubase capture** remains fully available. Page ranges, pause, stop and resume
+also work for your own PDFs. **New job** returns to capture mode. Keep using your
+installed maths, GPU and CUDA modules.
+
+Your own PDFs retain their original pages, vector graphics and existing text;
+OCR adds invisible searchable text. Copying or extracting text from an already
+searchable PDF can produce duplicates. Please check OCR results.
 
 **Get started:** [Download the Windows app](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.8.0/Edubase-PDF-Windows.zip)
 → extract the entire ZIP → open **Edubase-PDF.exe**.
 The download is about **241.7 MB**. Python, German/English text OCR, PDFium and
-Firefox are included. Installed Edge or Chrome can still be used for Edubase.
+Firefox are included. You can also use installed Edge or Chrome for Edubase.
 
 [English website](https://sebii1998.github.io/edubase-to-pdf-ocr/en/)
 
@@ -91,12 +96,18 @@ install them is through the setup buttons in the app.
 - [GPU / DirectML · ca. 23 MB](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.7.0/Edubase-GPU-OCR-Windows.zip)
 - [CUDA / NVIDIA RTX · ca. 1,68 GB](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.7.0/Edubase-CUDA-OCR-Windows.zip)
 
+Mit **Archiv** gekennzeichnete Dateien gehören zu früheren Builds. Für die aktuelle
+Version lade **Edubase-PDF-Windows.zip** und die zugehörige **SHA256SUMS.txt**.
+
+Files labelled **Archiv** belong to earlier builds. For the current version, use
+**Edubase-PDF-Windows.zip** and its **SHA256SUMS.txt**.
+
 ## SHA256
 
-`Edubase-PDF-Windows.zip` · 241723287 bytes
+`Edubase-PDF-Windows.zip` · 241726899 bytes
 
 ```text
-d3cb94aa09daa03497ad43442f41903fd3f24ba3574709de91023f54a27273c9
+0ff11c6e782a0ad00c6e9b96aedad0e6c195cee23f3dc490d81b4d387041807b
 ```
 
 [SHA256SUMS.txt](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.8.0/SHA256SUMS.txt)
