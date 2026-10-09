@@ -33,7 +33,7 @@ Nach deiner Anmeldung im Edubase-Reader nimmt die Windows-App die angezeigten Se
 
 Automatische Titelerkennung, einstellbare Buchseitennummerierung und optionale Mathe-Erkennung ergänzen den Export.
 
-**Neu in 1.7.0:** Effizientere Seitenaufnahme, weniger wiederholte Dateizugriffe und PDF-Erstellung mit Formeltext in einem Durchgang. Zwei Balken zeigen Aufnahme und OCR getrennt; bei aktiver Mathe-OCR siehst du Text- und Formelseiten einzeln. Auflösung, Farben und OCR-Modelle bleiben erhalten.
+**Neu in 1.7.0:** Die Aufnahme kann bei vollständig geladenen, stabilen Seiten früher weitergehen. Bei Rückstand verarbeitet die Text-OCR während der Aufnahme bis zu vier Seiten gleichzeitig, sofern CPU und Arbeitsspeicher ausreichen. GPU-Formelgruppen bieten 10 / 20 / 30 Formeln; eine begrenzte CUDA-Wiederherstellung erhält bereits erkannte Seiten. Zwei Balken zeigen Aufnahme und OCR getrennt. PNG-Komprimierung, Auflösung, Farben und OCR-Modelle bleiben unverändert.
 
 > **Für persönlichen Gebrauch und Archivierung:** Speichere nur Inhalte, auf die du zugreifen und die du speichern darfst. Das Projekt ist nicht für unerlaubte Weitergabe, Piraterie oder andere rechtswidrige Zwecke bestimmt.
 
@@ -41,7 +41,7 @@ Automatische Titelerkennung, einstellbare Buchseitennummerierung und optionale M
   <a href="https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.7.0/Edubase-PDF-Windows.zip"><img src="docs/images/download-de.svg" alt="Windows-App herunterladen" width="340"></a>
 </p>
 
-[ZIP · ca. 244 MB](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.7.0/Edubase-PDF-Windows.zip) · [Alle Downloads](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/tag/v1.7.0)
+[ZIP · ca. 237,6 MB](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.7.0/Edubase-PDF-Windows.zip) · [Alle Downloads](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/tag/v1.7.0)
 
 **Windows 64 Bit (Intel/AMD).** Python, Texterkennung und Firefox sind enthalten.
 Installiertes Edge oder Chrome werden ebenfalls unterstützt.
@@ -74,7 +74,7 @@ Deine PDF liegt standardmässig unter **`Dokumente/Edubase-PDF`**. Lesbarkeit un
 danach über **Neuer Auftrag** einen grösseren Bereich oder das ganze Buch aufnehmen.
 Während der Aufnahme nicht selbst blättern.
 
-> **Leistung wählen:** Unter **Erweiterte Einstellungen → OCR-Leistung** nutzt **Automatisch** ein funktionierendes GPU-Modul für Mathe-OCR. Die App erkennt Grafikkarten und bevorzugt die von Windows für hohe Leistung vorgesehene GPU; das Protokoll zeigt die tatsächlich verwendete Karte. **CPU – maximale Leistung** verarbeitet Textseiten passend zu CPU und Arbeitsspeicher parallel. Für Mathe-OCR auf der GPU stehen **Standard (5 Formeln)**, **Hoch (10 Formeln)** und **Maximum (20 Formeln)** zur Wahl. Grössere Gruppen brauchen mehr Grafikspeicher und sind nicht auf jedem Gerät schneller. Bildqualität und Erkennungsmodelle bleiben gleich. Formelgruppen werden über bis zu vier bereits aufgenommene Seiten gefüllt; ähnlich lange Ausschnitte werden gemeinsam verarbeitet.
+> **Leistung wählen:** Unter **Erweiterte Einstellungen → OCR-Leistung** nutzt **Automatisch** ein funktionierendes GPU-Modul für Mathe-OCR. Die App erkennt Grafikkarten und bevorzugt die von Windows für hohe Leistung vorgesehene GPU; das Protokoll zeigt die tatsächlich verwendete Karte. **CPU – maximale Leistung** verarbeitet Textseiten passend zu CPU und Arbeitsspeicher parallel. Für Mathe-OCR auf der GPU stehen **Standard (10 Formeln)**, **Hoch (20 Formeln)** und **Maximum (30 Formeln)** zur Wahl. Grössere Gruppen brauchen mehr Grafikspeicher und sind nicht auf jedem Gerät schneller. Bildqualität und Erkennungsmodelle bleiben gleich. Formelgruppen werden über bis zu vier bereits aufgenommene Seiten gefüllt; ähnlich lange Ausschnitte werden gemeinsam verarbeitet.
 
 | Funktion | Das bringt sie dir |
 | --- | --- |
@@ -88,6 +88,8 @@ Während der Aufnahme nicht selbst blättern.
 <details>
 <summary><strong>Aufnahme, Fortsetzen und Sprache</strong></summary>
 
+- **Wartezeit:** Die eingestellten 2 Sekunden sind standardmässig die maximale zusätzliche Beruhigungszeit nach den Ladeprüfungen. Vollständig geladene, stabile Bild- oder SVG-Seiten können früher fertig sein. Bei Canvas oder unbekannter Darstellung bleibt die volle Wartezeit; notwendige Lade- und Stabilitätsprüfungen können die Gesamtzeit pro Seite verlängern.
+- **Text-OCR während der Aufnahme:** Üblicherweise laufen bis zu zwei Seiten parallel, bei Rückstand und genügend CPU/RAM bis zu vier. Wartende Seiten werden schon während der Aufnahme abgearbeitet; bei knappen Ressourcen erfolgt die restliche OCR beim Export.
 - **Ganzes Buch:** Vor **Browser öffnen** den Haken **Ganzes Buch automatisch aufnehmen** setzen. Beim Start ist er ausgeschaltet.
 - **Früher fertig:** **Stoppen → Bisherige Seiten als PDF** exportiert bereits aufgenommene Seiten.
 - **Fortsetzen:** Nach Stopp oder Fehler bleiben Arbeitsdateien erhalten. Über **Aufnahme fortsetzen…** den Auftrag wieder öffnen.
@@ -111,7 +113,10 @@ unterstützte GPU ebenfalls genutzt; sonst bleibt CPU-Reserve.
 **CUDA-Modul einrichten**, danach **CUDA verwenden (NVIDIA RTX)** anwählen.
 Die Auswahl ist nur bei erkannter NVIDIA-RTX-Karte möglich und standardmässig aus.
 Das separate CUDA-Modul hält Formelmerkmale während der Erkennung im Grafikspeicher.
-Bei Problemen übernimmt DirectML, falls eingerichtet, sonst die CPU.
+Hat CUDA bereits Formelseiten erfolgreich erkannt und fällt später aus, versucht die App
+die CUDA-Erkennung pro Lauf höchstens einmal neu zu starten. Fertige Ergebnisse bleiben
+erhalten. Bei Startproblemen oder erneutem Erkennungsfehler werden verfügbare Alternativen
+bis hin zu DirectML und CPU versucht. Stoppen und Zeitlimits lösen keinen Neustart aus.
 AMD und Intel verwenden weiterhin DirectML und nutzen ebenfalls die neuen Formelgruppen.
 Der tatsächliche Tempogewinn hängt von GPU und Buch ab.
 
@@ -147,7 +152,7 @@ After you sign in to the Edubase Reader, the Windows app automatically captures 
 
 Automatic title detection, configurable PDF page labels and optional maths recognition complete the export.
 
-**New in 1.7.0:** More efficient page capture, fewer repeated file reads and single-pass PDF creation with formula text. Two progress bars separate capture and OCR; with maths enabled, text and formula page counts are shown individually. Resolution, colours and OCR models are preserved.
+**New in 1.7.0:** Capture can move on earlier when pages are fully loaded and stable. When a backlog grows, text OCR processes up to four pages at once during capture if CPU and memory allow. GPU formula groups offer 10 / 20 / 30 formulas; bounded CUDA recovery preserves completed results. Two progress bars separate capture and OCR. PNG compression, resolution, colours and OCR models remain unchanged.
 
 > **For personal use and archiving:** Only save content you can access and are permitted to save. This project is not intended for unauthorised sharing, piracy or other unlawful purposes.
 
@@ -155,7 +160,7 @@ Automatic title detection, configurable PDF page labels and optional maths recog
   <a href="https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.7.0/Edubase-PDF-Windows.zip"><img src="docs/images/download-en.svg" alt="Download the Windows app" width="340"></a>
 </p>
 
-[ZIP · about 244 MB](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.7.0/Edubase-PDF-Windows.zip) · [All downloads](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/tag/v1.7.0)
+[ZIP · about 237.6 MB](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.7.0/Edubase-PDF-Windows.zip) · [All downloads](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/tag/v1.7.0)
 
 **64-bit Windows (Intel/AMD).** Python, text recognition and Firefox are included.
 Installed Edge and Chrome are also supported.
@@ -188,7 +193,7 @@ Your PDF is saved to **`Documents/Edubase-PDF`** by default. Check readability a
 then use **New job** to capture a larger range or the whole book.
 Do not turn pages manually while capturing.
 
-> **Choose performance:** Under **Advanced settings → OCR performance**, **Automatic** uses a working GPU module for maths OCR. The app detects graphics cards and prefers the GPU Windows selects for high performance; the log identifies the card actually used. **CPU – maximum performance** processes text pages in parallel according to your CPU and available memory. GPU maths OCR offers **Standard (5 formulas)**, **High (10 formulas)** and **Maximum (20 formulas)**. Larger groups need more graphics memory and are not faster on every device. Image quality and recognition models stay the same. Formula groups draw from up to four already captured pages and group crops of similar estimated length.
+> **Choose performance:** Under **Advanced settings → OCR performance**, **Automatic** uses a working GPU module for maths OCR. The app detects graphics cards and prefers the GPU Windows selects for high performance; the log identifies the card actually used. **CPU – maximum performance** processes text pages in parallel according to your CPU and available memory. GPU maths OCR offers **Standard (10 formulas)**, **High (20 formulas)** and **Maximum (30 formulas)**. Larger groups need more graphics memory and are not faster on every device. Image quality and recognition models stay the same. Formula groups draw from up to four already captured pages and group crops of similar estimated length.
 
 | Feature | What it does |
 | --- | --- |
@@ -202,6 +207,8 @@ Do not turn pages manually while capturing.
 <details>
 <summary><strong>Capture, resume and language</strong></summary>
 
+- **Wait time:** The default 2 seconds are the maximum additional settling time after loading checks. Fully loaded, stable image or SVG pages can finish earlier. Canvas or unfamiliar page formats retain the full wait; mandatory loading and stability checks can make the total time per page longer.
+- **Text OCR during capture:** Usually up to two pages run in parallel, increasing to four when a backlog grows and CPU/RAM allow. Queued pages are processed while capture continues; with limited resources, remaining OCR runs during export.
 - **Whole book:** Enable **Capture the entire book automatically** before clicking **Open browser**. This option starts switched off.
 - **Finish early:** **Stop → Saved pages to PDF** exports the pages already captured.
 - **Resume:** Stopping or an error preserves the working files. Open the job using **Resume capture…**.
@@ -227,9 +234,11 @@ on recognition and the PDF viewer.
 **NVIDIA RTX – optional CUDA:** In **Advanced settings**, choose **Set up CUDA
 module**, then enable **Use CUDA (NVIDIA RTX)**. This option is off by default and
 only selectable when an NVIDIA RTX card is detected. The separate module keeps
-formula features in graphics memory during recognition. DirectML takes over if
-installed when CUDA fails; otherwise the CPU does. AMD and Intel continue to use
-DirectML and benefit from the same new formula groups. Actual speed depends on
+formula features in graphics memory during recognition. If CUDA has completed formula
+pages and later fails, the app attempts to restart CUDA recognition at most once per
+run, preserving completed results. Startup problems or a repeated recognition failure
+trigger available alternatives, including DirectML and CPU. Stop and timeouts do not
+trigger a restart. AMD and Intel continue to use DirectML and benefit from the same new formula groups. Actual speed depends on
 your GPU and book.
 
 **Also attach LaTeX files to the PDF** is a separate option, off by default.
@@ -249,4 +258,3 @@ Check the results; the app does not solve exercises.
 <p align="center">
   <a href="LICENSE">MIT License</a> · <a href="THIRD_PARTY_NOTICES.md">Third-party notices</a> · <a href="#edubase-to-pdf--ocr">↑ Nach oben / Back to top</a>
 </p>
-

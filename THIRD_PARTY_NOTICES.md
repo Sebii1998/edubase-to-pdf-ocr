@@ -50,6 +50,7 @@ Lizenzdateien bleiben Bestandteil des Downloads.
 | Playwright | Lokaler Browser und Screenshots | https://github.com/microsoft/playwright-python |
 | Pillow | Bildprüfung und Vorschau | https://github.com/python-pillow/Pillow |
 | pypdf | PDF-Prüfung und Zusammenführen | https://github.com/py-pdf/pypdf |
+| pylatexenc (MIT) | LaTeX als durchsuchbaren Unicode-Text aufbereiten | https://github.com/phfaist/pylatexenc |
 | CustomTkinter | Abgerundete Desktop-Oberfläche | https://github.com/TomSchimansky/CustomTkinter |
 | Tesseract | Lokale Texterkennung | https://github.com/tesseract-ocr/tesseract |
 
@@ -67,9 +68,10 @@ Die Lizenzdateien der Python-Pakete und der Laufzeit stehen im Paket unter
 `licenses/`; Tesseracts Dokumentation und Apache-2.0-Lizenz unter `ocr/doc/`,
 die Lizenz der Sprachmodelle unter `ocr/tessdata/LICENSE`. Originaldateien und
 Hinweise aus dem Tesseract-Installer bleiben erhalten. `BUILD.json` nennt die
-verwendeten Versionen, den Quellcode-Commit und die Herkunft des OCR-Installers.
+verwendeten Versionen, die Quellcode-Kennung und die Herkunft des OCR-Installers.
 
-- Python / PSF-Lizenz: https://www.python.org/downloads/release/python-31316/
+- Python 3.13 / PSF-Lizenz: https://docs.python.org/3.13/license.html
+  Die genaue Laufzeitversion des jeweiligen Pakets steht in `BUILD.json`.
 - PyInstaller (GPL mit Ausnahme für erzeugte Programme): https://pyinstaller.org/en/stable/license.html
 - Unveränderter OCR-Installer als Quelle der Laufzeit: https://github.com/tesseract-ocr/tesseract/releases/tag/5.5.3
 - Sprachmodelle (Apache-2.0), festgelegter Stand: https://github.com/tesseract-ocr/tessdata_fast/tree/87416418657359cb625c412a48b6e1d6d41c29bd
@@ -137,4 +139,3 @@ Die MIT-Lizenz der App gilt nicht für die NVIDIA-Komponenten.
 
 Das Zusatzpaket wird nur auf ausdrückliche Auswahl eingerichtet und verändert
 weder den Grafiktreiber noch die vorhandene CPU-/DirectML-Laufzeit.
-

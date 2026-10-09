@@ -11,8 +11,21 @@ der Aufnahme laufen. Wenn alle OCR-Seiten fertig sind, kann das Speichern und
 Prüfen der endgültigen PDF noch dauern; der Status darüber zeigt diesen Schritt.
 
 Version 1.7.0 spart wiederholte Bildzugriffe und unnötige Zwischenexporte. Die
-Aufnahmeauflösung, Farben und Erkennungsmodelle bleiben unverändert. Bestehende
-Mathe- und GPU-Zusatzmodule werden weiterhin erkannt.
+PNG-Komprimierung, Aufnahmeauflösung, Farben und Erkennungsmodelle bleiben
+unverändert. Bestehende Mathe-, GPU- und CUDA-Zusatzmodule werden weiterhin erkannt.
+
+## Adaptive Wartezeit bei der Aufnahme
+
+Die **Wartezeit pro Seite** beträgt standardmässig **2 Sekunden**. Sie ist die
+maximale zusätzliche Beruhigungszeit nach den Ladeprüfungen. Bei vollständig
+geladenen, stabilen Bild- oder SVG-Seiten kann die Aufnahme früher weitergehen.
+Bei Canvas-Seiten oder unbekannter Darstellung bleibt die volle eingestellte
+Wartezeit erhalten. Das gilt für Edge, Chrome und das mitgelieferte Firefox.
+
+Die App prüft weiterhin geladene Bilder und Schriften, die richtige Seite und
+eine stabile Darstellung. Diese notwendigen Prüfungen können länger dauern:
+**2 Sekunden sind keine Obergrenze für die gesamte Aufnahme einer Seite.**
+Die Bildqualität wird für die Beschleunigung nicht reduziert.
 
 ## OCR-Leistung
 
@@ -33,8 +46,15 @@ manuelle Eingabe des Modells ist nicht nötig. Bei mehreren Karten bevorzugt sie
 die von Windows für hohe Leistung vorgesehene GPU. Das Protokoll nennt die
 tatsächlich für Mathe-OCR verwendete Karte oder meldet den CPU-Betrieb.
 
-Für die GPU stehen **Standard (5 Formeln)**, **Hoch (10 Formeln)** und
-**Maximum (20 Formeln)** zur Wahl. Die Zahl begrenzt die gemeinsam verarbeiteten
+Während der Aufnahme verarbeitet die Text-OCR üblicherweise bis zu **zwei Seiten
+gleichzeitig**. Bei wachsendem Rückstand und genügend CPU- und RAM-Reserve erhöht
+die App auf bis zu **vier**. Auch wartende Seiten werden schon während der
+Aufnahme abgearbeitet. Bei knappen Ressourcen verarbeitet der Export die noch
+fehlenden OCR-Seiten. Hält die Text-OCR bereits mit der Aufnahme mit, bringt
+zusätzliche Parallelität allein keinen Tempogewinn.
+
+Für die GPU stehen **Standard (10 Formeln)**, **Hoch (20 Formeln)** und
+**Maximum (30 Formeln)** zur Wahl. Die Zahl begrenzt die gemeinsam verarbeiteten
 Formeln. Die App füllt Gruppen aus bis zu vier bereits gespeicherten Seiten und
 verarbeitet ähnlich lange Ausschnitte gemeinsam. Sie wartet dafür nicht auf
 noch aufzunehmende Seiten. Die ursprüngliche Formelreihenfolge bleibt erhalten.
@@ -59,10 +79,15 @@ eine manuelle Eingabe des Grafikkartenmodells oder eine CUDA-Toolkit-Installatio
 ist nicht erforderlich. Ein funktionierender NVIDIA-Treiber wird benötigt.
 
 CUDA hält Formelmerkmale zwischen Erkennungsschritten im Grafikspeicher.
-Modellgewichte, Auflösung und volle FP32-Genauigkeit bleiben erhalten. Bei Problemen
-probiert die App DirectML, falls eingerichtet, und danach die CPU. Das Protokoll
-nennt die tatsächlich aktive Technik und Grafikkarte. Eine erkannte RTX-Karte
-allein garantiert nicht, dass Treiber und Zusatzmodul CUDA erfolgreich starten.
+Modellgewichte, Auflösung und volle FP32-Genauigkeit bleiben erhalten. Hat CUDA
+bereits Formelseiten erfolgreich erkannt und tritt später ein Erkennungsfehler
+auf, versucht die App pro Lauf höchstens einen Neustart der CUDA-Erkennung. Bereits
+fertige Ergebnisse bleiben erhalten und werden nicht erneut erkannt. Bei
+Startproblemen oder erneutem Erkennungsfehler werden verfügbare Alternativen
+bis hin zu DirectML und CPU versucht. Stoppen und Zeitlimits lösen keinen
+Neustart aus; es gibt keine endlose Wiederholung. Das Protokoll nennt Fehler, Wechsel und die
+tatsächlich aktive Technik und Grafikkarte. Eine erkannte RTX-Karte allein
+garantiert nicht, dass Treiber und Zusatzmodul CUDA erfolgreich starten.
 
 **AMD und Intel:** Das vorhandene **GPU-Modul einrichten** installiert DirectML.
 Die neuen seitenübergreifenden und nach geschätzter Länge sortierten Formelgruppen
@@ -202,7 +227,7 @@ OCR-Seite, jeweils nicht für das gesamte Buch.
 | EXE, OCR oder Sprachdaten fehlen | Das vollständige Windows-ZIP erneut entpacken; alle mitgelieferten Ordner neben der EXE belassen. |
 | Browser nicht gefunden | Enthaltenes Firefox oder installiertes Edge/Chrome wählen. |
 | Buch wird nicht erkannt | Buch im von der App geöffneten Browser öffnen, Anmeldung abschliessen und Einzelseitenansicht wählen. |
-| Seite noch nicht vollständig geladen | Wartezeit pro Seite erhöhen und zuerst wenige Seiten testen. |
+| Seite noch nicht vollständig geladen | Einzelseitenansicht, Vorschau und Protokoll prüfen. Bei einem Lade-Zeitlimit das Seiten-Zeitlimit erhöhen und zuerst wenige Seiten testen. Eine höhere maximale Wartezeit deaktiviert die adaptive frühere Aufnahme nicht. |
 | Identische Seiten gemeldet | Prüfen, ob umgeblättert wird. Identische Nachbarseiten nur erlauben, wenn diese im Buch wirklich vorkommen. |
 | Sitzung abgelaufen | Browser erneut öffnen, anmelden, dasselbe Buch öffnen und Auftrag fortsetzen. |
 | Formeln fehlen | Mit Strg+F nach einem erkannten Zeichen suchen; Anhänge gibt es nur bei gewählter Anhangsoption. Bei einem Erkennungsfehler das Protokoll prüfen und **Nur OCR erneut…** mit aktivierter Mathe-Option verwenden. |
@@ -217,4 +242,3 @@ einen OCR-Dienst hochgeladen. Unabhängiges Projekt: Verwende nur Inhalte,
 auf die du zugreifen und die du speichern darfst.
 
 [Lizenz](../LICENSE) · [Drittanbieterhinweise](../THIRD_PARTY_NOTICES.md)
-
