@@ -4,7 +4,20 @@
 
 ## Deutsch
 
-**Neu: eigene PDF vom PC mit OCR verarbeiten.**
+**Update der finalen Version: PDF-Werkzeuge und einfachere Bedienung.**
+
+- **PDFs zusammenfügen…:** mindestens zwei PDFs auswählen, die Reihenfolge mit
+  den Pfeilen anpassen und über **Zusammenfügen & speichern…** als neue Datei speichern.
+  Seiten, vorhandener Text und Formel-Suchschichten bleiben erhalten. Keine neue OCR;
+  Originale und bestehende Zieldateien werden nicht überschrieben. Pause und Stopp
+  sind verfügbar; ein zuvor geladener OCR-Auftrag bleibt erhalten.
+- **Protokoll kopieren:** alle bisherigen Meldungen mit Uhrzeit in die Zwischenablage
+  kopieren, auch bei eingeklapptem Protokoll und während einer Verarbeitung.
+  Die Meldungen folgen der aktuell gewählten Oberflächensprache.
+- **Erweiterte Einstellungen / Performance-Einstellungen:** neue Beschriftung
+  für die vorhandenen Aufnahme-, CPU-, GPU- und CUDA-Einstellungen.
+
+**Ebenfalls in 1.8.0: eigene PDF vom PC mit OCR verarbeiten.**
 
 - **Eigene PDF auswählen…** schaltet automatisch in den PDF-Modus. Kein Browser,
   keine Edubase-Anmeldung und keine Bildschirmaufnahme nötig.
@@ -31,7 +44,20 @@ Edubase weiterhin verwendet werden.
 
 ## English
 
-**New: process a PDF from your PC with OCR.**
+**Final release update: PDF tools and easier controls.**
+
+- **Merge PDFs…:** select at least two PDFs, reorder them using the arrows and
+  choose **Merge & save…** to save a new file. Pages, existing text and formula
+  search layers are retained. No new OCR runs; originals and existing destination
+  files are not overwritten. Pause and stop are available; a previously loaded
+  OCR job is kept.
+- **Copy log:** copy all messages collected so far, including timestamps, to the
+  clipboard, even while the log is collapsed or a job is running. Messages follow
+  the current interface language.
+- **Advanced settings / Performance settings:** clearer label for the existing
+  capture, CPU, GPU and CUDA settings.
+
+**Also in 1.8.0: process a PDF from your PC with OCR.**
 
 - **Select your own PDF…** switches to PDF mode automatically. No browser,
   Edubase sign-in or screen capture is needed.
@@ -67,10 +93,10 @@ install them is through the setup buttons in the app.
 
 ## SHA256
 
-`Edubase-PDF-Windows.zip` · 241701242 bytes
+`Edubase-PDF-Windows.zip` · 241723287 bytes
 
 ```text
-58eeee73c3c2fbeddf4b51f6de9790c372c2394fc9cef3a2c3edf75b522250b8
+d3cb94aa09daa03497ad43442f41903fd3f24ba3574709de91023f54a27273c9
 ```
 
 [SHA256SUMS.txt](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.8.0/SHA256SUMS.txt)

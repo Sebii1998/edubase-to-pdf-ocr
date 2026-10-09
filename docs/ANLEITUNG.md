@@ -2,6 +2,23 @@
 
 [← Downloads und Schnellstart / English quick start](../README.md)
 
+## PDFs zusammenfügen
+
+1. **PDFs zusammenfügen…** anklicken und mindestens zwei PDFs vom PC auswählen.
+2. Im neuen Fenster die Reihenfolge prüfen. Mit den Pfeilen nach oben/unten
+   verschieben, weitere PDFs hinzufügen oder Einträge entfernen.
+3. **Zusammenfügen & speichern…** wählen und einen neuen Dateinamen für die Ausgabe festlegen.
+
+Die PDFs werden in der angezeigten Reihenfolge verbunden. Vorhandene Seiten,
+Text- und Formel-Suchschichten werden übernommen; es startet keine neue OCR
+und kein Browser. Die Quelldateien bleiben unverändert. Eine bereits vorhandene
+Ausgabedatei wird nicht überschrieben. Passwortgeschützte PDFs müssen zuerst
+als ungeschützte Kopie vorliegen.
+
+Während des Zusammenfügens sind **Pause** und **Stoppen** verfügbar. Ein Abbruch
+veröffentlicht keine unvollständige Ergebnis-PDF; zum erneuten Versuch die
+Dateien wieder auswählen. Ein zuvor geladener OCR-Auftrag bleibt erhalten.
+
 ## Eigene PDF vom PC verarbeiten
 
 1. **Eigene PDF auswählen…** anklicken und die Datei vom PC wählen. Die App
@@ -38,7 +55,7 @@ solchen Export zuvor **Arbeitsbilder behalten** einschalten.
 
 Wie bei Edubase werden die internen Arbeitsdaten nach erfolgreichem Export
 standardmässig gelöscht. Soll später **Nur OCR erneut…** verwendet werden,
-vorher unter **Erweiterte Einstellungen** **Arbeitsbilder behalten** aktivieren.
+vorher unter **Erweiterte Einstellungen / Performance-Einstellungen** **Arbeitsbilder behalten** aktivieren.
 Die ausgewählte Originaldatei wird bei dieser Bereinigung nie gelöscht.
 Mit **Neuer Auftrag** wird der PDF-Modus verlassen; danach ist die bisherige
 Edubase-Aufnahme wieder verfügbar.
@@ -70,7 +87,7 @@ Die Bildqualität wird für die Beschleunigung nicht reduziert.
 
 ## OCR-Leistung
 
-**Erweiterte Einstellungen → OCR-Leistung**:
+**Erweiterte Einstellungen / Performance-Einstellungen → OCR-Leistung**:
 
 - **Automatisch:** Textseiten werden mit Reserve für Browser und Mathe-OCR parallel verarbeitet.
   Bei ausreichenden Ressourcen beginnt die OCR schon während der Aufnahme.
@@ -113,7 +130,7 @@ machen und ist nicht auf jedem Gerät schneller.
 
 ## NVIDIA RTX und AMD
 
-**CUDA verwenden (NVIDIA RTX)** ist unter **Erweiterte Einstellungen** nur bei
+**CUDA verwenden (NVIDIA RTX)** ist unter **Erweiterte Einstellungen / Performance-Einstellungen** nur bei
 einer erkannten NVIDIA-RTX-Karte auswählbar und standardmässig ausgeschaltet.
 Zuerst **CUDA-Modul einrichten** wählen. Die App lädt ein separates Zusatzpaket;
 eine manuelle Eingabe des Grafikkartenmodells oder eine CUDA-Toolkit-Installation
@@ -160,8 +177,12 @@ Unterordner. Mit **Ausgabe öffnen** gelangst du direkt dorthin.
   temporäre Sitzung, in der du dich anmeldest.
 - Die kleinen **ⓘ** erklären Einstellungen und Aktionen: darüberfahren oder
   anklicken. Mit **Tab** und **Enter** geht es auch per Tastatur.
-- Weitere Optionen findest du unter **Erweiterte Einstellungen**;
+- Weitere Optionen findest du unter **Erweiterte Einstellungen / Performance-Einstellungen**;
   Fehlermeldungen unter **Protokoll**.
+- **Protokoll kopieren** kopiert alle bisher gesammelten Meldungen mit Uhrzeit
+  in die Zwischenablage – auch bei eingeklapptem Protokoll und während einer
+  Verarbeitung. Die Meldungen folgen der aktuell gewählten Oberflächensprache.
+  Mit **Strg+V** in einen Texteditor oder eine Support-Nachricht einfügen.
 
 ## Ganzes Buch automatisch aufnehmen
 
@@ -201,7 +222,7 @@ kennzeichnet den aufgenommenen Reader-Seitenbereich.
 **Nach erfolgreichem Export werden die Arbeitsbilder automatisch gelöscht –
 auch bei einer Teil-PDF.** Für weitere Seiten anschliessend **Neuer Auftrag**
 verwenden. Soll derselbe Auftrag später fortsetzbar bleiben, **vor dem Export**
-unter **Erweiterte Einstellungen → Arbeitsbilder behalten** den Haken setzen.
+unter **Erweiterte Einstellungen / Performance-Einstellungen → Arbeitsbilder behalten** den Haken setzen.
 
 ## Buchseiten und Reader-Seiten
 
@@ -273,6 +294,7 @@ OCR-Seite, jeweils nicht für das gesamte Buch.
 | Problem | Lösung |
 | --- | --- |
 | EXE, OCR oder Sprachdaten fehlen | Das vollständige Windows-ZIP erneut entpacken; alle mitgelieferten Ordner neben der EXE belassen. |
+| PDFs lassen sich nicht zusammenfügen | Mindestens zwei gültige, nicht verschlüsselte PDFs auswählen, Reihenfolge prüfen und einen neuen Dateinamen wählen. Bestehende Dateien werden nicht überschrieben. |
 | Eigene PDF lässt sich nicht öffnen | Eine gültige, nicht verschlüsselte PDF auswählen. Fehlermeldung und Protokoll prüfen; die Originaldatei bleibt unverändert. |
 | Browser nicht gefunden | Enthaltenes Firefox oder installiertes Edge/Chrome wählen. |
 | Buch wird nicht erkannt | Buch im von der App geöffneten Browser öffnen, Anmeldung abschliessen und Einzelseitenansicht wählen. |
