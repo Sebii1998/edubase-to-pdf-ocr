@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/tag/v1.7.0"><img src="https://img.shields.io/badge/Version-1.7.0-4163ad?style=flat-square" alt="Version 1.7.0"></a>
+  <a href="https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/tag/v1.8.0"><img src="https://img.shields.io/badge/Version-1.8.0-4163ad?style=flat-square" alt="Version 1.8.0"></a>
   <img src="https://img.shields.io/badge/Windows-64--bit-263246?style=flat-square" alt="Windows 64-bit">
   <img src="https://img.shields.io/badge/Sprache-DE%20%2F%20EN-263246?style=flat-square" alt="Deutsch und English">
 </p>
@@ -33,15 +33,15 @@ Nach deiner Anmeldung im Edubase-Reader nimmt die Windows-App die angezeigten Se
 
 Automatische Titelerkennung, einstellbare Buchseitennummerierung und optionale Mathe-Erkennung ergänzen den Export.
 
-**Neu in 1.7.0:** Die Aufnahme kann bei vollständig geladenen, stabilen Seiten früher weitergehen. Bei Rückstand verarbeitet die Text-OCR während der Aufnahme bis zu vier Seiten gleichzeitig, sofern CPU und Arbeitsspeicher ausreichen. GPU-Formelgruppen bieten 10 / 20 / 30 Formeln; eine begrenzte CUDA-Wiederherstellung erhält bereits erkannte Seiten. Zwei Balken zeigen Aufnahme und OCR getrennt. PNG-Komprimierung, Auflösung, Farben und OCR-Modelle bleiben unverändert.
+**Neu in 1.8.0 – Finale Version:** Mit **Eigene PDF auswählen…** kannst du jetzt auch eine PDF von deinem PC mit Text-OCR verarbeiten. Mathe-OCR läuft nur, wenn du sie zusätzlich aktivierst. Die App wechselt automatisch in den PDF-Modus; dafür sind kein Browser und keine Aufnahme nötig. Die Originaldatei bleibt unverändert. Die bisherige Edubase-Aufnahme bleibt erhalten.
 
 > **Für persönlichen Gebrauch und Archivierung:** Speichere nur Inhalte, auf die du zugreifen und die du speichern darfst. Das Projekt ist nicht für unerlaubte Weitergabe, Piraterie oder andere rechtswidrige Zwecke bestimmt.
 
 <p>
-  <a href="https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.7.0/Edubase-PDF-Windows.zip"><img src="docs/images/download-de.svg" alt="Windows-App herunterladen" width="340"></a>
+  <a href="https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.8.0/Edubase-PDF-Windows.zip"><img src="docs/images/download-de.svg" alt="Windows-App herunterladen" width="340"></a>
 </p>
 
-[ZIP · ca. 237,6 MB](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.7.0/Edubase-PDF-Windows.zip) · [Alle Downloads](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/tag/v1.7.0)
+[ZIP · ca. 241,7 MB](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.8.0/Edubase-PDF-Windows.zip) · [Alle Downloads](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/tag/v1.8.0)
 
 **Windows 64 Bit (Intel/AMD).** Python, Texterkennung und Firefox sind enthalten.
 Installiertes Edge oder Chrome werden ebenfalls unterstützt.
@@ -64,7 +64,7 @@ Installiertes Edge oder Chrome werden ebenfalls unterstützt.
 
 </details>
 
-### In drei Schritten starten
+### Edubase: In drei Schritten starten
 
 1. **Entpacken:** ZIP vollständig entpacken und **`Edubase-PDF.exe`** starten.
 2. **Buch öffnen:** **Browser öffnen** → bei Edubase anmelden → Buch in der **Einzelseitenansicht** öffnen.
@@ -74,11 +74,20 @@ Deine PDF liegt standardmässig unter **`Dokumente/Edubase-PDF`**. Lesbarkeit un
 danach über **Neuer Auftrag** einen grösseren Bereich oder das ganze Buch aufnehmen.
 Während der Aufnahme nicht selbst blättern.
 
+### Eigene PDF mit OCR verarbeiten
+
+1. **Eigene PDF auswählen…** anklicken. Die App zeigt die Seitenzahl und wählt zunächst alle Seiten aus; bei Bedarf den Bereich einschränken.
+2. **Textsprache** einstellen. Text-OCR läuft immer; **Mathe & Formeln erkennen** nur bei Bedarf aktivieren.
+3. **PDF mit OCR verarbeiten** starten. Das Ergebnis ist eine neue PDF; deine Originaldatei bleibt unverändert.
+
+Der PDF-Modus braucht keinen Browser und keine Edubase-Anmeldung. Die ursprünglichen Seiten bleiben erhalten und werden um unsichtbaren Suchtext ergänzt. Vorhandener Text kann beim Kopieren oder Extrahieren dadurch doppelt vorkommen. **Neuer Auftrag** wechselt zurück zur Edubase-Aufnahme.
+
 > **Leistung wählen:** Unter **Erweiterte Einstellungen → OCR-Leistung** nutzt **Automatisch** ein funktionierendes GPU-Modul für Mathe-OCR. Die App erkennt Grafikkarten und bevorzugt die von Windows für hohe Leistung vorgesehene GPU; das Protokoll zeigt die tatsächlich verwendete Karte. **CPU – maximale Leistung** verarbeitet Textseiten passend zu CPU und Arbeitsspeicher parallel. Für Mathe-OCR auf der GPU stehen **Standard (10 Formeln)**, **Hoch (20 Formeln)** und **Maximum (30 Formeln)** zur Wahl. Grössere Gruppen brauchen mehr Grafikspeicher und sind nicht auf jedem Gerät schneller. Bildqualität und Erkennungsmodelle bleiben gleich. Formelgruppen werden über bis zu vier bereits aufgenommene Seiten gefüllt; ähnlich lange Ausschnitte werden gemeinsam verarbeitet.
 
 | Funktion | Das bringt sie dir |
 | --- | --- |
 | **PDF + OCR** | Buchseiten mit durchsuchbarem Text; Verarbeitung lokal auf deinem PC. |
+| **Eigene PDF** | PDF vom PC mit Text-OCR und optionaler Mathe-OCR verarbeiten; das Original bleibt erhalten. |
 | **Flexible Aufnahme** | Seitenbereich wählen, pausieren oder bereits aufgenommene Seiten exportieren. |
 | **Buchseitennummern** | Einstellen, welche Reader-Seite der gedruckten Buchseite 1 entspricht. |
 | **Mathe optional** | Formeln durchsuchen; LaTeX-Anhang separat wählbar. |
@@ -128,6 +137,8 @@ Treffer hängen von Erkennung und PDF-Programm ab.
 Der Anhang enthält LaTeX und Seitenzuordnung zum Weiterverwenden und ist für Strg+F nicht nötig.
 Ergebnisse prüfen; die App löst keine Aufgaben.
 
+Die Mathe-, GPU- und CUDA-Zusatzpakete bleiben unverändert auf Version 1.7.0; bereits eingerichtete Module kannst du weiterverwenden.
+
 [Mathe-Zusatzmodul herunterladen](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.7.0/Edubase-Mathe-OCR-Windows.zip)
 
 </details>
@@ -152,15 +163,15 @@ After you sign in to the Edubase Reader, the Windows app automatically captures 
 
 Automatic title detection, configurable PDF page labels and optional maths recognition complete the export.
 
-**New in 1.7.0:** Capture can move on earlier when pages are fully loaded and stable. When a backlog grows, text OCR processes up to four pages at once during capture if CPU and memory allow. GPU formula groups offer 10 / 20 / 30 formulas; bounded CUDA recovery preserves completed results. Two progress bars separate capture and OCR. PNG compression, resolution, colours and OCR models remain unchanged.
+**New in 1.8.0 – Final release:** Use **Select your own PDF…** to process a PDF from your PC with text OCR. Maths OCR runs only when you enable it. The app switches to PDF mode automatically; no browser or capture is needed. The original file stays unchanged. Edubase capture remains available.
 
 > **For personal use and archiving:** Only save content you can access and are permitted to save. This project is not intended for unauthorised sharing, piracy or other unlawful purposes.
 
 <p>
-  <a href="https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.7.0/Edubase-PDF-Windows.zip"><img src="docs/images/download-en.svg" alt="Download the Windows app" width="340"></a>
+  <a href="https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.8.0/Edubase-PDF-Windows.zip"><img src="docs/images/download-en.svg" alt="Download the Windows app" width="340"></a>
 </p>
 
-[ZIP · about 237.6 MB](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.7.0/Edubase-PDF-Windows.zip) · [All downloads](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/tag/v1.7.0)
+[ZIP · about 241.7 MB](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.8.0/Edubase-PDF-Windows.zip) · [All downloads](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/tag/v1.8.0)
 
 **64-bit Windows (Intel/AMD).** Python, text recognition and Firefox are included.
 Installed Edge and Chrome are also supported.
@@ -183,7 +194,7 @@ Installed Edge and Chrome are also supported.
 
 </details>
 
-### Get started in three steps
+### Edubase: Get started in three steps
 
 1. **Extract:** Extract the entire ZIP and launch **`Edubase-PDF.exe`**. Select **English** at the top right.
 2. **Open your book:** **Open browser** → sign in to Edubase → open your book in **single-page view**.
@@ -193,11 +204,20 @@ Your PDF is saved to **`Documents/Edubase-PDF`** by default. Check readability a
 then use **New job** to capture a larger range or the whole book.
 Do not turn pages manually while capturing.
 
+### Process your own PDF with OCR
+
+1. Click **Select your own PDF…**. The app shows its page count and selects all pages; narrow the range if needed.
+2. Set the **Text language**. Text OCR always runs; enable **Recognise maths & formulas** only if needed.
+3. Start **Process PDF with OCR**. The result is a new PDF; your original file stays unchanged.
+
+PDF mode needs no browser or Edubase sign-in. Original pages are retained and invisible searchable text is added. If text already exists, copying or extracting it can produce duplicates. **New job** returns to Edubase capture.
+
 > **Choose performance:** Under **Advanced settings → OCR performance**, **Automatic** uses a working GPU module for maths OCR. The app detects graphics cards and prefers the GPU Windows selects for high performance; the log identifies the card actually used. **CPU – maximum performance** processes text pages in parallel according to your CPU and available memory. GPU maths OCR offers **Standard (10 formulas)**, **High (20 formulas)** and **Maximum (30 formulas)**. Larger groups need more graphics memory and are not faster on every device. Image quality and recognition models stay the same. Formula groups draw from up to four already captured pages and group crops of similar estimated length.
 
 | Feature | What it does |
 | --- | --- |
 | **PDF + OCR** | Book pages with searchable text, processed locally on your PC. |
+| **Your own PDF** | Process a local PDF with text OCR and optional maths OCR; keep the original file. |
 | **Flexible capture** | Choose a page range, pause or export the pages already captured. |
 | **Book page labels** | Set which Reader page contains printed book page 1. |
 | **Optional maths** | Search recognised formulas; choose LaTeX attachments separately. |
@@ -244,6 +264,8 @@ your GPU and book.
 **Also attach LaTeX files to the PDF** is a separate option, off by default.
 Attachments contain LaTeX and page references for reuse and are not needed for Ctrl+F.
 Check the results; the app does not solve exercises.
+
+Maths, GPU and CUDA add-ons remain unchanged at version 1.7.0; you can keep using modules already installed.
 
 [Download the maths add-on](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.7.0/Edubase-Mathe-OCR-Windows.zip)
 

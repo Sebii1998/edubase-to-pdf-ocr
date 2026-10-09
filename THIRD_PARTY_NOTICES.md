@@ -50,6 +50,7 @@ Lizenzdateien bleiben Bestandteil des Downloads.
 | Playwright | Lokaler Browser und Screenshots | https://github.com/microsoft/playwright-python |
 | Pillow | Bildprüfung und Vorschau | https://github.com/python-pillow/Pillow |
 | pypdf | PDF-Prüfung und Zusammenführen | https://github.com/py-pdf/pypdf |
+| pypdfium2 / PDFium | Eigene PDF-Dateien lokal für OCR darstellen | https://github.com/pypdfium2-team/pypdfium2 |
 | pylatexenc (MIT) | LaTeX als durchsuchbaren Unicode-Text aufbereiten | https://github.com/phfaist/pylatexenc |
 | CustomTkinter | Abgerundete Desktop-Oberfläche | https://github.com/TomSchimansky/CustomTkinter |
 | Tesseract | Lokale Texterkennung | https://github.com/tesseract-ocr/tesseract |
@@ -78,6 +79,24 @@ verwendeten Versionen, die Quellcode-Kennung und die Herkunft des OCR-Installers
 
 Die MIT-Lizenz dieses Projekts gilt für den eigenen Programmcode; Komponenten
 anderer Projekte behalten ihre jeweiligen Lizenzen.
+
+## Lokale PDF-Darstellung
+
+Ab App-Version 1.8.0 wird pypdfium2 5.14.0 mit der dazugehörigen PDFium-Bibliothek
+mitgeliefert. Die lokale PDF-Verarbeitung braucht keinen Browser und sendet die
+gewählte Datei nicht an einen Onlinedienst. Die Bibliothek ist Teil der App;
+die optionalen Mathe-, GPU- und CUDA-Pakete ändern sich dadurch nicht.
+
+pypdfium2 verwendet Apache-2.0 / BSD-3-Clause; PDFium eine BSD-artige Lizenz.
+Die Abhängigkeiten von PDFium behalten ihre jeweiligen Lizenzen. Die vollständigen
+mitgelieferten Lizenztexte einschliesslich `BUILD_LICENSES` werden aus dem
+unveränderten Wheel nach `licenses/pypdfium2/` übernommen. PDFium enthält seine
+eingebauten Ersatzschriften; die DLL und ihre Versionsdaten stehen im App-Paket
+unter `_internal/pypdfium2_raw/`. `BUILD.json` nennt die Python-Paketversion.
+
+- Paket und Herkunft: https://pypi.org/project/pypdfium2/5.14.0/
+- Projekt und Lizenzen: https://github.com/pypdfium2-team/pypdfium2
+- PDFium: https://pdfium.googlesource.com/pdfium/
 
 ## Optionales Mathe-OCR-Zusatzpaket
 

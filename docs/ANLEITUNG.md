@@ -1,6 +1,47 @@
-# Anleitung · Version 1.7.0
+# Anleitung · Version 1.8.0 – Finale Version
 
 [← Downloads und Schnellstart / English quick start](../README.md)
+
+## Eigene PDF vom PC verarbeiten
+
+1. **Eigene PDF auswählen…** anklicken und die Datei vom PC wählen. Die App
+   erkennt die PDF, zeigt ihren Namen und die Seitenzahl und wählt zunächst
+   **alle Seiten** aus. Bei Bedarf den Seitenbereich einschränken; **Ganze PDF**
+   stellt wieder den vollständigen Bereich ein.
+2. **Textsprache** einstellen. Text-OCR wird ausgeführt. Nur wenn zusätzlich
+   **Mathe & Formeln erkennen** angehakt ist, werden auch Formeln erkannt.
+   Dafür wie bisher einmal das Mathe-Modul einrichten. Die optionalen
+   GPU-/CUDA-Einstellungen und Formelanhänge können weiter verwendet werden.
+3. Ausgabetitel und Zielordner prüfen und **PDF mit OCR verarbeiten** anklicken.
+   Nach Abschluss die Lesbarkeit und die Textsuche in der neuen PDF prüfen.
+
+Die Auswahl schaltet automatisch auf den PDF-Modus um. Dafür wird kein Browser
+geöffnet, keine Edubase-Anmeldung verlangt und keine Bildschirmaufnahme gemacht.
+Browser- und Aufnahmeeinstellungen sind in diesem Modus deaktiviert. Die Datei
+wird lokal verarbeitet. Die Original-PDF bleibt unverändert; die Ausgabe bekommt
+einen freien Dateinamen und überschreibt auch keine ältere OCR-PDF.
+
+Die ursprünglichen PDF-Seiten werden für die Ausgabe übernommen; Text und
+Vektorgrafiken werden nicht durch die OCR-Arbeitsbilder ersetzt. Die OCR ergänzt
+unsichtbaren Suchtext. Hat eine PDF bereits eine Textschicht, bleibt diese
+erhalten: Beim Kopieren oder Extrahieren können dadurch doppelte Textstellen
+auftreten. Auch in diesem Fall führt die App die gewählte OCR aus. Vorhandene
+PDF-Seitenbeschriftungen bleiben erhalten; **Buchzählung** ist im PDF-Modus deaktiviert.
+
+**Pause** und **Stoppen** gelten auch für den PDF-Auftrag. Bei Stopp oder Fehler
+bleiben die internen Arbeitsdaten erhalten. **Aufnahme fortsetzen…** erkennt
+auch einen gespeicherten PDF-Auftrag und setzt ihn ohne Browser fort. Dafür
+verwendet die App ihre unveränderte Arbeitskopie der ursprünglichen PDF.
+**Bisherige Seiten als PDF** exportiert vollständig vorbereitete Seiten ab
+Beginn des gewählten Bereichs. Für eine weitere Verarbeitung nach einem
+solchen Export zuvor **Arbeitsbilder behalten** einschalten.
+
+Wie bei Edubase werden die internen Arbeitsdaten nach erfolgreichem Export
+standardmässig gelöscht. Soll später **Nur OCR erneut…** verwendet werden,
+vorher unter **Erweiterte Einstellungen** **Arbeitsbilder behalten** aktivieren.
+Die ausgewählte Originaldatei wird bei dieser Bereinigung nie gelöscht.
+Mit **Neuer Auftrag** wird der PDF-Modus verlassen; danach ist die bisherige
+Edubase-Aufnahme wieder verfügbar.
 
 ## Fortschritt bei Aufnahme und OCR
 
@@ -10,7 +51,7 @@ Beschriftung **Text** und **Mathe** einzeln. Die Verarbeitung kann schon währen
 der Aufnahme laufen. Wenn alle OCR-Seiten fertig sind, kann das Speichern und
 Prüfen der endgültigen PDF noch dauern; der Status darüber zeigt diesen Schritt.
 
-Version 1.7.0 spart wiederholte Bildzugriffe und unnötige Zwischenexporte. Die
+Die Edubase-Aufnahme und die bisherigen Verbesserungen aus Version 1.7.0 bleiben erhalten. Die App spart wiederholte Bildzugriffe und unnötige Zwischenexporte. Die
 PNG-Komprimierung, Aufnahmeauflösung, Farben und Erkennungsmodelle bleiben
 unverändert. Bestehende Mathe-, GPU- und CUDA-Zusatzmodule werden weiterhin erkannt.
 
@@ -95,7 +136,7 @@ funktionieren auch damit. CUDA ist ausschliesslich für NVIDIA vorgesehen.
 
 ## Starten und drei Seiten testen
 
-1. [Windows-App herunterladen](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.7.0/Edubase-PDF-Windows.zip),
+1. [Windows-App herunterladen](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.8.0/Edubase-PDF-Windows.zip),
    ZIP vollständig entpacken und **`Edubase-PDF.exe`** starten. Die Ordner neben
    der EXE gehören zum Programm und müssen mitentpackt werden.
 2. **Browser öffnen**, bei Edubase anmelden und das Buch in der
@@ -138,10 +179,13 @@ Einzelseitenansicht wechseln oder **Stoppen** wählen und manuell starten.
 **Pause / Fortsetzen** unterbricht die laufende Arbeit vor der nächsten Seite.
 **Stoppen** beendet den Auftrag; vollständig gespeicherte Seiten bleiben erhalten.
 
-Zum Fortsetzen den Browser öffnen, erneut anmelden und dasselbe Buch öffnen.
+Zum Fortsetzen einer Edubase-Aufnahme den Browser öffnen, erneut anmelden und dasselbe Buch öffnen.
 Die Automatik dabei ausgeschaltet lassen. **Aufnahme fortsetzen…** wählen,
 den Auftrag laden und **Auftrag fortsetzen + OCR** anklicken. Die App prüft
 bereits gespeicherte Seiten und fährt mit der fehlenden Seite fort.
+
+Ein gespeicherter Auftrag einer eigenen PDF wird automatisch erkannt und ohne
+Browser fortgesetzt. Nach dem Laden **PDF mit OCR verarbeiten** wählen.
 
 Sind alle Bilder vorhanden und nur die Texterkennung fehlgeschlagen,
 **Nur OCR erneut…** verwenden. Dafür ist kein Browser nötig.
@@ -161,7 +205,9 @@ unter **Erweiterte Einstellungen → Arbeitsbilder behalten** den Haken setzen.
 
 ## Buchseiten und Reader-Seiten
 
-Der **Seitenbereich** verwendet immer die Seitenzahlen des Edubase-Readers.
+Bei einer Edubase-Aufnahme verwendet der **Seitenbereich** die Seitenzahlen des
+Edubase-Readers. Bei einer eigenen PDF verwendet er die tatsächlichen
+PDF-Seitenpositionen ab 1; vorhandene PDF-Seitenbeschriftungen bleiben erhalten.
 Bei **Buchzählung** trägst du ein, auf welcher Reader-Seite die gedruckte
 Buchseite **1** steht. Beispiel: Buchseite 1 ist Reader-Seite 37 → **37** eintragen.
 
@@ -197,6 +243,8 @@ die normale PDF-Erstellung funktioniert ohne sie.
 
 [Zusatzmodul separat herunterladen](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.7.0/Edubase-Mathe-OCR-Windows.zip)
 – am einfachsten erfolgt die Einrichtung direkt über den Knopf in der App.
+Die Mathe-, GPU- und CUDA-Pakete bleiben unverändert auf Version 1.7.0;
+bereits eingerichtete Module können weiterverwendet werden.
 
 ## Ausgabe, Bildqualität und grosse Bücher
 
@@ -211,7 +259,7 @@ Fortsetzen oder erneutes OCR auch nach einem erfolgreichen Export. Späteres
 Aktivieren stellt bereits gelöschte Bilder nicht wieder her. Vorhandene fertige
 PDFs werden nicht überschrieben; ein neuer Export erhält einen freien Dateinamen.
 
-Neue Aufnahmen verwenden einen Browser-Auflösungsfaktor von **4**. Die PDF wird
+Neue Edubase-Aufnahmen verwenden einen Browser-Auflösungsfaktor von **4**. Die PDF wird
 mit **300 DPI** erstellt. Ein höherer DPI-Wert allein erzeugt keine zusätzlichen
 Bilddetails. Bei kleiner Anzeige im PDF-Betrachter **Seitenbreite** oder eine
 höhere Zoomstufe wählen. Die Qualität hängt auch vom Ausgangsmaterial ab.
@@ -225,6 +273,7 @@ OCR-Seite, jeweils nicht für das gesamte Buch.
 | Problem | Lösung |
 | --- | --- |
 | EXE, OCR oder Sprachdaten fehlen | Das vollständige Windows-ZIP erneut entpacken; alle mitgelieferten Ordner neben der EXE belassen. |
+| Eigene PDF lässt sich nicht öffnen | Eine gültige, nicht verschlüsselte PDF auswählen. Fehlermeldung und Protokoll prüfen; die Originaldatei bleibt unverändert. |
 | Browser nicht gefunden | Enthaltenes Firefox oder installiertes Edge/Chrome wählen. |
 | Buch wird nicht erkannt | Buch im von der App geöffneten Browser öffnen, Anmeldung abschliessen und Einzelseitenansicht wählen. |
 | Seite noch nicht vollständig geladen | Einzelseitenansicht, Vorschau und Protokoll prüfen. Bei einem Lade-Zeitlimit das Seiten-Zeitlimit erhöhen und zuerst wenige Seiten testen. Eine höhere maximale Wartezeit deaktiviert die adaptive frühere Aufnahme nicht. |
