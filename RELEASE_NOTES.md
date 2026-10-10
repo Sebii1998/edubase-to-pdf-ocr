@@ -25,12 +25,6 @@
   brauchen mehr Grafikspeicher; das Tempo hängt von deinem PC und den Formeln ab.
   Bildqualität und Erkennungsmodelle bleiben gleich.
 
-**Blau-silberne Oberfläche.**
-
-Blau-graue Flächen, silberne Konturen und klare blaue Schaltflächen geben der App mehr Tiefe.
-Die Auswahl für Buch, PDFs und Bilder ist oben klarer gegliedert. Der gleiche
-Stil gilt auch für die erweiterten Einstellungen und die englische Ansicht.
-
 **Bilder und Screenshots jetzt in A4:**
 
 Jedes Bild wird auf eine A4-Seite im Hoch- oder Querformat eingepasst – proportional,
@@ -96,12 +90,6 @@ Edubase ebenfalls verwenden.
   30 formulas per group** for GPU processing. Larger groups need more graphics
   memory; speed depends on your PC and formulas. Image quality and recognition
   models stay the same.
-
-**Blue-silver interface.**
-
-Blue-grey surfaces, silver outlines and clear blue buttons add depth to the app.
-The top section makes choosing a book, PDFs or images clearer. The same
-style applies to advanced settings and the English view.
 
 **Images and screenshots now fit A4:**
 

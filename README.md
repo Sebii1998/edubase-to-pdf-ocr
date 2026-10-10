@@ -35,7 +35,6 @@ Automatische Titelerkennung, einstellbare Buchseitennummerierung und optionale M
 
 **Neu in 1.8.0 – Finale Version**
 
-- **Blau-silberne Oberfläche:** Blau-graue Flächen mit dezenten Schatten und klarer gegliederter Auswahl für Buch, PDFs und Bilder. Der Stil zieht sich durch die gesamte App – auch durch die erweiterten Einstellungen und die englische Ansicht.
 - **Mehrere eigene PDFs mit OCR verarbeiten:** Wähle eine oder mehrere PDFs, lege ihre Reihenfolge fest und erhalte eine gemeinsame durchsuchbare PDF.
 - **Bilder und Screenshots als PDF:** Wähle ein oder mehrere gespeicherte Bilder im Format PNG, JPEG, BMP, TIFF oder WebP. Sortiere deine Auswahl, ergänze weitere Bilder oder entferne Einträge und erstelle daraus eine durchsuchbare PDF.
 - **Text und Formeln erkennen:** Text-OCR ist bei beiden Eingaben dabei; Mathe-OCR schaltest du bei Bedarf zu. Die App wechselt automatisch in den lokalen PDF-Modus – ohne Browser, mit unveränderten Originaldateien.
@@ -70,7 +69,7 @@ Download, Aufnahme, Text- und Mathe-OCR sowie eigene PDFs, Bilder und Screenshot
 <summary><strong>App-Oberfläche ansehen</strong></summary>
 
 <p align="center">
-  <a href="site/assets/app-de.png"><img src="site/assets/app-de.png" alt="Edubase to PDF + OCR – blau-silberne Oberfläche, deutsche Beispielansicht" width="820"></a>
+  <a href="site/assets/app-de.png"><img src="site/assets/app-de.png" alt="Edubase to PDF + OCR – deutsche Beispielansicht" width="820"></a>
 </p>
 
 </details>
@@ -203,7 +202,6 @@ Automatic title detection, configurable PDF page labels and optional maths recog
 
 **New in 1.8.0 – Final release**
 
-- **Blue-silver interface:** Blue-grey surfaces with subtle shadows and a clearer layout for choosing a book, PDFs or images. The same style extends throughout the app, including advanced settings and the English view.
 - **Process several PDFs with OCR:** Select one or more PDFs, set their order and create one searchable PDF.
 - **Turn images and screenshots into a PDF:** Select one or more saved PNG, JPEG, BMP, TIFF or WebP images. Reorder your selection, add more images or remove entries, then create a searchable PDF.
 - **Recognise text and formulas:** Text OCR runs for both input types; add maths OCR when needed. The app switches to local PDF mode automatically – no browser required, with your originals unchanged.
@@ -238,7 +236,7 @@ Download, capture, text and maths OCR, plus your own PDFs, images and screenshot
 <summary><strong>View the app interface</strong></summary>
 
 <p align="center">
-  <a href="site/assets/app-en.png"><img src="site/assets/app-en.png" alt="Edubase to PDF + OCR – blue-silver interface, English example view" width="820"></a>
+  <a href="site/assets/app-en.png"><img src="site/assets/app-en.png" alt="Edubase to PDF + OCR – English example view" width="820"></a>
 </p>
 
 </details>
