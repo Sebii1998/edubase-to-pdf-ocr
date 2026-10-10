@@ -2,6 +2,11 @@
 
 [← Downloads und Schnellstart / English quick start](../README.md)
 
+Die App verwendet eine dunkle Graphit-Oberfläche mit dezenten Schatten – auch
+in den erweiterten Einstellungen und der englischen Ansicht. Oben findest du
+die Browser-Aktionen und darunter die Auswahl für eigene PDFs und Bilder sowie
+**PDFs zusammenfügen**. Seiten- und OCR-Einstellungen folgen im gewohnten Aufbau.
+
 ## PDFs zusammenfügen
 
 1. **PDFs zusammenfügen** anklicken und mindestens zwei PDFs vom PC auswählen.

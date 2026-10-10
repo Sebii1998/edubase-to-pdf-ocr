@@ -25,7 +25,13 @@
   brauchen mehr Grafikspeicher; das Tempo hängt von deinem PC und den Formeln ab.
   Bildqualität und Erkennungsmodelle bleiben gleich.
 
-**Update vom 10. Oktober 2026: Mehrfachauswahl für PDFs und Bilder.**
+**Update vom 10. Oktober 2026: Neue Graphit-Oberfläche.**
+
+Dunkle Flächen, dezente Schatten und feine Konturen geben der App mehr Tiefe.
+Die Auswahl für Buch, PDFs und Bilder ist oben klarer gegliedert. Der gleiche
+Stil gilt auch für die erweiterten Einstellungen und die englische Ansicht.
+
+**Mehrere PDFs und Bilder verarbeiten:**
 
 Mit **Eigene PDFs auswählen** oder **Bilder / Screenshots auswählen** legst du
 los. Auswahl und Reihenfolge prüfen, bei Bedarf **Auswahl übernehmen** wählen
@@ -55,7 +61,7 @@ beim Kopieren oder Extrahieren doppelte Textstellen liefern. Prüfe OCR-Ergebnis
 
 **Loslegen:** [Windows-App herunterladen](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.8.0/Edubase-PDF-Windows.zip)
 → ZIP vollständig entpacken → **Edubase-PDF.exe** öffnen.
-Der Download ist ca. **241,7 MB** gross. Python, Text-OCR mit Deutsch/Englisch,
+Der Download ist ca. **241,8 MB** gross. Python, Text-OCR mit Deutsch/Englisch,
 PDFium und Firefox sind enthalten. Installiertes Edge oder Chrome kannst du für
 Edubase ebenfalls verwenden.
 
@@ -85,7 +91,13 @@ Edubase ebenfalls verwenden.
   memory; speed depends on your PC and formulas. Image quality and recognition
   models stay the same.
 
-**Updated on 10 October 2026: Select multiple PDFs or images.**
+**Updated on 10 October 2026: New graphite interface.**
+
+Dark surfaces, subtle shadows and fine outlines add depth to the app.
+The top section makes choosing a book, PDFs or images clearer. The same
+style applies to advanced settings and the English view.
+
+**Process multiple PDFs or images:**
 
 Start with **Select your own PDFs** or **Select images / screenshots**. Check
 files and order, click **Use selection** when shown, then start
@@ -113,7 +125,7 @@ searchable PDF can produce duplicates. Please check OCR results.
 
 **Get started:** [Download the Windows app](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.8.0/Edubase-PDF-Windows.zip)
 → extract the entire ZIP → open **Edubase-PDF.exe**.
-The download is about **241.7 MB**. Python, German/English text OCR, PDFium and
+The download is about **241.8 MB**. Python, German/English text OCR, PDFium and
 Firefox are included. You can also use installed Edge or Chrome for Edubase.
 
 [English website](https://sebii1998.github.io/edubase-to-pdf-ocr/en/)
@@ -141,10 +153,10 @@ Files labelled **Archiv** belong to earlier builds. For the current version, use
 
 ## SHA256
 
-`Edubase-PDF-Windows.zip` · 241745651 bytes
+`Edubase-PDF-Windows.zip` · 241757368 bytes
 
 ```text
-f1cf0f8512b752481eabf7095095eb3213d583091ce611cefe26bb118d363e7e
+a3c2b264537c4b0e9387074d0a90882fcca09724d67f91e5e6cc25950fd927bb
 ```
 
 `Edubase-CUDA-RTX50-Windows.zip` · 2006319505 bytes
