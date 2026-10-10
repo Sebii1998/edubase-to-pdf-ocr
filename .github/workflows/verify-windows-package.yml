@@ -1,0 +1,230 @@
+name: Verify public Windows package
+
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/verify-windows-package.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: verify-public-windows-package
+  cancel-in-progress: false
+
+env:
+  CANDIDATE_NAME: Test-Edubase-PDF-Windows-v1.8.0-A4.zip
+  CANDIDATE_SHA256: c63f08af1bc54ccae93506ff6c61937bce96796a8fd095cab109934059a96a95
+  CANDIDATE_BYTES: '241759873'
+  PYTHONUTF8: '1'
+
+jobs:
+  portable-exe:
+    runs-on: windows-2022
+    timeout-minutes: 20
+    steps:
+      # Only public release binaries are downloaded. No source checkout,
+      # credentials, caches or uploaded artifacts are needed for this check.
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          architecture: x64
+
+      - name: Download, verify and extract pinned public packages
+        shell: pwsh
+        run: |
+          @'
+          import hashlib, json, os, re, stat, urllib.error, urllib.request, zipfile
+          from pathlib import Path, PurePosixPath
+
+          root = Path(r'C:\epdf-test')
+          root.mkdir(exist_ok=False)
+          release = 'https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/'
+          candidate_sha = os.environ['CANDIDATE_SHA256']
+          candidate_size = int(os.environ['CANDIDATE_BYTES'])
+          if not re.fullmatch(r'[0-9a-f]{64}', candidate_sha) or candidate_size <= 0:
+              raise RuntimeError('Candidate SHA256 and exact size must be pinned before running.')
+          packages = (
+              ('v1.8.0', os.environ['CANDIDATE_NAME'], candidate_sha, candidate_size, 'app'),
+              ('v1.7.0', 'Edubase-Mathe-OCR-Windows.zip',
+               '32da1ebaef1c3c28bd12de20a5505ab0baff7a47202b8ee9fb6fecf914468993', 574549116, 'math'),
+          )
+          reserved = {'CON', 'PRN', 'AUX', 'NUL'} | {f'{p}{n}' for p in ('COM', 'LPT') for n in range(1, 10)}
+          for tag, name, digest, size, folder in packages:
+              archive = root / (folder + '.zip')
+              request = urllib.request.Request(release + tag + '/' + name,
+                                               headers={'User-Agent': 'Edubase-public-package-check'})
+              sha, written = hashlib.sha256(), 0
+              try:
+                  source = urllib.request.urlopen(request, timeout=120)
+              except urllib.error.HTTPError as error:
+                  # Promotion renames the staged asset. The exact hash stays pinned.
+                  if error.code != 404 or folder != 'app':
+                      raise
+                  request = urllib.request.Request(release + tag + '/Edubase-PDF-Windows.zip',
+                                                   headers={'User-Agent': 'Edubase-public-package-check'})
+                  source = urllib.request.urlopen(request, timeout=120)
+              with source, archive.open('xb') as target:
+                  while chunk := source.read(1024 * 1024):
+                      written += len(chunk)
+                      if written > size:
+                          raise RuntimeError('Download exceeds pinned size: ' + name)
+                      target.write(chunk)
+                      sha.update(chunk)
+              if written != size or sha.hexdigest() != digest:
+                  raise RuntimeError('Pinned size or SHA256 mismatch: ' + name)
+              destination = root / folder
+              with zipfile.ZipFile(archive) as package:
+                  seen = set()
+                  if sum(item.file_size for item in package.infolist()) > 8 * 1024**3:
+                      raise RuntimeError('Unreasonable expanded package size.')
+                  for item in package.infolist():
+                      name = item.filename
+                      path = PurePosixPath(name)
+                      if (not name or '\\' in name or ':' in name or path.is_absolute()
+                              or '..' in path.parts or any(part.rstrip(' .') != part for part in path.parts)
+                              or any(part.split('.')[0].upper() in reserved for part in path.parts)
+                              or stat.S_ISLNK(item.external_attr >> 16) or item.flag_bits & 1):
+                          raise RuntimeError('Unsafe archive entry: ' + name)
+                      key = str(path).casefold()
+                      if key in seen:
+                          raise RuntimeError('Duplicate archive entry: ' + name)
+                      seen.add(key)
+                      target = destination.joinpath(*path.parts)
+                      if len(str(target).encode('utf-16-le')) // 2 >= (248 if item.is_dir() else 260):
+                          raise RuntimeError('Archive path exceeds normal Windows path limit: ' + name)
+                      if len(str(target.parent).encode('utf-16-le')) // 2 >= 248:
+                          raise RuntimeError('Archive parent path exceeds Windows path limit: ' + name)
+                  bad = package.testzip()
+                  if bad:
+                      raise RuntimeError('Archive CRC failure: ' + bad)
+                  destination.mkdir()
+                  package.extractall(destination)
+              print(json.dumps({'package': archive.name, 'bytes': written,
+                                'sha256': digest, 'zip_crc': 'ok', 'safe_paths': True}), flush=True)
+
+          app = root / 'app' / 'Edubase-PDF'
+          if not (app / 'Edubase-PDF.exe').is_file() or not (root / 'math' / 'python.exe').is_file():
+              raise RuntimeError('Unexpected package layout.')
+          build = json.loads((app / 'BUILD.json').read_text(encoding='utf-8'))
+          if build.get('app_version') != '1.8.0':
+              raise RuntimeError('Unexpected app version in BUILD.json.')
+          manifest = json.loads((app / '_internal' / 'math-runtime.json').read_text(encoding='utf-8'))
+          if manifest.get('sha256') != packages[1][2] or manifest.get('bytes') != packages[1][3]:
+              raise RuntimeError('Math manifest does not match the pinned public runtime.')
+          if list((app / '_internal' / 'edubase_pdf').rglob('*.py')) or (app / 'desktop.py').exists():
+              raise RuntimeError('Package unexpectedly contains application source files.')
+          print('BUILD.json: ' + json.dumps(build, ensure_ascii=True), flush=True)
+          '@ | python -
+          if ($LASTEXITCODE -ne 0) { throw 'Package verification failed.' }
+
+      - name: Run frozen Windows app with OCR, maths, GUI and three browsers
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $testRoot = 'C:\epdf-test'
+          $exe = Join-Path $testRoot 'app\Edubase-PDF\Edubase-PDF.exe'
+          $report = Join-Path $testRoot 'portable-check.json'
+          $env:EDUBASE_MATH_RUNTIME = Join-Path $testRoot 'math'
+          $env:EDUBASE_GPU_RUNTIME = Join-Path $testRoot 'no-gpu-overlay'
+          $env:EDUBASE_CUDA_RUNTIME = Join-Path $testRoot 'no-cuda-overlay'
+          $env:EDUBASE_CUDA_BLACKWELL_RUNTIME = Join-Path $testRoot 'no-blackwell-overlay'
+          $env:EDUBASE_JOB_DATA = Join-Path $testRoot 'test-jobs'
+          $env:TESSDATA_PREFIX = Join-Path $testRoot 'nonexistent-language-data'
+          $env:PLAYWRIGHT_BROWSERS_PATH = '0'
+          foreach ($key in @('PYTHONHOME', 'PYTHONPATH', 'VIRTUAL_ENV', 'PIP_TARGET', 'PIP_PREFIX', 'PIP_USER')) {
+            Remove-Item "Env:$key" -ErrorAction SilentlyContinue
+          }
+          $env:PATH = "$env:SystemRoot\System32;$env:SystemRoot"
+          $process = Start-Process -FilePath $exe -WorkingDirectory $testRoot -PassThru `
+            -ArgumentList @('--self-test', ('"' + $report + '"')) `
+            -RedirectStandardOutput (Join-Path $testRoot 'self-test.stdout.log') `
+            -RedirectStandardError (Join-Path $testRoot 'self-test.stderr.log')
+          try {
+            if (-not $process.WaitForExit(600000)) {
+              & "$env:SystemRoot\System32\taskkill.exe" /PID $process.Id /T /F
+              throw 'Portable EXE self-test exceeded 10 minutes.'
+            }
+            $process.Refresh()
+            if ($process.ExitCode -ne 0 -or -not (Test-Path $report)) {
+              throw "Portable EXE self-test failed (exit $($process.ExitCode))."
+            }
+          } finally {
+            foreach ($file in @('self-test.stdout.log', 'self-test.stderr.log', 'portable-check.json')) {
+              $path = Join-Path $testRoot $file
+              if (Test-Path $path) {
+                Write-Output "BEGIN $file"
+                Get-Content -LiteralPath $path
+                Write-Output "END $file"
+              }
+            }
+          }
+
+      - name: Enforce portable test gates and print job summary
+        if: always()
+        shell: pwsh
+        run: |
+          @'
+          import json, os
+          from pathlib import Path
+
+          summary = Path(os.environ['GITHUB_STEP_SUMMARY'])
+          report = Path(r'C:\epdf-test\portable-check.json')
+          failures = []
+          def require(value, name):
+              if not value:
+                  failures.append(name)
+
+          result = json.loads(report.read_text(encoding='utf-8')) if report.is_file() else {}
+          require(result.get('ok') is True and result.get('frozen') is True, 'Frozen EXE completion')
+          require(result.get('version') == '1.8.0', 'App version 1.8.0')
+          require(result.get('gui') == 'ok' and result.get('initial_layout_fits') is True, 'GUI layout')
+          require({'de', 'en'}.issubset(result.get('ui_languages', [])), 'German and English GUI')
+          require({'deu', 'eng'}.issubset(result.get('languages', [])), 'Bundled OCR languages')
+          require(result.get('text_backlog', {}).get('native_sqlite') is True, 'Native SQLite')
+          selected = result.get('selected_inputs', {})
+          for field in ('ok', 'ordered', 'source_unchanged', 'no_browser', 'text_only_without_math',
+                        'pixels_preserved', 'cleaned', 'optional_math', 'gui_mode', 'a4_fit', 'optional_math_a4_fit'):
+              require(selected.get(field) is True, 'Image import: ' + field)
+          require(selected.get('image_pages') == 2 and selected.get('multi_pdf_pages') == 2, 'Multiple images/PDFs')
+          require({'PNG', 'JPEG', 'BMP', 'TIFF', 'WEBP'}.issubset(selected.get('formats', [])), 'Image codecs')
+          local = result.get('local_pdf', {})
+          for field in ('ok', 'source_unchanged', 'no_browser', 'optional_math', 'gui_mode',
+                        'native_pdfium', 'text_only_without_math', 'cleaned'):
+              require(local.get(field) is True, 'Existing PDF: ' + field)
+          require(local.get('searchable_pdf_pages') == 1, 'Existing PDF OCR output')
+          pdf_tools = result.get('pdf_tools', {})
+          merge = pdf_tools.get('merge', {})
+          for field in ('ok', 'ordered', 'source_unchanged', 'no_ocr'):
+              require(merge.get(field) is True, 'PDF merge: ' + field)
+          require(merge.get('pages') == 3 and merge.get('files') == 2, 'PDF merge order and counts')
+          for field in ('gui_controls', 'log_clipboard', 'performance_label'):
+              require(pdf_tools.get(field) is True, 'PDF tools: ' + field)
+          require(result.get('math', {}).get('ok') is True, 'Real optional maths OCR (CPU)')
+          require(result.get('native_full_page', {}).get('ok') is True, 'Native full-page capture')
+          require(result.get('parallel_text_ocr', {}).get('ok') is True, 'Parallel text OCR')
+          require(result.get('partial_resume', {}).get('default_cleanup_after_success') is True, 'Resume and cleanup')
+          for browser in ('msedge', 'chrome', 'firefox'):
+              require(result.get('browsers', {}).get(browser, {}).get('searchable_pdf_pages') == 4,
+                      'Browser capture and searchable PDF: ' + browser)
+          status = 'FAILED' if failures else 'PASSED'
+          lines = ['## Public Windows package verification: ' + status, '',
+                   'Candidate: `' + os.environ['CANDIDATE_NAME'] + '`',
+                   'SHA256: `' + os.environ['CANDIDATE_SHA256'] + '`', '',
+                   'Checked on a standard Windows Server 2022 runner:',
+                   '- Actual A4 page size, centred image fit and preserved pixels, with text and maths OCR.',
+                   '- Multiple image/PDF selection, existing PDFs, merging and source preservation.',
+                   '- Frozen GUI in German/English, bundled OCR, CPU formula OCR and native SQLite.',
+                   '- Edge, Chrome and bundled Firefox capture, searchable output, resume and cleanup.', '',
+                   'CUDA/GPU acceleration is not exercised on this CPU runner.',
+                   'The full portable-check.json is printed in the job log. No artifacts are uploaded.']
+          if failures:
+              lines += ['', 'Failed or missing gates:'] + ['- ' + item for item in failures]
+          with summary.open('a', encoding='utf-8') as output:
+              output.write('\n'.join(lines) + '\n')
+          print(json.dumps({'status': status, 'failed_gates': failures}, indent=2))
+          if failures:
+              raise SystemExit(1)
+          '@ | python -
+          if ($LASTEXITCODE -ne 0) { throw 'Portable report gates failed.' }
