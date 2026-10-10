@@ -140,10 +140,10 @@ lädt das DirectML-Modul für geeignete Intel-, AMD- und NVIDIA-Grafik.
 Bei GPU-Problemen übernimmt die CPU. Im Modus **Automatisch** wird eine eingerichtete,
 unterstützte GPU ebenfalls genutzt; sonst bleibt CPU-Reserve.
 
-**NVIDIA RTX – optionales CUDA:** Unter **Erweiterte Einstellungen / Performance-Einstellungen** zuerst
-**CUDA-Modul einrichten**, danach **CUDA verwenden (NVIDIA RTX)** anwählen.
+**Optionales CUDA – unterstützt NVIDIA GeForce RTX 20–50, inklusive Laptop-GPUs:** Unter **Erweiterte Einstellungen / Performance-Einstellungen** zuerst
+**CUDA-Modul einrichten**, danach **CUDA verwenden (RTX 20 / 30 / 40 / 50)** anwählen.
 Die Auswahl ist nur bei erkannter NVIDIA-RTX-Karte möglich und standardmässig aus.
-Das separate CUDA-Modul hält Formelmerkmale während der Erkennung im Grafikspeicher.
+Die App wählt automatisch das passende CUDA-Paket. Ein kompatibler NVIDIA-Treiber ist erforderlich. Das separate CUDA-Modul hält Formelmerkmale während der Erkennung im Grafikspeicher.
 Bei schweren CUDA-Fehlern wie Fehler 715 startet die App die Erkennung in einem neuen
 Prozess mit höchstens 10 Formeln pro Gruppe. Scheitert dieselbe Seitengruppe erneut,
 verarbeitet eine verfügbare Alternative wie DirectML oder CPU diese Gruppe. Bei weiteren
@@ -161,7 +161,7 @@ Treffer hängen von Erkennung und PDF-Programm ab.
 Der Anhang enthält LaTeX und Seitenzuordnung zum Weiterverwenden und ist für Strg+F nicht nötig.
 Ergebnisse prüfen; die App löst keine Aufgaben.
 
-Die Mathe-, GPU- und CUDA-Zusatzpakete bleiben unverändert auf Version 1.7.0; bereits eingerichtete Module kannst du weiterverwenden.
+Die bisherigen Mathe-, GPU- und CUDA-Zusatzpakete bleiben unverändert auf Version 1.7.0. Für RTX 50 kommt ein separates CUDA-Paket aus Version 1.8.0 hinzu; vorhandene Installationen für RTX 20/30/40 bleiben erhalten.
 
 [Mathe-Zusatzmodul herunterladen](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.7.0/Edubase-Mathe-OCR-Windows.zip)
 
@@ -297,9 +297,9 @@ Recognised formulas are added as **invisible searchable text**; the page image s
 Use **Ctrl+F** for e.g. `σ` or `F/A`. Complex formulas are simplified; results depend
 on recognition and the PDF viewer.
 
-**NVIDIA RTX – optional CUDA:** In **Advanced settings / Performance settings**, choose **Set up CUDA
-module**, then enable **Use CUDA (NVIDIA RTX)**. This option is off by default and
-only selectable when an NVIDIA RTX card is detected. The separate module keeps
+**Optional CUDA – supports NVIDIA GeForce RTX 20–50, including laptop GPUs:** In **Advanced settings / Performance settings**, choose **Set up CUDA
+module**, then enable **Use CUDA (RTX 20 / 30 / 40 / 50)**. This option is off by default and
+only selectable when an NVIDIA RTX card is detected. Setup automatically selects the matching CUDA package. A compatible NVIDIA driver is required. The separate module keeps
 formula features in graphics memory during recognition. After a fatal CUDA error such
 as error 715, the app restarts recognition in a new process with up to 10 formulas per
 group. If the same page group fails again, an available alternative such as DirectML
@@ -312,7 +312,7 @@ formula group settings. Actual speed depends on your GPU and book.
 Attachments contain LaTeX and page references for reuse and are not needed for Ctrl+F.
 Check the results; the app does not solve exercises.
 
-Maths, GPU and CUDA add-ons remain unchanged at version 1.7.0; you can keep using modules already installed.
+Existing maths, GPU and CUDA add-ons remain unchanged at version 1.7.0. RTX 50 adds a separate CUDA package from version 1.8.0; installed RTX 20/30/40 runtimes are preserved.
 
 [Download the maths add-on](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.7.0/Edubase-Mathe-OCR-Windows.zip)
 

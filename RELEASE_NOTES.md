@@ -18,7 +18,11 @@
   brauchen mehr Grafikspeicher; das Tempo hängt von deinem PC und den Formeln ab.
   Bildqualität und Erkennungsmodelle bleiben gleich.
 
-**Aktualisiert am 10. Oktober 2026: gezieltere CUDA-Wiederherstellung.**
+**Update vom 10. Oktober 2026: CUDA für RTX 20 bis RTX 50.**
+
+CUDA unterstützt **NVIDIA GeForce RTX 20–50, inklusive Laptop-GPUs**. Die App richtet automatisch das passende Paket ein. Ein kompatibler NVIDIA-Treiber ist erforderlich.
+
+**CUDA-Wiederherstellung bleibt enthalten:**
 
 Bei schweren CUDA-Fehlern wie Fehler 715 startet die App die Mathe-Erkennung in
 einem neuen Prozess mit höchstens **10 Formeln pro Gruppe**. Scheitert dieselbe
@@ -61,7 +65,11 @@ Edubase ebenfalls verwenden.
   memory; speed depends on your PC and formulas. Image quality and recognition
   models stay the same.
 
-**Updated on 10 October 2026: improved CUDA recovery.**
+**Updated on 10 October 2026: CUDA for RTX 20 through RTX 50.**
+
+CUDA supports **NVIDIA GeForce RTX 20–50, including laptop GPUs**. Setup automatically selects the matching package. A compatible NVIDIA driver is required.
+
+**CUDA recovery remains included:**
 
 After a fatal CUDA error such as error 715, the app restarts maths recognition in
 a new process with up to **10 formulas per group**. If the same page group fails
@@ -86,15 +94,18 @@ Firefox are included. You can also use installed Edge or Chrome for Edubase.
 
 ## Optionale Zusatzpakete / Optional add-ons
 
-Die unveränderten Pakete werden weiter aus v1.7.0 geladen. Am einfachsten erfolgt
-die Einrichtung über die entsprechenden Knöpfe in der App.
+Mathe, DirectML und das bewährte CUDA-Paket für RTX 20/30/40 bleiben unverändert
+auf v1.7.0. Das zusätzliche CUDA-Paket für RTX 50 liegt bei v1.8.0. Die App wählt
+beim Einrichten automatisch das passende Paket.
 
-The unchanged packages continue to download from v1.7.0. The easiest way to
-install them is through the setup buttons in the app.
+Maths, DirectML and the established CUDA package for RTX 20/30/40 remain unchanged
+at v1.7.0. The additional CUDA package for RTX 50 is available with v1.8.0. Setup
+in the app selects the matching package automatically.
 
 - [Mathe / Maths OCR · ca. 575 MB](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.7.0/Edubase-Mathe-OCR-Windows.zip)
 - [GPU / DirectML · ca. 23 MB](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.7.0/Edubase-GPU-OCR-Windows.zip)
-- [CUDA / NVIDIA RTX · ca. 1,68 GB](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.7.0/Edubase-CUDA-OCR-Windows.zip)
+- [CUDA / NVIDIA RTX 20 / 30 / 40 · 1.68 GB](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.7.0/Edubase-CUDA-OCR-Windows.zip)
+- [CUDA / NVIDIA RTX 50 · 2.01 GB](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.8.0/Edubase-CUDA-RTX50-Windows.zip)
 
 Mit **Archiv** gekennzeichnete Dateien gehören zu früheren Builds. Für die aktuelle
 Version lade **Edubase-PDF-Windows.zip** und die zugehörige **SHA256SUMS.txt**.
@@ -104,13 +115,20 @@ Files labelled **Archiv** belong to earlier builds. For the current version, use
 
 ## SHA256
 
-`Edubase-PDF-Windows.zip` · 241726899 bytes
+`Edubase-PDF-Windows.zip` · 241729181 bytes
 
 ```text
-0ff11c6e782a0ad00c6e9b96aedad0e6c195cee23f3dc490d81b4d387041807b
+a157ab0d011c3eabbba0f80b68718dda4b096b6251b56ed69ceaa6bef74393d5
+```
+
+`Edubase-CUDA-RTX50-Windows.zip` · 2006319505 bytes
+
+```text
+3cc7cffac4d583fb86dfadff2a254d5e7703c830e512332255076326b8586cfc
 ```
 
 [SHA256SUMS.txt](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.8.0/SHA256SUMS.txt)
 
 Windows 64 Bit / 64-bit Windows (Intel/AMD). Die App ist nicht digital signiert.
 The app is not digitally signed.
+

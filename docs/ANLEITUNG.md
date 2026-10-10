@@ -130,13 +130,16 @@ Abbruch im Zwischenspeicher. Mehr CPU-Leistung kann den Laptop wärmer und laute
 machen und ist nicht auf jedem Gerät schneller.
 
 
-## NVIDIA RTX und AMD
+## NVIDIA RTX, AMD und Intel
 
-**CUDA verwenden (NVIDIA RTX)** ist unter **Erweiterte Einstellungen / Performance-Einstellungen** nur bei
+**CUDA verwenden (RTX 20 / 30 / 40 / 50)** ist unter **Erweiterte Einstellungen / Performance-Einstellungen** nur bei
 einer erkannten NVIDIA-RTX-Karte auswählbar und standardmässig ausgeschaltet.
-Zuerst **CUDA-Modul einrichten** wählen. Die App lädt ein separates Zusatzpaket;
-eine manuelle Eingabe des Grafikkartenmodells oder eine CUDA-Toolkit-Installation
-ist nicht erforderlich. Ein funktionierender NVIDIA-Treiber wird benötigt.
+Unterstützt werden **NVIDIA GeForce RTX der 20-, 30-, 40- und 50-Serie**,
+einschliesslich Laptop-GPUs. Zuerst **CUDA-Modul einrichten** wählen; die App
+erkennt die Karte und lädt automatisch das passende Zusatzpaket. RTX 20/30/40
+behalten die bewährte CUDA-Laufzeit; RTX 50 erhält das neue Blackwell-Paket.
+Ein kompatibler NVIDIA-Treiber ist erforderlich. Eine manuelle Eingabe des
+Grafikkartenmodells oder eine CUDA-Toolkit-Installation ist nicht nötig.
 
 CUDA hält Formelmerkmale zwischen Erkennungsschritten im Grafikspeicher.
 Modellgewichte, Auflösung und volle FP32-Genauigkeit bleiben erhalten. Bei schweren
@@ -270,8 +273,9 @@ die normale PDF-Erstellung funktioniert ohne sie.
 
 [Zusatzmodul separat herunterladen](https://github.com/Sebii1998/edubase-to-pdf-ocr/releases/download/v1.7.0/Edubase-Mathe-OCR-Windows.zip)
 – am einfachsten erfolgt die Einrichtung direkt über den Knopf in der App.
-Die Mathe-, GPU- und CUDA-Pakete bleiben unverändert auf Version 1.7.0;
-bereits eingerichtete Module können weiterverwendet werden.
+Die bisherigen Mathe-, GPU- und CUDA-Pakete für RTX 20/30/40 bleiben unverändert
+auf Version 1.7.0; bereits eingerichtete Module können weiterverwendet werden.
+Für RTX 50 kommt ein separates CUDA-Paket aus Version 1.8.0 hinzu.
 
 ## Ausgabe, Bildqualität und grosse Bücher
 
@@ -319,3 +323,4 @@ einen OCR-Dienst hochgeladen. Unabhängiges Projekt: Verwende nur Inhalte,
 auf die du zugreifen und die du speichern darfst.
 
 [Lizenz](../LICENSE) · [Drittanbieterhinweise](../THIRD_PARTY_NOTICES.md)
+
