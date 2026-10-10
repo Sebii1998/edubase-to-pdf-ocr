@@ -31,6 +31,12 @@ Dunkle Flächen, dezente Schatten und feine Konturen geben der App mehr Tiefe.
 Die Auswahl für Buch, PDFs und Bilder ist oben klarer gegliedert. Der gleiche
 Stil gilt auch für die erweiterten Einstellungen und die englische Ansicht.
 
+**Bilder und Screenshots jetzt in A4:**
+
+Jedes Bild wird auf eine A4-Seite im Hoch- oder Querformat eingepasst – proportional,
+zentriert und mit mindestens 5 mm Rand. Nichts wird abgeschnitten oder verzerrt.
+Die Originalbilder bleiben unverändert; vorhandene PDFs behalten ihr Seitenformat.
+
 **Mehrere PDFs und Bilder verarbeiten:**
 
 Mit **Eigene PDFs auswählen** oder **Bilder / Screenshots auswählen** legst du
@@ -97,6 +103,12 @@ Dark surfaces, subtle shadows and fine outlines add depth to the app.
 The top section makes choosing a book, PDFs or images clearer. The same
 style applies to advanced settings and the English view.
 
+**Images and screenshots now fit A4:**
+
+Each image fits an A4 page in portrait or landscape, proportionally and centred
+with at least a 5 mm margin. Nothing is cropped or stretched. Original images
+stay unchanged; existing PDFs retain their page sizes.
+
 **Process multiple PDFs or images:**
 
 Start with **Select your own PDFs** or **Select images / screenshots**. Check
@@ -153,10 +165,10 @@ Files labelled **Archiv** belong to earlier builds. For the current version, use
 
 ## SHA256
 
-`Edubase-PDF-Windows.zip` · 241757368 bytes
+`Edubase-PDF-Windows.zip` · 241759873 bytes
 
 ```text
-a3c2b264537c4b0e9387074d0a90882fcca09724d67f91e5e6cc25950fd927bb
+c63f08af1bc54ccae93506ff6c61937bce96796a8fd095cab109934059a96a95
 ```
 
 `Edubase-CUDA-RTX50-Windows.zip` · 2006319505 bytes

@@ -97,7 +97,7 @@ Der PDF-Modus braucht keinen Browser und keine Edubase-Anmeldung. Die ursprüngl
 2. Bilder mit den Pfeilen sortieren, weitere hinzufügen oder Einträge entfernen. Mit **Auswahl übernehmen** bestätigen. Jedes Bild wird eine PDF-Seite; mehrseitige TIFF-Dateien werden vollständig übernommen.
 3. **Textsprache**, Seitenbereich und Ausgabetitel prüfen. Bei Bedarf **Mathe & Formeln erkennen** aktivieren und **PDF mit OCR verarbeiten** starten.
 
-Die App erstellt eine gemeinsame durchsuchbare PDF in deiner gewählten Reihenfolge. Es wird kein Browser geöffnet; die Originalbilder bleiben unverändert.
+Die App erstellt eine gemeinsame durchsuchbare PDF in deiner gewählten Reihenfolge. Jedes Bild wird proportional auf eine **A4-Seite** eingepasst, automatisch im Hoch- oder Querformat, zentriert und mit mindestens 5 mm Rand. Es wird nichts abgeschnitten oder verzerrt. Es wird kein Browser geöffnet; die Originalbilder bleiben unverändert. Bereits vorhandene PDFs behalten beim PDF-Import ihr ursprüngliches Seitenformat.
 
 ### PDFs zusammenfügen
 
@@ -263,7 +263,7 @@ PDF mode needs no browser or Edubase sign-in. Original pages are retained and in
 2. Use the arrows to reorder images, add more or remove entries. Click **Use selection**. Each image becomes a PDF page; all pages of a multipage TIFF are included.
 3. Check the **Text language**, page range and output title. Enable **Recognise maths & formulas** if needed and start **Process PDF with OCR**.
 
-The app creates one searchable PDF in your chosen order. No browser opens; your original images stay unchanged.
+The app creates one searchable PDF in your chosen order. Each image fits proportionally onto an **A4 page**, automatically in portrait or landscape, centred with at least a 5 mm margin. Nothing is cropped or stretched. No browser opens; your original images stay unchanged. Existing PDFs retain their original page sizes when imported as PDFs.
 
 ### Merge PDFs
 

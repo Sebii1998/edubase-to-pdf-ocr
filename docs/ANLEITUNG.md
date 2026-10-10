@@ -77,11 +77,17 @@ Edubase-Aufnahme wieder verfügbar.
    **Bilder hinzufügen** ergänzt weitere Dateien; **Entfernen** nimmt Einträge aus
    der Auswahl. Anschliessend **Auswahl übernehmen** anklicken.
 3. Die App wechselt automatisch in den lokalen PDF-Modus. Jedes Bild wird eine
-   PDF-Seite; bei mehrseitigen TIFF-Dateien werden alle Seiten übernommen.
+   **A4-Seite**; bei mehrseitigen TIFF-Dateien werden alle Seiten übernommen.
    Seitenbereich, Ausgabetitel, Zielordner und **Textsprache** prüfen.
 4. **Mathe & Formeln erkennen** bei Bedarf aktivieren und
    **PDF mit OCR verarbeiten** starten. Text-OCR wird immer ausgeführt.
    Das Ergebnis ist eine gemeinsame durchsuchbare PDF in der gewählten Reihenfolge.
+
+Die App berücksichtigt die gespeicherte Bildausrichtung und wählt automatisch
+A4 im Hoch- oder Querformat. Das Bild wird proportional auf die Seite eingepasst,
+zentriert und mit mindestens **5 mm Rand** platziert. Es wird nichts abgeschnitten
+oder verzerrt; die ursprüngliche Pixelanzahl bleibt erhalten. Die A4-Anpassung
+gilt für den Bildimport. Eigene PDFs behalten ihre ursprünglichen Seitenformate.
 
 Es wird kein Browser geöffnet und keine Edubase-Anmeldung benötigt. Die
 Originalbilder bleiben unverändert. Die Auswahl gilt entweder für PDFs oder
