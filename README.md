@@ -1,8 +1,8 @@
 <h1 align="center">Edubase to PDF + OCR</h1>
 
 <p align="center">
-  <strong>Dein Buch. Lokal als durchsuchbare PDF.</strong><br>
-  <sub>Your book. A local, searchable PDF.</sub>
+  <strong>Bücher, PDFs und Bilder. Lokal durchsuchbar.</strong><br>
+  <sub>Books, PDFs and images. Searchable, on your PC.</sub>
 </p>
 
 <p align="center">
@@ -27,7 +27,9 @@
 
 ## Deutsch
 
-**Edubase to PDF + OCR** hilft dir, Edubase-Buchseiten als **durchsuchbare PDF** lokal zu speichern. So kannst du deine Lernunterlagen offline nutzen und langfristig in deinem persönlichen Archiv aufbewahren – auch wenn der Edubase-Reader später verändert oder eingestellt wird.
+**Edubase to PDF + OCR** ist eine **Windows-App für Text-OCR und optionale Mathe-OCR**. Speichere Edubase-Buchseiten, eigene PDFs, Bilder und Screenshots als **durchsuchbare PDF** oder füge mehrere PDFs zusammen. Die Verarbeitung läuft lokal auf deinem PC.
+
+**Auch ohne Edubase nutzbar:** Für eigene PDFs und Bilder brauchst du weder ein Edubase-Konto noch einen Browser. Die Originaldateien bleiben unverändert.
 
 Nach deiner Anmeldung im Edubase-Reader nimmt die Windows-App die angezeigten Seiten des ausgewählten Buches automatisch als Bilder auf. Daraus erstellt sie auf deinem PC eine PDF und ergänzt mit Texterkennung (OCR) durchsuchbaren Text. Die aufgenommenen Buchseiten werden dabei nicht auf GitHub hochgeladen.
 
@@ -58,7 +60,7 @@ Installiertes Edge oder Chrome werden ebenfalls unterstützt.
 
 ### Video-Anleitung · Version 1.8.0
 
-Download, Aufnahme, Text- und Mathe-OCR sowie eigene PDFs, Bilder und Screenshots – Schritt für Schritt in 5:09 Minuten.
+Download, Aufnahme, Text- und Mathe-OCR sowie eigene PDFs, Bilder und Screenshots – Schritt für Schritt in 5:09 Minuten. Deutsche Erklärungen im Bild; englische Untertitel kannst du über **⚙️ → Untertitel → Englisch** einschalten.
 
 <p align="center">
   <a href="https://www.youtube.com/watch?v=Qp2_XK_5LnY"><img src="https://i.ytimg.com/vi/Qp2_XK_5LnY/maxresdefault.jpg" alt="Edubase to PDF 1.8.0 – Text- und Mathe-OCR für Bücher, PDFs und Bilder – Tutorial starten" width="820"></a><br>
@@ -194,7 +196,9 @@ Die bisherigen Mathe-, GPU- und CUDA-Zusatzpakete bleiben unverändert auf Versi
 
 **[Visit the English website](https://sebii1998.github.io/edubase-to-pdf-ocr/en/)**
 
-**Edubase to PDF + OCR** helps you save Edubase book pages locally as **searchable PDFs**. Keep your learning materials available offline and in your personal archive, even if the Edubase Reader changes or is discontinued in the future.
+**Edubase to PDF + OCR** is a **Windows app for text OCR and optional maths OCR**. Turn Edubase book pages, your own PDFs, images and screenshots into **searchable PDFs**, or merge several PDFs. Processing runs locally on your PC.
+
+**Works without Edubase, too:** Your own PDFs and images need no Edubase account or browser. Your original files stay unchanged.
 
 After you sign in to the Edubase Reader, the Windows app automatically captures the displayed pages of your selected book as images. It creates a PDF on your PC and uses optical character recognition (OCR) to add searchable text. The captured book pages are not uploaded to GitHub.
 
@@ -225,11 +229,11 @@ Installed Edge and Chrome are also supported.
 
 ### Video tutorial · Version 1.8.0
 
-Download, capture, text and maths OCR, plus your own PDFs, images and screenshots – step by step in 5:09 minutes, with German on-screen explanations.
+Download, capture, text and maths OCR, plus your own PDFs, images and screenshots – step by step in 5:09 minutes. German on-screen explanations with **English subtitles**: choose **⚙️ → Subtitles/CC → English**.
 
 <p align="center">
-  <a href="https://www.youtube.com/watch?v=Qp2_XK_5LnY"><img src="https://i.ytimg.com/vi/Qp2_XK_5LnY/maxresdefault.jpg" alt="Edubase to PDF 1.8.0 – text and maths OCR for books, PDFs and images – watch the tutorial in German" width="820"></a><br>
-  <a href="https://www.youtube.com/watch?v=Qp2_XK_5LnY"><img src="docs/images/tutorial-en.svg" alt="Watch on YouTube · 5:09 · German on-screen explanations" width="820"></a>
+  <a href="https://www.youtube.com/watch?v=Qp2_XK_5LnY"><img src="https://i.ytimg.com/vi/Qp2_XK_5LnY/maxresdefault.jpg" alt="Edubase to PDF 1.8.0 – text and maths OCR for books, PDFs and images – German tutorial with English subtitles" width="820"></a><br>
+  <a href="https://www.youtube.com/watch?v=Qp2_XK_5LnY"><img src="docs/images/tutorial-en.svg" alt="Watch on YouTube · 5:09 · English subtitles available" width="820"></a>
 </p>
 
 <details>
