@@ -19,23 +19,26 @@ Während des Zusammenfügens sind **Pause** und **Stoppen** verfügbar. Ein Abbr
 veröffentlicht keine unvollständige Ergebnis-PDF; zum erneuten Versuch die
 Dateien wieder auswählen. Ein zuvor geladener OCR-Auftrag bleibt erhalten.
 
-## Eigene PDF vom PC verarbeiten
+## Eigene PDFs vom PC verarbeiten
 
-1. **Eigene PDF auswählen** anklicken und die Datei vom PC wählen. Die App
-   erkennt die PDF, zeigt ihren Namen und die Seitenzahl und wählt zunächst
-   **alle Seiten** aus. Bei Bedarf den Seitenbereich einschränken; **Ganze PDF**
-   stellt wieder den vollständigen Bereich ein.
+1. **Eigene PDFs auswählen** anklicken und eine oder mehrere PDFs vom PC wählen.
+   Bei mehreren Dateien im Auswahlfenster die Reihenfolge mit **Nach oben** und
+   **Nach unten** festlegen. Bei Bedarf PDFs hinzufügen oder Einträge entfernen
+   und **Auswahl übernehmen** wählen. Die App zeigt die gesamte Seitenzahl und
+   wählt zunächst **alle Seiten** aus. Bei Bedarf den Seitenbereich einschränken;
+   **Ganze PDF** stellt wieder den vollständigen Bereich ein.
 2. **Textsprache** einstellen. Text-OCR wird ausgeführt. Nur wenn zusätzlich
    **Mathe & Formeln erkennen** angehakt ist, werden auch Formeln erkannt.
    Dafür wie bisher einmal das Mathe-Modul einrichten. Die optionalen
    GPU-/CUDA-Einstellungen und Formelanhänge können weiter verwendet werden.
 3. Ausgabetitel und Zielordner prüfen und **PDF mit OCR verarbeiten** anklicken.
-   Nach Abschluss die Lesbarkeit und die Textsuche in der neuen PDF prüfen.
+   Die Auswahl wird in der festgelegten Reihenfolge als **eine gemeinsame PDF**
+   gespeichert. Nach Abschluss die Lesbarkeit und die Textsuche prüfen.
 
 Die Auswahl schaltet automatisch auf den PDF-Modus um. Dafür wird kein Browser
 geöffnet, keine Edubase-Anmeldung verlangt und keine Bildschirmaufnahme gemacht.
-Browser- und Aufnahmeeinstellungen sind in diesem Modus deaktiviert. Die Datei
-wird lokal verarbeitet. Die Original-PDF bleibt unverändert; die Ausgabe bekommt
+Browser- und Aufnahmeeinstellungen sind in diesem Modus deaktiviert. Die Dateien
+werden lokal verarbeitet. Die Original-PDFs bleiben unverändert; die Ausgabe bekommt
 einen freien Dateinamen und überschreibt auch keine ältere OCR-PDF.
 
 Die ursprünglichen PDF-Seiten werden für die Ausgabe übernommen; Text und
@@ -56,9 +59,30 @@ solchen Export zuvor **Arbeitsbilder behalten** einschalten.
 Wie bei Edubase werden die internen Arbeitsdaten nach erfolgreichem Export
 standardmässig gelöscht. Soll später **Nur OCR erneut** verwendet werden,
 vorher unter **Erweiterte Einstellungen / Performance-Einstellungen** **Arbeitsbilder behalten** aktivieren.
-Die ausgewählte Originaldatei wird bei dieser Bereinigung nie gelöscht.
+Die ausgewählten Originaldateien werden bei dieser Bereinigung nie gelöscht.
 Mit **Neuer Auftrag** wird der PDF-Modus verlassen; danach ist die bisherige
 Edubase-Aufnahme wieder verfügbar.
+
+## Bilder und Screenshots als PDF verarbeiten
+
+1. Einen Screenshot zuerst als Bilddatei auf dem PC speichern. Anschliessend
+   **Bilder / Screenshots auswählen** anklicken und ein oder mehrere Bilder wählen.
+   Unterstützt werden **PNG, JPEG, BMP, TIFF und WebP**.
+2. Im Auswahlfenster die Reihenfolge mit **Nach oben** und **Nach unten** festlegen.
+   **Bilder hinzufügen** ergänzt weitere Dateien; **Entfernen** nimmt Einträge aus
+   der Auswahl. Anschliessend **Auswahl übernehmen** anklicken.
+3. Die App wechselt automatisch in den lokalen PDF-Modus. Jedes Bild wird eine
+   PDF-Seite; bei mehrseitigen TIFF-Dateien werden alle Seiten übernommen.
+   Seitenbereich, Ausgabetitel, Zielordner und **Textsprache** prüfen.
+4. **Mathe & Formeln erkennen** bei Bedarf aktivieren und
+   **PDF mit OCR verarbeiten** starten. Text-OCR wird immer ausgeführt.
+   Das Ergebnis ist eine gemeinsame durchsuchbare PDF in der gewählten Reihenfolge.
+
+Es wird kein Browser geöffnet und keine Edubase-Anmeldung benötigt. Die
+Originalbilder bleiben unverändert. Die Auswahl gilt entweder für PDFs oder
+für Bilder; beide Eingaben nutzen denselben OCR-Ablauf mit den vorhandenen
+Mathe-, GPU- und CUDA-Einstellungen. Pause, Stopp, Fortsetzen und die Bereinigung
+der internen Arbeitsdateien funktionieren wie beim eigenen PDF-Auftrag.
 
 ## Fortschritt bei Aufnahme und OCR
 
@@ -306,6 +330,7 @@ OCR-Seite, jeweils nicht für das gesamte Buch.
 | EXE, OCR oder Sprachdaten fehlen | Das vollständige Windows-ZIP erneut entpacken; alle mitgelieferten Ordner neben der EXE belassen. |
 | PDFs lassen sich nicht zusammenfügen | Mindestens zwei gültige, nicht verschlüsselte PDFs auswählen, Reihenfolge prüfen und einen neuen Dateinamen wählen. Bestehende Dateien werden nicht überschrieben. |
 | Eigene PDF lässt sich nicht öffnen | Eine gültige, nicht verschlüsselte PDF auswählen. Fehlermeldung und Protokoll prüfen; die Originaldatei bleibt unverändert. |
+| Bild lässt sich nicht öffnen | Eine gültige PNG-, JPEG-, BMP-, TIFF- oder WebP-Datei auswählen. Animierte Bilder werden nicht unterstützt. Fehlermeldung prüfen; das Original bleibt unverändert. |
 | Browser nicht gefunden | Enthaltenes Firefox oder installiertes Edge/Chrome wählen. |
 | Buch wird nicht erkannt | Buch im von der App geöffneten Browser öffnen, Anmeldung abschliessen und Einzelseitenansicht wählen. |
 | Seite noch nicht vollständig geladen | Einzelseitenansicht, Vorschau und Protokoll prüfen. Bei einem Lade-Zeitlimit das Seiten-Zeitlimit erhöhen und zuerst wenige Seiten testen. Eine höhere maximale Wartezeit deaktiviert die adaptive frühere Aufnahme nicht. |
@@ -318,9 +343,10 @@ OCR-Seite, jeweils nicht für das gesamte Buch.
 App-Version, Windows-Version, fehlerhaften Schritt und genaue Meldung nennen.
 Keine Anmeldedaten, Bücher oder privaten PDFs hochladen.
 
-Die Verarbeitung läuft lokal; Buchseiten und PDFs werden nicht auf GitHub oder
+Die Verarbeitung läuft lokal; Buchseiten, Bilder und PDFs werden nicht auf GitHub oder
 einen OCR-Dienst hochgeladen. Unabhängiges Projekt: Verwende nur Inhalte,
 auf die du zugreifen und die du speichern darfst.
 
 [Lizenz](../LICENSE) · [Drittanbieterhinweise](../THIRD_PARTY_NOTICES.md)
+
 

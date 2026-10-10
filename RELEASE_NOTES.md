@@ -6,9 +6,16 @@
 
 **Deine Unterlagen. Durchsuchbar, zusammengefügt und bereit zum Lernen.**
 
-- **Eigene PDFs durchsuchbar machen:** Wähle eine PDF von deinem PC und starte die
-  Texterkennung. Mathe-OCR kannst du bei Bedarf zuschalten. Die App erkennt den
-  PDF-Modus automatisch – alles lokal, ohne Browser oder Edubase-Anmeldung.
+- **Mehrere eigene PDFs mit OCR verarbeiten:** Wähle eine oder mehrere PDFs
+  vom PC und verarbeite sie gemeinsam zu einer durchsuchbaren PDF. Bei mehreren
+  Dateien kannst du die Reihenfolge ändern, PDFs hinzufügen oder Einträge entfernen.
+- **Bilder und Screenshots als PDF:** Wähle ein oder mehrere gespeicherte Bilder
+  im Format **PNG, JPEG, BMP, TIFF oder WebP**, sortiere sie und erstelle daraus
+  eine durchsuchbare PDF. Du kannst vor dem Start weitere Bilder hinzufügen oder
+  Einträge entfernen. Jedes Bild wird eine Seite; mehrseitige TIFFs werden vollständig übernommen.
+- **Text und Formeln erkennen:** Bei eigenen PDFs und Bildern läuft Text-OCR
+  automatisch. Mathe-OCR schaltest du bei Bedarf zu. Die App erkennt den lokalen
+  PDF-Modus – ohne Browser oder Edubase-Anmeldung. Deine Originaldateien bleiben unverändert.
 - **PDFs zusammenfügen:** Kombiniere mehrere Dokumente in deiner gewünschten
   Reihenfolge zu einer neuen PDF. Seiten und vorhandener Suchtext bleiben erhalten.
   Die Originaldateien bleiben unverändert.
@@ -18,7 +25,13 @@
   brauchen mehr Grafikspeicher; das Tempo hängt von deinem PC und den Formeln ab.
   Bildqualität und Erkennungsmodelle bleiben gleich.
 
-**Update vom 10. Oktober 2026: CUDA für RTX 20 bis RTX 50.**
+**Update vom 10. Oktober 2026: Mehrfachauswahl für PDFs und Bilder.**
+
+Mit **Eigene PDFs auswählen** oder **Bilder / Screenshots auswählen** legst du
+los. Auswahl und Reihenfolge prüfen, bei Bedarf **Auswahl übernehmen** wählen
+und mit **PDF mit OCR verarbeiten** die gemeinsame PDF erstellen.
+
+**CUDA für RTX 20 bis RTX 50 bleibt enthalten.**
 
 CUDA unterstützt **NVIDIA GeForce RTX 20–50, inklusive Laptop-GPUs**. Die App richtet automatisch das passende Paket ein. Ein kompatibler NVIDIA-Treiber ist erforderlich.
 
@@ -53,9 +66,16 @@ Edubase ebenfalls verwenden.
 
 **Your documents. Searchable, combined and ready to study.**
 
-- **Make your own PDFs searchable:** Select a PDF from your PC and start text
-  recognition. Add maths OCR when you need it. The app switches to PDF mode
-  automatically – all locally, without a browser or Edubase account.
+- **Process several PDFs with OCR:** Select one or more PDFs from your PC
+  and turn them into one searchable PDF. With multiple files, change their order,
+  add PDFs or remove entries before processing.
+- **Turn images and screenshots into a PDF:** Select one or more saved
+  **PNG, JPEG, BMP, TIFF or WebP** images, arrange them and create a searchable PDF.
+  Add more images or remove entries before you start. Each image becomes a page;
+  all pages of a multipage TIFF are included.
+- **Recognise text and formulas:** Text OCR runs automatically for your own PDFs
+  and images. Enable maths OCR when needed. The app switches to local PDF mode –
+  no browser or Edubase account required. Your original files stay unchanged.
 - **Merge PDFs:** Bring several documents together in the order you choose and
   save a new PDF. Pages and existing searchable text are retained.
   Your original files stay unchanged.
@@ -65,7 +85,13 @@ Edubase ebenfalls verwenden.
   memory; speed depends on your PC and formulas. Image quality and recognition
   models stay the same.
 
-**Updated on 10 October 2026: CUDA for RTX 20 through RTX 50.**
+**Updated on 10 October 2026: Select multiple PDFs or images.**
+
+Start with **Select your own PDFs** or **Select images / screenshots**. Check
+files and order, click **Use selection** when shown, then start
+**Process PDF with OCR** to create your combined PDF.
+
+**CUDA for RTX 20 through RTX 50 remains included.**
 
 CUDA supports **NVIDIA GeForce RTX 20–50, including laptop GPUs**. Setup automatically selects the matching package. A compatible NVIDIA driver is required.
 
@@ -115,10 +141,10 @@ Files labelled **Archiv** belong to earlier builds. For the current version, use
 
 ## SHA256
 
-`Edubase-PDF-Windows.zip` · 241729181 bytes
+`Edubase-PDF-Windows.zip` · 241745651 bytes
 
 ```text
-a157ab0d011c3eabbba0f80b68718dda4b096b6251b56ed69ceaa6bef74393d5
+f1cf0f8512b752481eabf7095095eb3213d583091ce611cefe26bb118d363e7e
 ```
 
 `Edubase-CUDA-RTX50-Windows.zip` · 2006319505 bytes
@@ -131,4 +157,5 @@ a157ab0d011c3eabbba0f80b68718dda4b096b6251b56ed69ceaa6bef74393d5
 
 Windows 64 Bit / 64-bit Windows (Intel/AMD). Die App ist nicht digital signiert.
 The app is not digitally signed.
+
 

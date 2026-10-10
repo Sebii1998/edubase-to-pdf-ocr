@@ -35,7 +35,9 @@ Automatische Titelerkennung, einstellbare Buchseitennummerierung und optionale M
 
 **Neu in 1.8.0 – Finale Version**
 
-- **Eigene PDFs durchsuchbar machen:** Wähle eine PDF von deinem PC und starte die Texterkennung. Mathe-OCR kannst du bei Bedarf zuschalten – alles lokal, ohne Browser.
+- **Mehrere eigene PDFs mit OCR verarbeiten:** Wähle eine oder mehrere PDFs, lege ihre Reihenfolge fest und erhalte eine gemeinsame durchsuchbare PDF.
+- **Bilder und Screenshots als PDF:** Wähle ein oder mehrere gespeicherte Bilder im Format PNG, JPEG, BMP, TIFF oder WebP. Sortiere deine Auswahl, ergänze weitere Bilder oder entferne Einträge und erstelle daraus eine durchsuchbare PDF.
+- **Text und Formeln erkennen:** Text-OCR ist bei beiden Eingaben dabei; Mathe-OCR schaltest du bei Bedarf zu. Die App wechselt automatisch in den lokalen PDF-Modus – ohne Browser, mit unveränderten Originaldateien.
 - **PDFs zusammenfügen:** Kombiniere mehrere Dokumente in deiner gewünschten Reihenfolge zu einer PDF.
 - **Mathe-OCR auf deinen PC abstimmen:** Wähle CPU, GPU oder optional CUDA. Für die GPU stehen bis zu **10, 20 oder 30 Formeln pro Gruppe** zur Auswahl. Die Performance-Einstellungen helfen dir, die verfügbare Rechenleistung passend zu nutzen.
 
@@ -80,13 +82,21 @@ Deine PDF liegt standardmässig unter **`Dokumente/Edubase-PDF`**. Lesbarkeit un
 danach über **Neuer Auftrag** einen grösseren Bereich oder das ganze Buch aufnehmen.
 Während der Aufnahme nicht selbst blättern.
 
-### Eigene PDF mit OCR verarbeiten
+### Eigene PDFs mit OCR verarbeiten
 
-1. **Eigene PDF auswählen** anklicken. Die App zeigt die Seitenzahl und wählt zunächst alle Seiten aus; bei Bedarf den Bereich einschränken.
-2. **Textsprache** einstellen. Text-OCR läuft immer; **Mathe & Formeln erkennen** nur bei Bedarf aktivieren.
-3. **PDF mit OCR verarbeiten** starten. Das Ergebnis ist eine neue PDF; deine Originaldatei bleibt unverändert.
+1. **Eigene PDFs auswählen** anklicken und eine oder mehrere PDFs vom PC wählen. Bei mehreren Dateien die Reihenfolge mit den Pfeilen festlegen, bei Bedarf PDFs hinzufügen oder entfernen und **Auswahl übernehmen** wählen.
+2. Seitenbereich und **Textsprache** prüfen. Zunächst sind alle Seiten ausgewählt. Text-OCR läuft immer; **Mathe & Formeln erkennen** nur bei Bedarf aktivieren.
+3. **PDF mit OCR verarbeiten** starten. Die ausgewählten Seiten werden in einer neuen durchsuchbaren PDF gespeichert; deine Originaldateien bleiben unverändert.
 
 Der PDF-Modus braucht keinen Browser und keine Edubase-Anmeldung. Die ursprünglichen Seiten bleiben erhalten und werden um unsichtbaren Suchtext ergänzt. Vorhandener Text kann beim Kopieren oder Extrahieren dadurch doppelt vorkommen. **Neuer Auftrag** wechselt zurück zur Edubase-Aufnahme.
+
+### Bilder und Screenshots als PDF
+
+1. **Bilder / Screenshots auswählen** anklicken und ein oder mehrere gespeicherte Bilder wählen: **PNG, JPEG, BMP, TIFF oder WebP**.
+2. Bilder mit den Pfeilen sortieren, weitere hinzufügen oder Einträge entfernen. Mit **Auswahl übernehmen** bestätigen. Jedes Bild wird eine PDF-Seite; mehrseitige TIFF-Dateien werden vollständig übernommen.
+3. **Textsprache**, Seitenbereich und Ausgabetitel prüfen. Bei Bedarf **Mathe & Formeln erkennen** aktivieren und **PDF mit OCR verarbeiten** starten.
+
+Die App erstellt eine gemeinsame durchsuchbare PDF in deiner gewählten Reihenfolge. Es wird kein Browser geöffnet; die Originalbilder bleiben unverändert.
 
 ### PDFs zusammenfügen
 
@@ -107,7 +117,8 @@ Die Originale bleiben unverändert; eine vorhandene Zieldatei wird nicht übersc
 | Funktion | Das bringt sie dir |
 | --- | --- |
 | **PDF + OCR** | Buchseiten mit durchsuchbarem Text; Verarbeitung lokal auf deinem PC. |
-| **Eigene PDF** | PDF vom PC mit Text-OCR und optionaler Mathe-OCR verarbeiten; das Original bleibt erhalten. |
+| **Eigene PDFs** | Eine oder mehrere PDFs sortieren und mit Text-OCR sowie optionaler Mathe-OCR als eine neue PDF speichern. |
+| **Bilder / Screenshots** | Mehrere Bilder auswählen, sortieren und als durchsuchbare PDF speichern; Originale bleiben erhalten. |
 | **PDFs zusammenfügen** | Dateien in der gewünschten Reihenfolge als neue PDF speichern, ohne neue OCR. |
 | **Mathe-OCR anpassen** | CPU, GPU oder optional CUDA nutzen und die Anzahl Formeln pro Gruppe wählen. |
 | **Flexible Aufnahme** | Seitenbereich wählen, pausieren oder bereits aufgenommene Seiten exportieren. |
@@ -189,7 +200,9 @@ Automatic title detection, configurable PDF page labels and optional maths recog
 
 **New in 1.8.0 – Final release**
 
-- **Make your own PDFs searchable:** Select a PDF from your PC and start text recognition. Add maths OCR when you need it – all locally, without a browser.
+- **Process several PDFs with OCR:** Select one or more PDFs, set their order and create one searchable PDF.
+- **Turn images and screenshots into a PDF:** Select one or more saved PNG, JPEG, BMP, TIFF or WebP images. Reorder your selection, add more images or remove entries, then create a searchable PDF.
+- **Recognise text and formulas:** Text OCR runs for both input types; add maths OCR when needed. The app switches to local PDF mode automatically – no browser required, with your originals unchanged.
 - **Merge PDFs:** Bring several documents together in the order you choose.
 - **Tune maths OCR for your PC:** Choose CPU, GPU or optional CUDA. For GPU processing, select up to **10, 20 or 30 formulas per group**. Performance settings help you put your available computing power to use.
 
@@ -234,13 +247,21 @@ Your PDF is saved to **`Documents/Edubase-PDF`** by default. Check readability a
 then use **New job** to capture a larger range or the whole book.
 Do not turn pages manually while capturing.
 
-### Process your own PDF with OCR
+### Process your own PDFs with OCR
 
-1. Click **Select your own PDF**. The app shows its page count and selects all pages; narrow the range if needed.
-2. Set the **Text language**. Text OCR always runs; enable **Recognise maths & formulas** only if needed.
-3. Start **Process PDF with OCR**. The result is a new PDF; your original file stays unchanged.
+1. Click **Select your own PDFs** and choose one or more PDFs from your PC. For multiple files, use the arrows to set their order, add or remove PDFs as needed, then click **Use selection**.
+2. Check the page range and **Text language**. All pages are selected initially. Text OCR always runs; enable **Recognise maths & formulas** only if needed.
+3. Start **Process PDF with OCR**. Your selected pages are saved in one new searchable PDF; the original files stay unchanged.
 
 PDF mode needs no browser or Edubase sign-in. Original pages are retained and invisible searchable text is added. If text already exists, copying or extracting it can produce duplicates. **New job** returns to Edubase capture.
+
+### Turn images and screenshots into a PDF
+
+1. Click **Select images / screenshots** and choose one or more saved **PNG, JPEG, BMP, TIFF or WebP** images.
+2. Use the arrows to reorder images, add more or remove entries. Click **Use selection**. Each image becomes a PDF page; all pages of a multipage TIFF are included.
+3. Check the **Text language**, page range and output title. Enable **Recognise maths & formulas** if needed and start **Process PDF with OCR**.
+
+The app creates one searchable PDF in your chosen order. No browser opens; your original images stay unchanged.
 
 ### Merge PDFs
 
@@ -261,7 +282,8 @@ Open **Advanced settings / Performance settings** and match maths recognition to
 | Feature | What it does |
 | --- | --- |
 | **PDF + OCR** | Book pages with searchable text, processed locally on your PC. |
-| **Your own PDF** | Process a local PDF with text OCR and optional maths OCR; keep the original file. |
+| **Your own PDFs** | Order one or more PDFs and save them as one new PDF with text OCR and optional maths OCR. |
+| **Images / screenshots** | Select and order several images, then save a searchable PDF; keep the originals. |
 | **Merge PDFs** | Save documents in the selected order as a new PDF, without new OCR. |
 | **Tune maths OCR** | Use CPU, GPU or optional CUDA and choose the GPU formula batch size. |
 | **Flexible capture** | Choose a page range, pause or export the pages already captured. |
@@ -327,3 +349,4 @@ Existing maths, GPU and CUDA add-ons remain unchanged at version 1.7.0. RTX 50 a
 <p align="center">
   <a href="LICENSE">MIT License</a> · <a href="THIRD_PARTY_NOTICES.md">Third-party notices</a> · <a href="#edubase-to-pdf--ocr">↑ Nach oben / Back to top</a>
 </p>
+
