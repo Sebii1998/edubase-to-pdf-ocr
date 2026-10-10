@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <strong><a href="https://sebii1998.github.io/edubase-to-pdf-ocr/">Webseite öffnen</a> · <a href="https://sebii1998.github.io/edubase-to-pdf-ocr/en/">Visit the English website</a> · <a href="https://www.youtube.com/watch?v=0XhHn8oYu90">▶ YouTube-Tutorial</a></strong>
+  <strong><a href="https://sebii1998.github.io/edubase-to-pdf-ocr/">Webseite öffnen</a> · <a href="https://sebii1998.github.io/edubase-to-pdf-ocr/en/">Visit the English website</a> · <a href="https://www.youtube.com/watch?v=Qp2_XK_5LnY">▶ YouTube-Tutorial</a></strong>
 </p>
 
 <p align="center">
@@ -57,11 +57,13 @@ Installiertes Edge oder Chrome werden ebenfalls unterstützt.
 
 > Die fertige App findest du über den Download oben. **Code → Download ZIP** und **Source code** enthalten nur die öffentliche Dokumentation.
 
-### Video-Anleitung
+### Video-Anleitung · Version 1.8.0
+
+Download, Aufnahme, Text- und Mathe-OCR sowie eigene PDFs, Bilder und Screenshots – Schritt für Schritt in 5:09 Minuten.
 
 <p align="center">
-  <a href="https://www.youtube.com/watch?v=0XhHn8oYu90"><img src="docs/images/tutorial-thumbnail.png" alt="Edubase als PDF mit OCR – YouTube-Tutorial starten" width="820"></a><br>
-  <a href="https://www.youtube.com/watch?v=0XhHn8oYu90"><img src="docs/images/tutorial-de.svg" alt="Tutorial auf YouTube ansehen · 2:32 Minuten · Deutsch" width="820"></a>
+  <a href="https://www.youtube.com/watch?v=Qp2_XK_5LnY"><img src="https://i.ytimg.com/vi/Qp2_XK_5LnY/maxresdefault.jpg" alt="Edubase to PDF 1.8.0 – Text- und Mathe-OCR für Bücher, PDFs und Bilder – Tutorial starten" width="820"></a><br>
+  <a href="https://www.youtube.com/watch?v=Qp2_XK_5LnY"><img src="docs/images/tutorial-de.svg" alt="Tutorial auf YouTube ansehen · 5:09 Minuten · Deutsch" width="820"></a>
 </p>
 
 <details>
@@ -223,11 +225,13 @@ Installed Edge and Chrome are also supported.
 
 > Get the app using the download above. **Code → Download ZIP** and **Source code** contain only the public documentation.
 
-### Video tutorial
+### Video tutorial · Version 1.8.0
+
+Download, capture, text and maths OCR, plus your own PDFs, images and screenshots – step by step in 5:09 minutes, with German on-screen explanations.
 
 <p align="center">
-  <a href="https://www.youtube.com/watch?v=0XhHn8oYu90"><img src="docs/images/tutorial-thumbnail.png" alt="Edubase to PDF with OCR – watch the YouTube tutorial in German" width="820"></a><br>
-  <a href="https://www.youtube.com/watch?v=0XhHn8oYu90"><img src="docs/images/tutorial-en.svg" alt="Watch on YouTube · 2:32 · German on-screen explanations" width="820"></a>
+  <a href="https://www.youtube.com/watch?v=Qp2_XK_5LnY"><img src="https://i.ytimg.com/vi/Qp2_XK_5LnY/maxresdefault.jpg" alt="Edubase to PDF 1.8.0 – text and maths OCR for books, PDFs and images – watch the tutorial in German" width="820"></a><br>
+  <a href="https://www.youtube.com/watch?v=Qp2_XK_5LnY"><img src="docs/images/tutorial-en.svg" alt="Watch on YouTube · 5:09 · German on-screen explanations" width="820"></a>
 </p>
 
 <details>
@@ -351,4 +355,5 @@ Existing maths, GPU and CUDA add-ons remain unchanged at version 1.7.0. RTX 50 a
 <p align="center">
   <a href="LICENSE">MIT License</a> · <a href="THIRD_PARTY_NOTICES.md">Third-party notices</a> · <a href="#edubase-to-pdf--ocr">↑ Nach oben / Back to top</a>
 </p>
+
 
