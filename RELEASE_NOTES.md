@@ -25,9 +25,9 @@
   brauchen mehr Grafikspeicher; das Tempo hängt von deinem PC und den Formeln ab.
   Bildqualität und Erkennungsmodelle bleiben gleich.
 
-**Update vom 10. Oktober 2026: Neue Graphit-Oberfläche.**
+**Blau-silberne Oberfläche.**
 
-Dunkle Flächen, dezente Schatten und feine Konturen geben der App mehr Tiefe.
+Blau-graue Flächen, silberne Konturen und klare blaue Schaltflächen geben der App mehr Tiefe.
 Die Auswahl für Buch, PDFs und Bilder ist oben klarer gegliedert. Der gleiche
 Stil gilt auch für die erweiterten Einstellungen und die englische Ansicht.
 
@@ -97,9 +97,9 @@ Edubase ebenfalls verwenden.
   memory; speed depends on your PC and formulas. Image quality and recognition
   models stay the same.
 
-**Updated on 10 October 2026: New graphite interface.**
+**Blue-silver interface.**
 
-Dark surfaces, subtle shadows and fine outlines add depth to the app.
+Blue-grey surfaces, silver outlines and clear blue buttons add depth to the app.
 The top section makes choosing a book, PDFs or images clearer. The same
 style applies to advanced settings and the English view.
 
@@ -165,10 +165,10 @@ Files labelled **Archiv** belong to earlier builds. For the current version, use
 
 ## SHA256
 
-`Edubase-PDF-Windows.zip` · 241759873 bytes
+`Edubase-PDF-Windows.zip` · 241760443 bytes
 
 ```text
-c63f08af1bc54ccae93506ff6c61937bce96796a8fd095cab109934059a96a95
+b87f26c987e66d456b4b39267c870897e555e67178ac24c84c97552e9089d443
 ```
 
 `Edubase-CUDA-RTX50-Windows.zip` · 2006319505 bytes
@@ -181,5 +181,6 @@ c63f08af1bc54ccae93506ff6c61937bce96796a8fd095cab109934059a96a95
 
 Windows 64 Bit / 64-bit Windows (Intel/AMD). Die App ist nicht digital signiert.
 The app is not digitally signed.
+
 
 
