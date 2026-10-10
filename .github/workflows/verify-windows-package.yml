@@ -14,9 +14,9 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  CANDIDATE_NAME: Test-Edubase-PDF-Windows-v1.8.0-A4.zip
-  CANDIDATE_SHA256: c63f08af1bc54ccae93506ff6c61937bce96796a8fd095cab109934059a96a95
-  CANDIDATE_BYTES: '241759873'
+  CANDIDATE_NAME: Test-Edubase-PDF-Windows-v1.8.0-Silber.zip
+  CANDIDATE_SHA256: b87f26c987e66d456b4b39267c870897e555e67178ac24c84c97552e9089d443
+  CANDIDATE_BYTES: '241760443'
   PYTHONUTF8: '1'
 
 jobs:
@@ -218,7 +218,7 @@ jobs:
                    '- Frozen GUI in German/English, bundled OCR, CPU formula OCR and native SQLite.',
                    '- Edge, Chrome and bundled Firefox capture, searchable output, resume and cleanup.', '',
                    'CUDA/GPU acceleration is not exercised on this CPU runner.',
-                   'The full portable-check.json is printed in the job log. No artifacts are uploaded.']
+                   'The full portable-check.json and native UI screenshot proofs are printed in the job log. No artifacts are uploaded.']
           if failures:
               lines += ['', 'Failed or missing gates:'] + ['- ' + item for item in failures]
           with summary.open('a', encoding='utf-8') as output:
@@ -228,3 +228,37 @@ jobs:
               raise SystemExit(1)
           '@ | python -
           if ($LASTEXITCODE -ne 0) { throw 'Portable report gates failed.' }
+
+      - name: Print native Windows UI screenshot proofs
+        if: success()
+        shell: pwsh
+        run: |
+          @'
+          import base64, hashlib, json, struct
+          from pathlib import Path
+
+          root = Path(r'C:\epdf-test')
+          # These are blank or synthetic self-test windows, never user documents.
+          screenshots = (
+              ('de', 'portable-check-ui.png'),
+              ('en', 'portable-check-ui-en.png'),
+              ('advanced-de', 'portable-check-gpu-ui.png'),
+              ('advanced-en', 'portable-check-gpu-ui-en.png'),
+              ('pdf-de', 'portable-check-pdf-ui.png'),
+              ('pdf-en', 'portable-check-pdf-ui-en.png'),
+          )
+          for language, name in screenshots:
+              raw = (root / name).read_bytes()
+              if not 32 <= len(raw) <= 5 * 1024 * 1024 or raw[:8] != b'\x89PNG\r\n\x1a\n':
+                  raise RuntimeError('Missing or invalid native UI screenshot: ' + name)
+              width, height = struct.unpack('>II', raw[16:24])
+              if not 500 <= width <= 7680 or not 400 <= height <= 4320:
+                  raise RuntimeError('Unexpected native UI screenshot dimensions: ' + name)
+              print('UI_PROOF ' + json.dumps({
+                  'name': name, 'language': language,
+                  'bytes': len(raw), 'sha256': hashlib.sha256(raw).hexdigest(),
+                  'width': width, 'height': height,
+                  'base64': base64.b64encode(raw).decode('ascii'),
+              }), flush=True)
+          '@ | python -
+          if ($LASTEXITCODE -ne 0) { throw 'Native UI screenshot proof failed.' }
