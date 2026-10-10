@@ -119,6 +119,107 @@ jobs:
           '@ | python -
           if ($LASTEXITCODE -ne 0) { throw 'Package verification failed.' }
 
+      - name: Prepare supported 1920x1080 desktop for clean native UI screenshots
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          # Temporary resolution change on this disposable runner only. No registry update.
+          # https://learn.microsoft.com/windows/win32/api/winuser/nf-winuser-enumdisplaysettingsw
+          # https://learn.microsoft.com/windows/win32/api/winuser/nf-winuser-changedisplaysettingsexw
+          Add-Type -TypeDefinition @'
+          using System;
+          using System.Collections.Generic;
+          using System.Runtime.InteropServices;
+          using System.Threading;
+          
+          public static class EdubaseRunnerDisplay {
+              [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+              public struct DEVMODEW {
+                  [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)] public string dmDeviceName;
+                  public ushort dmSpecVersion, dmDriverVersion, dmSize, dmDriverExtra;
+                  public uint dmFields;
+                  public int dmPositionX, dmPositionY;
+                  public uint dmDisplayOrientation, dmDisplayFixedOutput;
+                  public short dmColor, dmDuplex, dmYResolution, dmTTOption, dmCollate;
+                  [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 32)] public string dmFormName;
+                  public ushort dmLogPixels;
+                  public uint dmBitsPerPel, dmPelsWidth, dmPelsHeight, dmDisplayFlags, dmDisplayFrequency;
+                  public uint dmICMMethod, dmICMIntent, dmMediaType, dmDitherType;
+                  public uint dmReserved1, dmReserved2, dmPanningWidth, dmPanningHeight;
+              }
+          
+              [DllImport("user32.dll", CharSet = CharSet.Unicode, ExactSpelling = true)]
+              [return: MarshalAs(UnmanagedType.Bool)]
+              private static extern bool EnumDisplaySettingsW(string device, int index, ref DEVMODEW mode);
+          
+              [DllImport("user32.dll", CharSet = CharSet.Unicode, ExactSpelling = true)]
+              private static extern int ChangeDisplaySettingsExW(string device, ref DEVMODEW mode,
+                  IntPtr reservedWindow, uint flags, IntPtr reservedData);
+          
+              private static DEVMODEW EmptyMode() {
+                  var mode = new DEVMODEW();
+                  mode.dmDeviceName = String.Empty;
+                  mode.dmFormName = String.Empty;
+                  mode.dmSize = checked((ushort)Marshal.SizeOf(typeof(DEVMODEW)));
+                  if (mode.dmSize != 220 || Marshal.OffsetOf(typeof(DEVMODEW), "dmPelsWidth").ToInt32() != 172)
+                      throw new InvalidOperationException("Unexpected DEVMODEW layout.");
+                  return mode;
+              }
+          
+              private static DEVMODEW CurrentMode() {
+                  var mode = EmptyMode();
+                  if (!EnumDisplaySettingsW(null, -1, ref mode))
+                      throw new InvalidOperationException("Cannot read runner display mode.");
+                  return mode;
+              }
+          
+              private static string Describe(DEVMODEW mode) {
+                  return mode.dmPelsWidth + "x" + mode.dmPelsHeight + " @ " + mode.dmDisplayFrequency
+                      + " Hz, " + mode.dmBitsPerPel + " bpp";
+              }
+          
+              public static void Prepare() {
+                  var before = CurrentMode();
+                  Console.WriteLine("RUNNER_DISPLAY_BEFORE " + Describe(before));
+                  if (before.dmPelsWidth == 1920 && before.dmPelsHeight == 1080) return;
+          
+                  var modes = new HashSet<string>();
+                  DEVMODEW? selected = null;
+                  for (int index = 0; index < 4096; index++) {
+                      var mode = EmptyMode();
+                      if (!EnumDisplaySettingsW(null, index, ref mode)) break;
+                      modes.Add(Describe(mode));
+                      if (mode.dmPelsWidth == 1920 && mode.dmPelsHeight == 1080 && mode.dmBitsPerPel == 32) {
+                          if (!selected.HasValue || mode.dmDisplayFrequency == 60) selected = mode;
+                      }
+                  }
+                  Console.WriteLine("RUNNER_DISPLAY_SUPPORTED " + String.Join("; ", modes));
+                  if (!selected.HasValue)
+                      throw new InvalidOperationException("1920x1080 at 32 bpp is not advertised by this runner display driver.");
+          
+                  var desired = selected.Value;
+                  int test = ChangeDisplaySettingsExW(null, ref desired, IntPtr.Zero, 2, IntPtr.Zero); // CDS_TEST
+                  Console.WriteLine("RUNNER_DISPLAY_TEST " + test);
+                  if (test != 0)
+                      throw new InvalidOperationException("Driver rejected the advertised 1920x1080 mode; code " + test);
+                  int change = ChangeDisplaySettingsExW(null, ref desired, IntPtr.Zero, 0, IntPtr.Zero);
+                  Console.WriteLine("RUNNER_DISPLAY_CHANGE " + change);
+                  if (change != 0)
+                      throw new InvalidOperationException("Temporary display change failed; code " + change);
+                  for (int attempt = 0; attempt < 12; attempt++) {
+                      var after = CurrentMode();
+                      if (after.dmPelsWidth == 1920 && after.dmPelsHeight == 1080) {
+                          Console.WriteLine("RUNNER_DISPLAY_AFTER " + Describe(after));
+                          return;
+                      }
+                      Thread.Sleep(250);
+                  }
+                  throw new InvalidOperationException("Runner display did not reach 1920x1080 after the accepted change.");
+              }
+          }
+          '@
+          [EdubaseRunnerDisplay]::Prepare()
+
       - name: Run frozen Windows app with OCR, maths, GUI and three browsers
         shell: pwsh
         run: |
