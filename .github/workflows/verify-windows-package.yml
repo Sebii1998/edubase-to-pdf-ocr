@@ -14,9 +14,9 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  CANDIDATE_NAME: Test-Edubase-PDF-Windows-v1.8.0-PDF-Formate.zip
-  CANDIDATE_SHA256: fd8e9510eaa1ebb544b277e92570a48252706d061274a9c5497922d7dd17d0f0
-  CANDIDATE_BYTES: '241764488'
+  CANDIDATE_NAME: Test-Edubase-PDF-Windows-v1.8.0-Fehlerpruefung.zip
+  CANDIDATE_SHA256: eb931998a418bb12f8b5ab3ff23842ef376e6d3f6b619ee39ec19d3ba815f703
+  CANDIDATE_BYTES: '241771671'
   PYTHONUTF8: '1'
 
 jobs:
@@ -294,6 +294,10 @@ jobs:
           require(selected.get('single_pdf_editable') is True, 'Single PDF can append another selection')
           require(selected.get('image_pages') == 2 and selected.get('multi_pdf_pages') == 2, 'Multiple images/PDFs')
           require({'PNG', 'JPEG', 'BMP', 'TIFF', 'WEBP'}.issubset(selected.get('formats', [])), 'Image codecs')
+          robustness = result.get('robust_inputs', {})
+          for field in ('grayscale_16bit', 'runtime_metadata_rejected', 'empty_runtime_files_rejected',
+                        'resume_rejection_preserves_selection', 'saved_export_rejection_preserves_selection'):
+              require(robustness.get(field) is True, 'Damaged input recovery: ' + field)
           local = result.get('local_pdf', {})
           for field in ('ok', 'source_unchanged', 'no_browser', 'optional_math', 'gui_mode',
                         'native_pdfium', 'text_only_without_math', 'cleaned'):
