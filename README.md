@@ -97,10 +97,11 @@ Der PDF-Modus braucht keinen Browser und keine Edubase-Anmeldung. Die ursprüngl
 ### Bilder und Screenshots als PDF
 
 1. **Bilder / Screenshots auswählen** anklicken und ein oder mehrere gespeicherte Bilder wählen: **PNG, JPEG, BMP, TIFF oder WebP**.
-2. Bilder mit den Pfeilen sortieren, weitere hinzufügen oder Einträge entfernen. Mit **Auswahl übernehmen** bestätigen. Jedes Bild wird eine PDF-Seite; mehrseitige TIFF-Dateien werden vollständig übernommen.
-3. **Textsprache**, Seitenbereich und Ausgabetitel prüfen. Bei Bedarf **Mathe & Formeln erkennen** aktivieren und **PDF mit OCR verarbeiten** starten.
+2. Bilder mit **Nach oben** und **Nach unten** sortieren, weitere hinzufügen oder Einträge entfernen.
+3. Standard ist **A4 im Hochformat**. Unter **PDF-Seitenformat** wählst du die Papiergrösse für die gesamte Auswahl: **A4, A3, A5 oder Letter**. Für die Ausrichtung ein Bild in der Liste markieren und unter **Ausrichtung** **Hochformat** oder **Querformat** wählen. So kannst du jedes Bild separat einstellen; bei mehreren markierten Bildern gilt die Änderung für diese gemeinsam.
+4. Mit **Auswahl übernehmen** bestätigen. **Textsprache**, Seitenbereich und Ausgabetitel prüfen. Bei Bedarf **Mathe & Formeln erkennen** aktivieren und **PDF mit OCR verarbeiten** starten.
 
-Die App erstellt eine gemeinsame durchsuchbare PDF in deiner gewählten Reihenfolge. Jedes Bild wird proportional auf eine **A4-Seite** eingepasst, automatisch im Hoch- oder Querformat, zentriert und mit mindestens 5 mm Rand. Es wird nichts abgeschnitten oder verzerrt. Es wird kein Browser geöffnet; die Originalbilder bleiben unverändert. Bereits vorhandene PDFs behalten beim PDF-Import ihr ursprüngliches Seitenformat.
+Die App erstellt eine gemeinsame durchsuchbare PDF in deiner gewählten Reihenfolge. Jedes Bild wird proportional auf eine Seite im gewählten Papierformat und in seiner eingestellten Ausrichtung eingepasst, zentriert und mit mindestens 5 mm Rand. Es wird nichts abgeschnitten oder verzerrt. Mehrseitige TIFF-Dateien werden vollständig übernommen; alle Seiten einer TIFF-Datei verwenden die für diesen Eintrag gewählte Ausrichtung. Es wird kein Browser geöffnet; die Originalbilder bleiben unverändert. Bereits vorhandene PDFs behalten beim PDF-Import ihr ursprüngliches Seitenformat.
 
 ### PDFs zusammenfügen
 
@@ -266,10 +267,11 @@ PDF mode needs no browser or Edubase sign-in. Original pages are retained and in
 ### Turn images and screenshots into a PDF
 
 1. Click **Select images / screenshots** and choose one or more saved **PNG, JPEG, BMP, TIFF or WebP** images.
-2. Use the arrows to reorder images, add more or remove entries. Click **Use selection**. Each image becomes a PDF page; all pages of a multipage TIFF are included.
-3. Check the **Text language**, page range and output title. Enable **Recognise maths & formulas** if needed and start **Process PDF with OCR**.
+2. Use **Move up** and **Move down** to reorder images, add more or remove entries.
+3. The default is **A4 portrait**. Choose the paper size for the entire selection under **PDF page size**: **A4, A3, A5 or Letter**. To set an image's orientation, select it in the list and choose **Portrait** or **Landscape** under **Orientation**. You can set each image separately; selecting several images applies the change to all selected entries.
+4. Click **Use selection**. Check the **Text language**, page range and output title. Enable **Recognise maths & formulas** if needed and start **Process PDF with OCR**.
 
-The app creates one searchable PDF in your chosen order. Each image fits proportionally onto an **A4 page**, automatically in portrait or landscape, centred with at least a 5 mm margin. Nothing is cropped or stretched. No browser opens; your original images stay unchanged. Existing PDFs retain their original page sizes when imported as PDFs.
+The app creates one searchable PDF in your chosen order. Each image fits proportionally onto a page with the selected paper size and its chosen orientation, centred with at least a 5 mm margin. Nothing is cropped or stretched. All pages of a multipage TIFF are included and use the orientation chosen for that entry. No browser opens; your original images stay unchanged. Existing PDFs retain their original page sizes when imported as PDFs.
 
 ### Merge PDFs
 
@@ -357,6 +359,7 @@ Existing maths, GPU and CUDA add-ons remain unchanged at version 1.7.0. RTX 50 a
 <p align="center">
   <a href="LICENSE">MIT License</a> · <a href="THIRD_PARTY_NOTICES.md">Third-party notices</a> · <a href="#edubase-to-pdf--ocr">↑ Nach oben / Back to top</a>
 </p>
+
 
 
 

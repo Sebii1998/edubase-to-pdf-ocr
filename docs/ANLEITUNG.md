@@ -75,18 +75,27 @@ Edubase-Aufnahme wieder verfügbar.
    Unterstützt werden **PNG, JPEG, BMP, TIFF und WebP**.
 2. Im Auswahlfenster die Reihenfolge mit **Nach oben** und **Nach unten** festlegen.
    **Bilder hinzufügen** ergänzt weitere Dateien; **Entfernen** nimmt Einträge aus
-   der Auswahl. Anschliessend **Auswahl übernehmen** anklicken.
-3. Die App wechselt automatisch in den lokalen PDF-Modus. Jedes Bild wird eine
-   **A4-Seite**; bei mehrseitigen TIFF-Dateien werden alle Seiten übernommen.
+   der Auswahl.
+3. Standard ist **A4 im Hochformat**. Unter **PDF-Seitenformat** kannst du für
+   die gesamte Auswahl **A4, A3, A5 oder Letter** wählen. Für die Ausrichtung
+   ein Bild in der Liste markieren und unter **Ausrichtung** **Hochformat** oder
+   **Querformat** einstellen. Das lässt sich für jedes Bild separat festlegen.
+   Sind mehrere Bilder markiert, wird die Ausrichtung für diese gemeinsam geändert.
+   Die gewählte Ausrichtung steht neben jedem Bild in der Liste und bleibt beim
+   Umsortieren erhalten. Neu hinzugefügte Bilder starten im Hochformat.
+4. **Auswahl übernehmen** anklicken. Die App wechselt automatisch in den lokalen
+   PDF-Modus. Jedes Bild wird eine PDF-Seite; bei mehrseitigen TIFF-Dateien werden
+   alle Seiten mit der für diesen Eintrag gewählten Ausrichtung übernommen.
    Seitenbereich, Ausgabetitel, Zielordner und **Textsprache** prüfen.
-4. **Mathe & Formeln erkennen** bei Bedarf aktivieren und
+5. **Mathe & Formeln erkennen** bei Bedarf aktivieren und
    **PDF mit OCR verarbeiten** starten. Text-OCR wird immer ausgeführt.
    Das Ergebnis ist eine gemeinsame durchsuchbare PDF in der gewählten Reihenfolge.
 
-Die App berücksichtigt die gespeicherte Bildausrichtung und wählt automatisch
-A4 im Hoch- oder Querformat. Das Bild wird proportional auf die Seite eingepasst,
+Die App berücksichtigt die gespeicherte Bildausrichtung. Papiergrösse und
+Hoch- oder Querformat richten sich nach deiner Auswahl; ohne Änderung gilt
+**A4 im Hochformat**, auch für breite Bilder. Das Bild wird proportional auf die Seite eingepasst,
 zentriert und mit mindestens **5 mm Rand** platziert. Es wird nichts abgeschnitten
-oder verzerrt; die ursprüngliche Pixelanzahl bleibt erhalten. Die A4-Anpassung
+oder verzerrt; die ursprüngliche Pixelanzahl bleibt erhalten. Die Formatanpassung
 gilt für den Bildimport. Eigene PDFs behalten ihre ursprünglichen Seitenformate.
 
 Es wird kein Browser geöffnet und keine Edubase-Anmeldung benötigt. Die
@@ -359,5 +368,6 @@ einen OCR-Dienst hochgeladen. Unabhängiges Projekt: Verwende nur Inhalte,
 auf die du zugreifen und die du speichern darfst.
 
 [Lizenz](../LICENSE) · [Drittanbieterhinweise](../THIRD_PARTY_NOTICES.md)
+
 
 
