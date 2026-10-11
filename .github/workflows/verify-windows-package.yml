@@ -14,9 +14,9 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  CANDIDATE_NAME: Test-Edubase-PDF-Windows-v1.8.0-Start-Bildausrichtung.zip
-  CANDIDATE_SHA256: a616592f3a2f8d5bacd7ebfa7b14c08ebd6782c486db11fab68f9e9d78a067ea
-  CANDIDATE_BYTES: '241779487'
+  CANDIDATE_NAME: Test-Edubase-PDF-Windows-v1.8.0-Start-Bildausrichtung-Titel.zip
+  CANDIDATE_SHA256: cd6ba5669c52492c9ba33705168f5c8c49ac3623ae0d42dfe10ee6a862ec3e65
+  CANDIDATE_BYTES: '241781898'
   PYTHONUTF8: '1'
 
 jobs:
@@ -285,6 +285,9 @@ jobs:
           for field in ('hidden_until_ready', 'stable_visible_geometry', 'no_visible_remap'):
               require(startup.get(field) is True, 'Startup: ' + field)
           require({'de', 'en'}.issubset(result.get('ui_languages', [])), 'German and English GUI')
+          title_language = result.get('default_title', {})
+          for field in ('localized', 'edited_preserved', 'detected_preserved'):
+              require(title_language.get(field) is True, 'Book title language: ' + field)
           require({'deu', 'eng'}.issubset(result.get('languages', [])), 'Bundled OCR languages')
           require(result.get('text_backlog', {}).get('native_sqlite') is True, 'Native SQLite')
           selected = result.get('selected_inputs', {})
